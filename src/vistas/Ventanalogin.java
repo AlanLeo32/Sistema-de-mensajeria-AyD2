@@ -5,23 +5,30 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
-import javax.swing.JPasswordField;
 
-public class Ventanalogin extends JFrame {
+public class Ventanalogin extends JFrame implements ActionListener, KeyListener{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtUsuario;
-	private JPasswordField txtPuerto;
 	private JButton botonRegistrar;
+	private JTextField textFieldPuerto;
 
 	/**
 	 * Launch the application.
@@ -43,6 +50,7 @@ public class Ventanalogin extends JFrame {
 	 * Create the frame.
 	 */
 	public Ventanalogin() {
+		setTitle("Sistema de mensajería");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 308, 227);
@@ -68,6 +76,7 @@ public class Ventanalogin extends JFrame {
 		txtUsuario = new JTextField();
 		panel_2.add(txtUsuario);
 		txtUsuario.setColumns(10);
+		this.txtUsuario.addKeyListener(this);
 		
 		JLabel lblNewLabel = new JLabel("Puerto:");
 		panel.add(lblNewLabel);
@@ -78,24 +87,32 @@ public class Ventanalogin extends JFrame {
 		flowLayout_1.setAlignment(FlowLayout.LEFT);
 		panel.add(panel_3);
 		
-		txtPuerto = new JPasswordField();
-		txtPuerto.setColumns(10);
-		panel_3.add(txtPuerto);
+		this.textFieldPuerto = new JTextField();
+		panel_3.add(this.textFieldPuerto);
+		this.textFieldPuerto.setColumns(10);
+		this.textFieldPuerto.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) { // Si no es un número, se ignora el evento
+                    e.consume();
+                }
+            }
+			public void keyReleased(KeyEvent e) {
+				botonRegistrar.setEnabled(!(getPuerto().isEmpty()));
+			}
+        });
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton botonRegistrar = new JButton("Registrar");
-		panel_1.add(botonRegistrar);
+		this.botonRegistrar = new JButton("Registrar");
+		this.botonRegistrar.setToolTipText("Registrar");
+		this.botonRegistrar.setEnabled(false);
+		panel_1.add(this.botonRegistrar);
 		// Agregar el ActionListener para el botón
-        botonRegistrar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String usuario = getUsuario();
-                String puerto = getPuerto();
-                System.out.println("Usuario: " + usuario + ", Contraseña: " + puerto);
-            }
-        });
+		this.botonRegistrar.addActionListener(this);
 	}
 	
 
@@ -105,7 +122,32 @@ public class Ventanalogin extends JFrame {
 	}
 
 	public String getPuerto() {
-		return new String(txtPuerto.getPassword()); // Convertir password a String
+		return this.textFieldPuerto.getText();
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		this.botonRegistrar.setEnabled(!(this.getUsuario().isEmpty() || this.getPuerto().isEmpty()));
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+        String usuario = getUsuario();
+        String puerto = getPuerto();
+        System.out.println("Usuario: " + usuario + ", Puerto: " + puerto);
 	}
 	
 }

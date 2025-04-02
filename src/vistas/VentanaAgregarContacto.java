@@ -5,25 +5,35 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import java.awt.FlowLayout;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.ActionEvent;
 
-public class VentanaAgregarContacto extends JFrame {
+public class VentanaAgregarContacto extends JFrame implements ActionListener, KeyListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JPanel panel_1;
-	private JLabel lblNewLabel_1;
-	private JTextField textField_1;
-	private JPanel panel_2;
-	private JLabel lblNewLabel_2;
-	private JTextField textField_2;
+	private JTextField textFieldNickname;
+	private JPanel panelIP;
+	private JLabel ipLabel;
+	private JTextField textFieldIP;
+	private JPanel panelPuerto;
+	private JLabel puertoLabel;
+	private JTextField textFieldPuerto;
 	private JPanel panel_3;
-	private JButton btnNewButton;
+	private JButton btnAgregarButton;
+	private JPanel panel;
+	private JPanel panel_1;
+	private JPanel panel_2;
 
 	/**
 	 * Launch the application.
@@ -45,55 +55,112 @@ public class VentanaAgregarContacto extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaAgregarContacto() {
+		setTitle("Agregar contacto");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 217, 253);
+		setBounds(100, 100, 280, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(4, 2, 0, 0));
 		
-		panel_1 = new JPanel();
-		FlowLayout flowLayout_1 = (FlowLayout) panel_1.getLayout();
-		flowLayout_1.setAlignment(FlowLayout.LEFT);
-		contentPane.add(panel_1);
+		JPanel panelNickname = new JPanel();
+		contentPane.add(panelNickname);
+		panelNickname.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		lblNewLabel_1 = new JLabel("New label");
-		panel_1.add(lblNewLabel_1);
+		JLabel nicknameLabel = new JLabel("Nickname");
+		panelNickname.add(nicknameLabel);
 		
-		textField_1 = new JTextField();
-		panel_1.add(textField_1);
-		textField_1.setColumns(10);
+		this.panel = new JPanel();
+		panelNickname.add(this.panel);
 		
-		JPanel panel = new JPanel();
-		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
-		flowLayout.setAlignment(FlowLayout.LEFT);
-		contentPane.add(panel);
+		textFieldNickname = new JTextField();
+		this.textFieldNickname.addKeyListener(this);
+		this.panel.add(this.textFieldNickname);
+		textFieldNickname.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		panel.add(lblNewLabel);
+		panelIP = new JPanel();
+		contentPane.add(panelIP);
+		this.panelIP.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		textField = new JTextField();
-		panel.add(textField);
-		textField.setColumns(10);
+		ipLabel = new JLabel("Dirección IP");
+		panelIP.add(ipLabel);
 		
-		panel_2 = new JPanel();
-		FlowLayout flowLayout_2 = (FlowLayout) panel_2.getLayout();
-		flowLayout_2.setAlignment(FlowLayout.LEFT);
-		contentPane.add(panel_2);
+		this.panel_1 = new JPanel();
+		this.panelIP.add(this.panel_1);
 		
-		lblNewLabel_2 = new JLabel("New label");
-		panel_2.add(lblNewLabel_2);
+		textFieldIP = new JTextField();
+		this.textFieldIP.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!(Character.isDigit(c) || c == '.')) { // Si no es un número, se ignora el evento
+                    e.consume();
+                }
+            }
+			public void keyReleased(KeyEvent e) {
+				btnAgregarButton.setEnabled(!(textFieldIP.getText().isEmpty()));
+			}
+        });
+		this.panel_1.add(this.textFieldIP);
+		textFieldIP.setColumns(10);
 		
-		textField_2 = new JTextField();
-		panel_2.add(textField_2);
-		textField_2.setColumns(10);
+		panelPuerto = new JPanel();
+		contentPane.add(panelPuerto);
+		this.panelPuerto.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		puertoLabel = new JLabel("Puerto");
+		panelPuerto.add(puertoLabel);
+		
+		this.panel_2 = new JPanel();
+		this.panelPuerto.add(this.panel_2);
+		
+		textFieldPuerto = new JTextField();
+		this.textFieldPuerto.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) { // Si no es un número, se ignora el evento
+                    e.consume();
+                }
+            }
+			public void keyReleased(KeyEvent e) {
+				btnAgregarButton.setEnabled(!(textFieldIP.getText().isEmpty()));
+			}
+        });
+		this.panel_2.add(this.textFieldPuerto);
+		textFieldPuerto.setColumns(10);
 		
 		panel_3 = new JPanel();
 		contentPane.add(panel_3);
 		
-		btnNewButton = new JButton("Agregar");
-		panel_3.add(btnNewButton);
+		btnAgregarButton = new JButton("Agregar");
+		this.btnAgregarButton.setToolTipText("Agregar");
+		this.btnAgregarButton.addActionListener(this);
+		this.btnAgregarButton.setEnabled(false);
+		panel_3.add(btnAgregarButton);
 	}
 
+	public void actionPerformed(ActionEvent e) {
+		//AGREGAR CARTEL O ALGO POR EL ESTILO
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		this.btnAgregarButton.setEnabled(!(this.textFieldNickname.getText().isEmpty() || this.textFieldIP.getText().isEmpty() || this.textFieldPuerto.getText().isEmpty()));
+	}
 }
