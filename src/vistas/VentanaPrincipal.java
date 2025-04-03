@@ -10,6 +10,12 @@ import controlador.Controlador;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 import javax.swing.JSplitPane;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -20,12 +26,20 @@ import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionEvent;
 
-public class VentanaPrincipal extends JFrame implements IVista {
+public class VentanaPrincipal extends JFrame implements IVista, ActionListener, KeyListener, MouseListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textFieldMensaje;
 	private Controlador controlador;
+	private JButton botonAgregarContacto;
+	private JButton botonNuevaConversacion;
+	private JButton botonEnviar;
 	/**
 	 * Launch the application.
 	 */
@@ -65,11 +79,15 @@ public class VentanaPrincipal extends JFrame implements IVista {
 		panel.add(panel_1, BorderLayout.SOUTH);
 		panel_1.setLayout(new GridLayout(1, 2, 0, 0));
 		
-		JButton botonAgregarContacto = new JButton("Agregar contacto");
-		panel_1.add(botonAgregarContacto);
+		this.botonAgregarContacto = new JButton("Agregar contacto");
+		this.botonAgregarContacto.setActionCommand("AGREGAR CONTACTO");
+		this.botonAgregarContacto.addActionListener(this);
+		panel_1.add(this.botonAgregarContacto);
 		
-		JButton botonNuevaConversacion = new JButton("Nueva conversacion");
-		panel_1.add(botonNuevaConversacion);
+		this.botonNuevaConversacion = new JButton("Nueva conversacion");
+		this.botonNuevaConversacion.addActionListener(this);
+		this.botonNuevaConversacion.setActionCommand("NUEVA CONVERSACIÓN");
+		panel_1.add(this.botonNuevaConversacion);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		panel.add(scrollPane_1, BorderLayout.CENTER);
@@ -99,20 +117,76 @@ public class VentanaPrincipal extends JFrame implements IVista {
 		panel_3.setLayout(new GridLayout(1, 2, 0, 0));
 		
 		textFieldMensaje = new JTextField();
-		textFieldMensaje.setText("mensaje");
+		this.textFieldMensaje.addKeyListener(this);
+		this.textFieldMensaje.setToolTipText("Mensaje");
 		panel_3.add(textFieldMensaje);
 		textFieldMensaje.setColumns(10);
 		
-		JButton botonEnviar = new JButton("Enviar");
-		panel_3.add(botonEnviar);
+		this.botonEnviar = new JButton("Enviar");
+		this.botonEnviar.setEnabled(false);
+		this.botonEnviar.addActionListener(this);
+		this.botonEnviar.setActionCommand("ENVIAR");
+		panel_3.add(this.botonEnviar);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		panel_2.add(scrollPane, BorderLayout.CENTER);
 		
 		JTextArea textAreaChat = new JTextArea();
+		textAreaChat.setWrapStyleWord(true);
+		textAreaChat.setLineWrap(true);
 		textAreaChat.setEditable(false);
-		textAreaChat.setText("asfasfafsafasfasf\r\nafafafafafaf\r\nafafafafaf\r\nwwwwffw\r\n");
+		textAreaChat.setText("asfasfafsafasfasf\r\nafafafafafaf\r\nafafafafaf\r\nwwwwffw\r\n🧊");
 		scrollPane.setViewportView(textAreaChat);
 	}
+	@Override
+	public void setActionListener(ActionListener controlador) {
+		// TODO Auto-generated method stub
+		this.botonAgregarContacto.addActionListener(controlador);
+		this.botonNuevaConversacion.addActionListener(controlador);
+		this.botonEnviar.addActionListener(controlador);
+	}
 
+	public void actionPerformed(ActionEvent e) {
+		
+	}
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		this.botonEnviar.setEnabled(!(textFieldMensaje.getText().isEmpty()));
+	}
 }

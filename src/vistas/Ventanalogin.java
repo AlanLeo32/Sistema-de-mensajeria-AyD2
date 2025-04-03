@@ -111,6 +111,7 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		this.botonRegistrar = new JButton("Registrar");
+		this.botonRegistrar.setActionCommand("REGISTRAR");
 		this.botonRegistrar.setToolTipText("Registrar");
 		this.botonRegistrar.setEnabled(false);
 		panel_1.add(this.botonRegistrar);
@@ -152,5 +153,11 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 		puerto=Integer.parseInt(getPuerto());
 		controlador.setUser(getUsuario(),puerto);
  	}
+
+	@Override
+	public void setActionListener(ActionListener controlador) {
+		// TODO Auto-generated method stub
+		this.botonRegistrar.addActionListener(controlador);
+	}
 	
 }

@@ -79,6 +79,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		
 		textFieldNickname = new JTextField();
 		textFieldNickname.setBounds(100, 21, 86, 20);
+		this.textFieldNickname.addKeyListener(this);
 		panelNickname.add(textFieldNickname);
 		textFieldNickname.setColumns(10);
 		
@@ -93,6 +94,18 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		textFieldIP = new JTextField();
 		textFieldIP.setBounds(100, 21, 86, 20);
 		panelIP.add(textFieldIP);
+		this.textFieldIP.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!(Character.isDigit(c) || c == '.')) { // Si no es un número, se ignora el evento
+                    e.consume();
+                }
+            }
+			public void keyReleased(KeyEvent e) {
+				btnAgregarButton.setEnabled(!(textFieldIP.getText().isEmpty()));
+			}
+        });
 		textFieldIP.setColumns(10);
 		
 		panelPuerto = new JPanel();
@@ -106,12 +119,25 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		textFieldPuerto = new JTextField();
 		textFieldPuerto.setBounds(100, 21, 86, 20);
 		panelPuerto.add(textFieldPuerto);
+		this.textFieldPuerto.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) { // Si no es un número, se ignora el evento
+                    e.consume();
+                }
+            }
+			public void keyReleased(KeyEvent e) {
+				btnAgregarButton.setEnabled(!(textFieldIP.getText().isEmpty()));
+			}
+        });
 		textFieldPuerto.setColumns(10);
 		
 		panel_3 = new JPanel();
 		contentPane.add(panel_3);
 		
 		btnAgregarButton = new JButton("Agregar");
+		this.btnAgregarButton.setActionCommand("AGREGAR");
 		btnAgregarButton.setBounds(75, 24, 80, 23);
 		this.btnAgregarButton.setToolTipText("Agregar");
 		this.btnAgregarButton.addActionListener(this);
@@ -140,5 +166,11 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		this.btnAgregarButton.setEnabled(!(this.textFieldNickname.getText().isEmpty() || this.textFieldIP.getText().isEmpty() || this.textFieldPuerto.getText().isEmpty()));
+	}
+
+	@Override
+	public void setActionListener(ActionListener controlador) {
+		// TODO Auto-generated method stub
+		this.btnAgregarButton.addActionListener(controlador);
 	}
 }
