@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controlador.Controlador;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JSplitPane;
@@ -18,14 +21,15 @@ import javax.swing.JList;
 import javax.swing.AbstractListModel;
 import javax.swing.SwingConstants;
 
-public class VentanaPrincipal extends JFrame {
+public class VentanaPrincipal extends JFrame implements IVista {
 
 	private JPanel contentPane;
 	private JTextField textFieldMensaje;
-
+	private Controlador controlador;
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -38,11 +42,12 @@ public class VentanaPrincipal extends JFrame {
 			}
 		});
 	}
-
+*/
 	/**
 	 * Create the frame.
 	 */
-	public VentanaPrincipal() {
+	public VentanaPrincipal(Controlador controlador) {
+		this.controlador=controlador;
 		setTitle("Messenger");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

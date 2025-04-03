@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controlador.Controlador;
+
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -17,7 +20,7 @@ import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
 import javax.swing.SwingConstants;
 
-public class VentanaAgregarContacto extends JFrame implements ActionListener, KeyListener {
+public class VentanaAgregarContacto extends JFrame implements IVista,ActionListener, KeyListener {
 
 	/**
 	 * 
@@ -33,10 +36,11 @@ public class VentanaAgregarContacto extends JFrame implements ActionListener, Ke
 	private JTextField textFieldPuerto;
 	private JTextField textFieldIP;
 	private JTextField textFieldNickname;
-
+	private Controlador controlador;
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -49,11 +53,12 @@ public class VentanaAgregarContacto extends JFrame implements ActionListener, Ke
 			}
 		});
 	}
-
+*/
 	/**
 	 * Create the frame.
 	 */
-	public VentanaAgregarContacto() {
+	public VentanaAgregarContacto(Controlador controlador) {
+		this.controlador=controlador;
 		setTitle("Agregar contacto");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

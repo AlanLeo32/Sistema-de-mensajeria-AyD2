@@ -1,12 +1,14 @@
 package sistemaMensajeria;
 
-import vistas.Ventanalogin;
+import controlador.Controlador;
+import modeloNegocio.SistemaMensajeria;
+import vistas.*;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Ventanalogin ventalog= new Ventanalogin();
-		ventalog.setVisible(true);
+		SistemaMensajeria sMensajeria=SistemaMensajeria.get_Instancia();
+		Controlador controlador=new Controlador(sMensajeria);
 	}
 
 }

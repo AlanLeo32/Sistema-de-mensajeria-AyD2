@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controlador.*;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -19,7 +21,7 @@ import javax.swing.JTextField;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 
-public class Ventanalogin extends JFrame implements ActionListener, KeyListener{
+public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyListener{
 
 	/**
 	 * 
@@ -29,11 +31,11 @@ public class Ventanalogin extends JFrame implements ActionListener, KeyListener{
 	private JTextField txtUsuario;
 	private JButton botonRegistrar;
 	private JTextField textFieldPuerto;
-
+	private Controlador controlador;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -45,11 +47,12 @@ public class Ventanalogin extends JFrame implements ActionListener, KeyListener{
 			}
 		});
 	}
-
+*/
 	/**
 	 * Create the frame.
 	 */
-	public Ventanalogin() {
+	public Ventanalogin(Controlador controlador) {
+		this.controlador=controlador;
 		setTitle("Sistema de mensajería");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -145,9 +148,9 @@ public class Ventanalogin extends JFrame implements ActionListener, KeyListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-        String usuario = getUsuario();
-        String puerto = getPuerto();
-        System.out.println("Usuario: " + usuario + ", Puerto: " + puerto);
-	}
+		int puerto;
+		puerto=Integer.parseInt(getPuerto());
+		controlador.setUser(getUsuario(),puerto);
+ 	}
 	
 }

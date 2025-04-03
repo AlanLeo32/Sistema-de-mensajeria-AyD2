@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controlador.Controlador;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
@@ -16,7 +19,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractListModel;
 import javax.swing.JScrollPane;
 
-public class VentanaContactos extends JFrame implements ActionListener {
+public class VentanaContactos extends JFrame implements IVista,ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -27,10 +30,11 @@ public class VentanaContactos extends JFrame implements ActionListener {
 	private JButton btnIniciarConversacion;
 	private JScrollPane scrollPane;
 	private JList list;
-
+	private Controlador controlador;
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,11 +47,12 @@ public class VentanaContactos extends JFrame implements ActionListener {
 			}
 		});
 	}
-
+*/
 	/**
 	 * Create the frame.
 	 */
-	public VentanaContactos() {
+	public VentanaContactos(Controlador controlador) {
+		this.controlador=controlador;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		this.contentPane = new JPanel();
