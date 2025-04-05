@@ -1,5 +1,7 @@
 package modeloNegocio;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -10,6 +12,8 @@ public class Usuario {
 	private String ip;
 	private int puerto;
 	private PriorityQueue<Usuario> agenda = new PriorityQueue<>(Comparator.comparing(Usuario::getNickName));
+	private ArrayList<Mensaje> mensajes = new ArrayList<>();
+	
 	public Usuario(String nickName, int puerto) {
 		super();
 		this.nickName = nickName;
@@ -51,7 +55,30 @@ public class Usuario {
 		return String.format("%s", nickName);
 	}
 	
-	
+	public void enviarMensaje(String contenido, Usuario receptor) {
+        Mensaje m = new Mensaje(contenido, LocalDateTime.now(), this, receptor);
+        this.mensajes.add(m);
+    }
+
+    public void recibirMensaje(String contenido, Usuario emisor) {
+        Mensaje m = new Mensaje(contenido, LocalDateTime.now(), emisor, this);
+        this.mensajes.add(m);
+    }
+
+    public ArrayList<Mensaje> traerMensajes()
+    {
+      return this.mensajes;
+    }
+    // ******VA EN LA VISTA DE LA CONVERSACION******
+   /* public void ListarMensajes(Usuario contacto) 
+    {
+    	    this.mensajes.sort(Comparator.comparing(Mensaje::getFechayhora));
+        for (Mensaje m : mensajes)
+        {
+            if (m.getEmisor().equals(contacto) || m.getReceptor().equals(contacto))
+        }
+    }
+	*/
 	public PriorityQueue<Usuario> getAgenda() {
 		return new PriorityQueue<>(agenda);
 	}
