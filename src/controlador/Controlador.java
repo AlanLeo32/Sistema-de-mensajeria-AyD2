@@ -2,6 +2,9 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
 
 import modeloNegocio.*;
 import vistas.*;
@@ -39,7 +42,16 @@ public class Controlador implements ActionListener{
 	public String getNickNamePuerto() {
 		return "Nickname:"+sistemaMensajeria.getnickName()+"\nPuerto:"+sistemaMensajeria.getPuerto();
 	}
+	public List<String> getAgenda() {
+	    List<String> lista = new ArrayList<>();
+	    PriorityQueue<Usuario> copia = new PriorityQueue<>(sistemaMensajeria.getAgenda());
 
+	    while (!copia.isEmpty()) {
+	        lista.add(copia.poll().getNickName());
+	    }
+
+	    return lista;
+	}
 	public IVista getVentana2() {
 		return ventana2;
 	}
@@ -48,7 +60,9 @@ public class Controlador implements ActionListener{
 		this.ventana2 = ventana2;
 		this.ventana2.setActionListener(this);
 	}
-
+	public void agregaContacto(String nickName,String ip,int puerto) {
+		this.sistemaMensajeria.agregaContacto(nickName,ip,puerto);
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub

@@ -17,19 +17,17 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractListModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JScrollPane;
 
 public class VentanaContactos extends JFrame implements IVista,ActionListener {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JPanel panelBuscar;
-	private JTextField textField;
-	private JButton btnBuscar;
 	private JPanel panelIniciar;
 	private JButton btnIniciarConversacion;
 	private JScrollPane scrollPane;
-	private JList list;
+	private JList<String> list;
 	private Controlador controlador;
 	/**
 	 * Launch the application.
@@ -61,17 +59,6 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 		setContentPane(this.contentPane);
 		this.contentPane.setLayout(new BorderLayout(0, 0));
 		
-		this.panelBuscar = new JPanel();
-		this.contentPane.add(this.panelBuscar, BorderLayout.NORTH);
-		this.panelBuscar.setLayout(new GridLayout(0, 2, 0, 0));
-		
-		this.textField = new JTextField();
-		this.panelBuscar.add(this.textField);
-		this.textField.setColumns(10);
-		
-		this.btnBuscar = new JButton("Buscar");
-		this.panelBuscar.add(this.btnBuscar);
-		
 		this.panelIniciar = new JPanel();
 		this.contentPane.add(this.panelIniciar, BorderLayout.SOUTH);
 		
@@ -84,7 +71,12 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 		this.scrollPane = new JScrollPane();
 		this.contentPane.add(this.scrollPane, BorderLayout.CENTER);
 		
-		this.list = new JList();
+		DefaultListModel<String> modelo = new DefaultListModel<>();
+		modelo.clear();
+		this.list = new JList<>(modelo);
+		for (String nick : controlador.getAgenda()) {
+		        modelo.addElement(nick);
+		}
 		this.scrollPane.setViewportView(this.list);
 	}
 

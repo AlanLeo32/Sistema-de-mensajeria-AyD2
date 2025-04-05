@@ -147,7 +147,8 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		//AGREGAR CARTEL O ALGO POR EL ESTILO
+		controlador.agregaContacto(this.textFieldNickname.getText(),this.textFieldIP.getText(),Integer.parseInt(this.textFieldPuerto.getText()));
+		System.out.println("Se registro Bien"); //quitar
 	}
 
 	@Override
