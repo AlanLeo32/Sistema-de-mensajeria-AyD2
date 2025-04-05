@@ -37,5 +37,11 @@ public class Usuario {
 	public void setPuerto(int puerto) {
 		this.puerto = puerto;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("%s", nickName);
+	}
+	
 	
 }
