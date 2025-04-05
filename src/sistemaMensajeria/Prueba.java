@@ -11,6 +11,7 @@ public class Prueba {
 		Usuario u2 = new Usuario("Alan", 1026);
 		LocalDateTime fecha = LocalDateTime.now();		
 		Mensaje m = new Mensaje("hola como estas", fecha , u1, u2);
+		u1.enviarMensaje(m.getContenido(), u2);
 		System.out.println(m);
 
 	}
