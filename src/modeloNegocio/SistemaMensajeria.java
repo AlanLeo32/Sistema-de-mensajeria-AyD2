@@ -41,14 +41,14 @@ public class SistemaMensajeria {
 		return this.usuario.getAgenda();
 	}
 
-	public ArrayList<MensajeDTO> getChat(int puerto){
-		return usuario.getChat(puerto);
+	public ArrayList<MensajeDTO> getChat(int puerto,String ip){
+		return usuario.getChat(puerto,ip);
 	}
 	public ArrayList<Mensaje> getMensajes(){
       return usuario.getMensajes();
     }
 	
-	public void setConversacion(int puerto) {
+	public void setContactoActual(int puerto,String ip) {
 		Usuario contacto=usuario.getBuscaContacto(puerto);
 		if(contacto!=null) {
 			this.usuario.agregarConversacion(contacto);
@@ -73,15 +73,30 @@ public class SistemaMensajeria {
 	    });
 	    serverThread.start();
 	}
-	public void enviarMensaje(String ipDestino, int puertoDestino, String mensaje) {
-	    try (Socket socket = new Socket(ipDestino, puertoDestino)) {
+	
+	public Usuario buscarUsuarioPorDTO(UsuarioDTO dto) {
+	    for (Usuario u : usuario.getAgenda()) {
+	        if (u.getPuerto() == dto.getPuerto() && u.getIp()== dto.getIp()) {
+	            return u;
+	        }
+	    }
+	    return null; // o lanzar excepción si querés asegurarte que esté
+	}
+
+	public void enviarMensaje(UsuarioDTO contacto, String mensaje) {
+	    try (Socket socket = new Socket(contacto.getIp(), contacto.getPuerto())) {
 	        PrintWriter salida = new PrintWriter(socket.getOutputStream(), true);
 	        salida.println(mensaje);
 	        salida.close();
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
+	    Usuario ureceptor=this.buscarUsuarioPorDTO(contacto);
+	    if(ureceptor!=null)
+	    	this.usuario.enviarMensaje(mensaje, ureceptor);
 	}
+	
+	
 	public List<Usuario> getListaConversaciones() {
 		return this.usuario.getListaConversaciones();
 	}

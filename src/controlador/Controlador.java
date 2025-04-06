@@ -53,7 +53,7 @@ public class Controlador implements ActionListener{
 	    Usuario user;
 	    while (!copia.isEmpty()) {
 	    	 user = copia.poll();
-	         lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto()));
+	         lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto(),user.getIp()));
 	    }
 
 	    return lista;
@@ -62,7 +62,7 @@ public class Controlador implements ActionListener{
 	    List<UsuarioDTO> lista = new ArrayList<UsuarioDTO>();
 	    List<Usuario> copia = new ArrayList<>(sistemaMensajeria.getListaConversaciones());
 	    for (Usuario user : copia) {
-	        lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto()));
+	        lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto(),user.getIp()));
 	    }
 
 	    return lista;
@@ -80,21 +80,20 @@ public class Controlador implements ActionListener{
 		this.sistemaMensajeria.agregaContacto(nickName,ip,puerto);
 	}
 
-	public void cargaChat(int puerto) {
+	public void cargaChat(int puerto,String ip) {
 	
-	  for (MensajeDTO msg : this.sistemaMensajeria.getChat(puerto)) {
+	  for (MensajeDTO msg : this.sistemaMensajeria.getChat(puerto,ip)) {
 		        if (ventana instanceof VentanaPrincipal) {
 		            ((VentanaPrincipal) ventana).agregarChat(msg.getContenido(), msg.getFechayhora(), msg.getEmisor().getNickName());
 		        }
 		    }
 	}
-	public void actualizaListaConversacion(int puerto) {
-		this.sistemaMensajeria.setConversacion(puerto);
+	public void actualizaListaConversacion(int puerto,String ip) {
+		this.sistemaMensajeria.setContactoActual(puerto,ip);
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-	
 		int puerto;
 		switch (e.getActionCommand()) {
 		case "REGISTRAR":
@@ -115,20 +114,28 @@ public class Controlador implements ActionListener{
 			this.setVentana2(new VentanaContactos(this));
 			break;
 		case "ENVIAR":
-			
+			if (ventana instanceof VentanaPrincipal) {
+				String contenidoMensaje;
+	
+				contenidoMensaje=((VentanaPrincipal) ventana).getTextFieldMensaje();
+				UsuarioDTO user=((VentanaPrincipal) ventana).getContactoConversacionActual();
+				this.sistemaMensajeria.enviarMensaje(user, contenidoMensaje);
+			}
 			break;
 		case "INICIAR CONVERSACIÓN":
 			if (this.ventana2 instanceof VentanaContactos) {
 		        VentanaContactos ventanaContactos = (VentanaContactos) this.ventana2;
-		        puerto = ventanaContactos.getPuerto(); 
-		        this.cargaChat(puerto);
-		        this.actualizaListaConversacion(puerto);
 		        
+		        UsuarioDTO contacto=ventanaContactos.getUsuario();
+		        this.cargaChat(contacto.getPuerto(),contacto.getIp());
+		        this.actualizaListaConversacion(contacto.getPuerto(),contacto.getIp());
 		        // ACTUALIZA la lista en la ventana principal
 		        if (ventana instanceof VentanaPrincipal) { 	
 		            ((VentanaPrincipal) ventana).actualizarListaChats(this.getListaConversaciones());
 		            //pone nombre de user seleccionado en parte de chat
-		            ((VentanaPrincipal)ventana).setTextFieldNameContacto(ventanaContactos.getName());
+		            
+		            ((VentanaPrincipal)ventana).setTextFieldNameContacto(contacto.getNombre());
+		            ((VentanaPrincipal)ventana).setDejarSeleccionadoContactoNuevaConversacion(contacto);;
 		        }
 
 		        this.ventana2.dispose();

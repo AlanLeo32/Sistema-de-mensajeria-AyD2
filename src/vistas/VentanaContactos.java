@@ -81,12 +81,8 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 		this.list  = new JList<>(modelo);
 		this.scrollPane.setViewportView(this.list);
 	}
-	public int getPuerto() {
-		
-		return this.list.getSelectedValue().getPuerto();
-	}
-	public String getName() {
-		return this.list.getSelectedValue().getNombre();
+	public UsuarioDTO getUsuario() {
+		return this.list.getSelectedValue();
 	}
 	public void actionPerformed(ActionEvent e) {
 

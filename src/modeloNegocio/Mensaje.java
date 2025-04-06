@@ -39,9 +39,7 @@ public class Mensaje{
 	public Usuario getReceptor() {
 		return receptor;
 	}
-	public int getPuertoReceptor() {
-		return this.receptor.getPuerto();
-	}
+
 	public void setReceptor(Usuario receptor) {
 		this.receptor = receptor;
 	}

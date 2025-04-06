@@ -45,7 +45,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	private JButton botonAgregarContacto;
 	private JButton botonNuevaConversacion;
 	private JButton botonEnviar;
-	private JList<UsuarioDTO> listaContactos;
+	private JList<UsuarioDTO> listaConversacionesActivas;
 	private JTextArea textAreaChat;
 	private JLabel textFieldNameContacto;
 	/**
@@ -58,7 +58,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 				try {
 					VentanaPrincipal frame = new VentanaPrincipal();
 					frame.setVisible(true);
-				} catch (Exception e) {
+				} catch (Exception e) 
 					e.printStackTrace();
 				}
 			}
@@ -98,8 +98,8 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		JScrollPane scrollPane_1 = new JScrollPane();
 		panel.add(scrollPane_1, BorderLayout.CENTER);
 		
-		listaContactos = new JList();
-		listaContactos.setModel(new AbstractListModel() {
+		listaConversacionesActivas = new JList();
+		listaConversacionesActivas.setModel(new AbstractListModel() {
 			String[] values = new String[] {};
 			public int getSize() {
 				return values.length;
@@ -108,7 +108,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 				return values[index];
 			}
 		});
-		scrollPane_1.setViewportView(listaContactos);
+		scrollPane_1.setViewportView(listaConversacionesActivas);
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
@@ -150,18 +150,30 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		this.botonNuevaConversacion.addActionListener(controlador);
 		this.botonEnviar.addActionListener(controlador);
 	}
+	//Este metodo actualiza la lista de conversaciones de la derecha
+	//de la ventana principal
 	public void actualizarListaChats(List<UsuarioDTO> contactos) {
 	    DefaultListModel<UsuarioDTO> modelo = new DefaultListModel<>();
 	    for (UsuarioDTO u : contactos) {
 	        modelo.addElement(u); 
 	    }
-	    this.listaContactos.setModel(modelo);
+	    this.listaConversacionesActivas.setModel(modelo);
+	    
+	}
+	public UsuarioDTO getContactoConversacionActual() {
+		return this.listaConversacionesActivas.getSelectedValue();
 	}
 	public void setTextFieldNameContacto(String name) {
 		this.textFieldNameContacto.setText(name);
 	}
+	public void setDejarSeleccionadoContactoNuevaConversacion(UsuarioDTO contacto) {
+		this.listaConversacionesActivas.setSelectedValue(contacto, true);
+	}
 	public void agregarChat(String contenido, LocalDateTime fechayhora, String emisor ) {
 		this.textAreaChat.append(String.format("%s [%s]:\n%s\n\n", emisor, fechayhora, contenido));	
+	}
+	public String getTextFieldMensaje() {
+		return this.textFieldMensaje.getText();
 	}
 	public void actionPerformed(ActionEvent e) {
 		

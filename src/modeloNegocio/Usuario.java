@@ -65,13 +65,13 @@ public class Usuario {
 	public void enviarMensaje(String contenido, Usuario receptor) {
         Mensaje m = new Mensaje(contenido, LocalDateTime.now(), this, receptor);
         this.mensajes.add(m);
-        this.agregarConversacion(receptor);
     }
 
     public void recibirMensaje(String contenido, Usuario emisor) {
-        Mensaje m = new Mensaje(contenido, LocalDateTime.now(), emisor, this);
+    	this.agregarConversacion(emisor);
+    	Mensaje m = new Mensaje(contenido, LocalDateTime.now(), emisor, this);
         this.mensajes.add(m);
-        this.agregarConversacion(emisor);
+        
     }
     //equals y hashCode ayudan a que el metodo contains en recibir y enviar msg
     //en la lista de conver compare solo por puerto y no el puntero del objeto
@@ -94,10 +94,10 @@ public class Usuario {
     public ArrayList<Mensaje> getMensajes(){
       return this.mensajes;
     }
-    public ArrayList<MensajeDTO> getChat(int puerto){
+    public ArrayList<MensajeDTO> getChat(int puerto,String ip){
     	ArrayList<MensajeDTO> chat=new ArrayList<MensajeDTO>();
     	for (Mensaje m : mensajes) {
-    	    if (m.getPuertoReceptor()==puerto) {
+    	    if (m.getReceptor().getPuerto()==puerto && m.getReceptor().getIp()==ip) {
     	    	chat.add(new MensajeDTO(m.getContenido(), m.getFechayhora(),m.getEmisor(),m.getReceptor()));
     	    }
     	}
@@ -114,8 +114,12 @@ public class Usuario {
 
 
 	public void agregarConversacion(Usuario contacto) {
+		if(!this.agenda.contains(contacto)) {
+			this.agenda.add(contacto);
+		}
 		if(this.listaConversaciones.isEmpty() || !this.listaConversaciones.contains(contacto)) {
-        	this.listaConversaciones.add(0,contacto);
+        	
+			this.listaConversaciones.add(0,contacto);
         }
 	}
 	public void setAgenda(PriorityQueue<Usuario> agenda) {
