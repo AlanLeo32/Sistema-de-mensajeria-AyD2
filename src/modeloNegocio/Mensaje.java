@@ -1,9 +1,10 @@
 package modeloNegocio;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Mensaje{
+public class Mensaje implements Serializable{
 	private String contenido;
 	private LocalDateTime fechayhora;
 	private Usuario emisor;

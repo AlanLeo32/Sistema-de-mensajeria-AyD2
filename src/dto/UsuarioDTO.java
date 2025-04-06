@@ -1,8 +1,9 @@
 package dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class UsuarioDTO {
+public class UsuarioDTO implements Serializable{
 	private String nombre;
     private int puerto;
     private String ip;

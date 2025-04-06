@@ -168,6 +168,9 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	    this.listaConversacionesActivas.setModel(modelo);
 	    
 	}
+	public boolean hayConversaciones() {
+		return listaConversacionesActivas.getModel().getSize() != 0;
+	}
 	public UsuarioDTO getContactoConversacionActual() {
 		return this.listaConversacionesActivas.getSelectedValue();
 	}
@@ -196,7 +199,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		this.controlador.contactoSeleccionadoDesdeLista(getContactoConversacionActual());
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
@@ -231,6 +234,10 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		this.botonEnviar.setEnabled(!(textFieldMensaje.getText().isEmpty()));
+		this.botonEnviar.setEnabled(!(textFieldMensaje.getText().isEmpty()) && (listaConversacionesActivas.getSelectedValue()!=null));
+	}
+	public void limpiarBuffer() {
+		this.textFieldMensaje.setText("");
+		
 	}
 }

@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.PriorityQueue;
 
 import dto.MensajeDTO;
@@ -12,7 +14,7 @@ import dto.UsuarioDTO;
 import modeloNegocio.*;
 import vistas.*;
 
-public class Controlador implements ActionListener{
+public class Controlador implements ActionListener,Observer{
 	protected IVista ventana;
 	protected IVista ventana2;
 	protected SistemaMensajeria sistemaMensajeria;
@@ -22,6 +24,7 @@ public class Controlador implements ActionListener{
 		ventana.setVisible(true);
 		this.sistemaMensajeria=sistemaMensajeria;
 		this.ventana.setActionListener(this);
+		sistemaMensajeria.addObserver(this);
 	}
 
 	public IVista getVentana() {
@@ -124,6 +127,7 @@ public class Controlador implements ActionListener{
 				this.sistemaMensajeria.enviarMensaje(user, contenidoMensaje);
 				
 				((VentanaPrincipal) ventana).agregarMensajeAchat(contenidoMensaje,LocalDateTime.now(),this.sistemaMensajeria.getUsuario().getNickName());
+				((VentanaPrincipal) ventana).limpiarBuffer();
 			}
 			break;
 		case "INICIAR CONVERSACIÓN":
@@ -169,5 +173,33 @@ public class Controlador implements ActionListener{
 	        vp.limpiarChat(); 
 	        this.cargaChat(contacto.getPuerto(), contacto.getIp()); // Mostrás historial
 	    }
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		 if (arg instanceof Mensaje ) {
+			 	Mensaje mensaje = (Mensaje) arg;
+	            System.out.println("Nuevo mensaje recibido en el controlador: " + mensaje.getContenido());
+	            if (ventana instanceof VentanaPrincipal) {
+	            	VentanaPrincipal vp = (VentanaPrincipal) ventana;
+	            	//chequeo si soy receptor
+	            	if(!(mensaje.getEmisor().getIp().equals(this.sistemaMensajeria.getUsuario().getIp()) && (mensaje.getEmisor().getPuerto()==this.sistemaMensajeria.getUsuario().getPuerto()))) {
+	            		this.sistemaMensajeria.getUsuario().recibirMensaje(mensaje);
+	            		//Si emisor es el contacto con el que estoy hablando muestra en pantalla	
+	            		if((vp.hayConversaciones()) && mensaje.getEmisor().getIp().equals(vp.getContactoConversacionActual().getIp())&& (mensaje.getEmisor().getPuerto()==vp.getContactoConversacionActual().getPuerto()) ) {
+	            			vp.agregarMensajeAchat(mensaje.getContenido(),mensaje.getFechayhora(),mensaje.getEmisor().getNickName());
+	            			vp.limpiarChat(); 
+            		        this.cargaChat(mensaje.getEmisor().getPuerto(), mensaje.getEmisor().getIp()); // Mostrás historial
+	            			System.out.println("Llego");
+	            		}//notifica llega cuando no hay conversaciones o no es contacto actual
+	            		else {
+	            			vp.actualizarListaChats(this.getListaConversaciones());
+          			 
+	            		} 
+	            	}
+	        
+	            }
+	     }
 	}
 }

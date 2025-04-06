@@ -1,5 +1,6 @@
 package modeloNegocio;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -11,15 +12,15 @@ import dto.MensajeDTO;
 import dto.UsuarioDTO;
 import util.*;
 
-public class Usuario {
+public class Usuario implements Serializable {
 	private String nickName;
 	private String ip;
 	private int puerto;
-	private PriorityQueue<Usuario> agenda = new PriorityQueue<>(Comparator.comparing(Usuario::getNickName));
+	private transient PriorityQueue<Usuario> agenda = new PriorityQueue<>(Comparator.comparing(Usuario::getNickName));
 	
-	private List<Usuario> listaConversaciones = new LinkedList<>();
+	private transient List<Usuario> listaConversaciones = new LinkedList<>();
 
-	private ArrayList<Mensaje> mensajes = new ArrayList<>();
+	private transient ArrayList<Mensaje> mensajes = new ArrayList<>();
 	//constructor para usuario main
 	public Usuario(String nickName, int puerto) {
 		super();
@@ -63,16 +64,14 @@ public class Usuario {
 		return String.format("%s", nickName);
 	}
 	
-	public void enviarMensaje(String contenido, Usuario receptor) {
-        Mensaje m = new Mensaje(contenido, LocalDateTime.now(), this, receptor);
-        this.mensajes.add(m);
+	public void guardarMensaje(Mensaje msg) {
+        this.mensajes.add(msg);
     }
 
-    public void recibirMensaje(String contenido, Usuario emisor) {
-    	this.agregarConversacion(emisor);
-    	Mensaje m = new Mensaje(contenido, LocalDateTime.now(), emisor, this);
-        this.mensajes.add(m);
-        
+    public void recibirMensaje(Mensaje m) {
+    	this.agregarConversacion(m.getEmisor());
+    	//Mensaje m = new Mensaje(contenido, LocalDateTime.now(), emisor, this);
+        this.guardarMensaje(m);
     }
     //equals y hashCode ayudan a que el metodo contains en recibir y enviar msg
     //en la lista de conver compare solo por puerto e id y no el puntero del objeto

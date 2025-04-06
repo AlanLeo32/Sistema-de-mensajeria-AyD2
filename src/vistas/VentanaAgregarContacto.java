@@ -113,7 +113,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		contentPane.add(panelPuerto);
 		panelPuerto.setLayout(null);
 		
-		puertoLabel = new JLabel("Puerto");
+		puertoLabel = new JLabel("Puerto\r\n(> 1000)");
 		puertoLabel.setBounds(0, 0, 254, 62);
 		panelPuerto.add(puertoLabel);
 		
@@ -157,8 +157,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
 
 	@Override
@@ -170,7 +169,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		this.btnAgregarButton.setEnabled(!(this.textFieldNickname.getText().isEmpty() || this.textFieldIP.getText().isEmpty() || this.textFieldPuerto.getText().isEmpty()));
+		this.btnAgregarButton.setEnabled(!(this.textFieldNickname.getText().isEmpty() || this.textFieldIP.getText().isEmpty() || this.textFieldPuerto.getText().isEmpty()) && (Integer.parseInt(this.textFieldPuerto.getText())>1000));
 	}
 
 	@Override

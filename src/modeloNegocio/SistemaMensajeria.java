@@ -3,23 +3,27 @@ package modeloNegocio;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 import java.util.PriorityQueue;
 
 import dto.MensajeDTO;
 import dto.UsuarioDTO;
 
-public class SistemaMensajeria {
+public class SistemaMensajeria extends Observable{
 	private Usuario usuario;
 	private static SistemaMensajeria sistema_instancia=null;
 	//Quitar despues de probar
 	public SistemaMensajeria() {
 		
-	}
+	} 
 	
 	/*
 	  private SistemaMensajeria() {
@@ -29,8 +33,8 @@ public class SistemaMensajeria {
 		if(sistema_instancia==null)
 			sistema_instancia=new SistemaMensajeria();
 		return sistema_instancia;
-	} */
-	
+	} 
+	*/
 	public void setUsuario(String nickName,int puerto) {
 		this.usuario = new Usuario(nickName,puerto);
 	}
@@ -69,10 +73,26 @@ public class SistemaMensajeria {
 	            System.out.println("Servidor escuchando en puerto " + puerto);
 	            while (true) {
 	                Socket socket = serverSocket.accept();
-	                BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-	                String mensaje = entrada.readLine();
-	                System.out.println("Mensaje recibido: " + mensaje);
-	                entrada.close();
+	                try (ObjectInputStream ois = new ObjectInputStream(socket.getInputStream())) {
+	                    Object recibido = ois.readObject();
+	                    if (recibido instanceof Mensaje) {
+	                        Mensaje mensaje = (Mensaje) recibido;
+	                        setChanged(); // importante
+	     		           	notifyObservers(mensaje);
+	     		         
+	                        this.usuario.recibirMensaje(mensaje);
+	                        System.out.println("AAAAa");
+	                        for (Mensaje msj : this.usuario.getMensajes()) {
+	                            System.out.println(msj.toString());
+	                        }
+
+	                        System.out.println("Mensaje recibido de " + mensaje.getEmisor().getNickName() + ": " + mensaje.getContenido());
+	                    } else {
+	                        System.out.println("Objeto recibido no es de tipo Mensaje");
+	                    }
+	                } catch (ClassNotFoundException e) {
+	                    e.printStackTrace();
+	                }
 	                socket.close();
 	            }
 	        } catch (IOException e) {
@@ -81,7 +101,7 @@ public class SistemaMensajeria {
 	    });
 	    serverThread.start();
 	}
-	
+
 	public Usuario buscarUsuarioPorDTO(UsuarioDTO dto) {
 	    for (Usuario u : usuario.getAgenda()) {
 	        if (u.getPuerto() == dto.getPuerto() && u.getIp()== dto.getIp()) {
@@ -95,15 +115,22 @@ public class SistemaMensajeria {
 	}
 	public void enviarMensaje(UsuarioDTO contacto, String mensaje) {
 	    try (Socket socket = new Socket(contacto.getIp(), contacto.getPuerto())) {
-	        PrintWriter salida = new PrintWriter(socket.getOutputStream(), true);
-	        salida.println(mensaje);
-	        salida.close();
+	    	   ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+	    	   Usuario ureceptor=this.buscarUsuarioPorDTO(contacto);
+	    	   Mensaje msg;
+	    	   if(ureceptor!=null) {
+	    		   msg=new Mensaje(mensaje,LocalDateTime.now(),this.usuario,ureceptor);
+	    		   this.usuario.guardarMensaje(msg);
+	    		   oos.writeObject(msg);
+	    		   oos.flush();
+		    	   oos.close();
+		    	   setChanged(); // importante
+		           notifyObservers(msg);
+	    	   }
+
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
-	    Usuario ureceptor=this.buscarUsuarioPorDTO(contacto);
-	    if(ureceptor!=null)
-	    	this.usuario.enviarMensaje(mensaje, ureceptor);
 	}
 	
 	

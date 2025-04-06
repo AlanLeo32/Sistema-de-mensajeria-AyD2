@@ -1,10 +1,11 @@
 package dto;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import modeloNegocio.Usuario;
 
-public class MensajeDTO {
+public class MensajeDTO implements Serializable{
 	private String contenido;
 	private LocalDateTime fechayhora;
 	private Usuario emisor;

@@ -81,7 +81,7 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 		txtUsuario.setColumns(10);
 		this.txtUsuario.addKeyListener(this);
 		
-		JLabel lblNewLabel = new JLabel("Puerto:");
+		JLabel lblNewLabel = new JLabel("Puerto(Mayor a 1000):");
 		panel.add(lblNewLabel);
 		
 		JPanel panel_3 = new JPanel();
@@ -141,7 +141,7 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		this.botonRegistrar.setEnabled(!(this.getUsuario().isEmpty() || this.getPuerto().isEmpty()));
+		this.botonRegistrar.setEnabled(!(this.getUsuario().isEmpty() || this.getPuerto().isEmpty()) && (Integer.parseInt(this.getPuerto())>1000));
 	}
 	
 	@Override
