@@ -7,8 +7,9 @@ import vistas.*;
 public class Main {
 
 	public static void main(String[] args) {
-		SistemaMensajeria sMensajeria=SistemaMensajeria.get_Instancia();
-		Controlador controlador=new Controlador(sMensajeria);
+		//SistemaMensajeria sMensajeria=SistemaMensajeria.get_Instancia();
+	//	Controlador controlador=new Controlador(sMensajeria);
+			
 	}
 
 }

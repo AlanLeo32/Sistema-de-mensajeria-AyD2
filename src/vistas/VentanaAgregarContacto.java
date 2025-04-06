@@ -92,6 +92,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		panelIP.add(ipLabel);
 		
 		textFieldIP = new JTextField();
+		textFieldIP.setText("localhost");
 		textFieldIP.setBounds(100, 21, 86, 20);
 		panelIP.add(textFieldIP);
 		this.textFieldIP.addKeyListener(new KeyAdapter() {

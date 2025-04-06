@@ -84,7 +84,7 @@ public class Controlador implements ActionListener{
 	
 	  for (MensajeDTO msg : this.sistemaMensajeria.getChat(puerto,ip)) {
 		        if (ventana instanceof VentanaPrincipal) {
-		            ((VentanaPrincipal) ventana).agregarChat(msg.getContenido(), msg.getFechayhora(), msg.getEmisor().getNickName());
+		            ((VentanaPrincipal) ventana).agregarMensajeAchat(msg.getContenido(), msg.getFechayhora(), msg.getEmisor().getNickName());
 		        }
 		    }
 	}
@@ -101,11 +101,13 @@ public class Controlador implements ActionListener{
 			if (this.ventana instanceof Ventanalogin) {
 				Ventanalogin ventanalogin = (Ventanalogin) this.ventana;
 				puerto=Integer.parseInt(ventanalogin.getPuerto());
-				setUser(ventanalogin.getName(),puerto);
+				setUser(ventanalogin.getUsuario(),puerto);
 				this.sistemaMensajeria.iniciarServidor(puerto);
+				this.ventana.setVisible(false);
+				this.setVentana(new VentanaPrincipal(this));
+				((VentanaPrincipal) ventana).TitulonameUsuario(ventanalogin.getUsuario());
 			}
-			this.ventana.setVisible(false);
-			this.setVentana(new VentanaPrincipal(this));
+			
 			break;
 		case "AGREGAR CONTACTO":
 			this.setVentana2(new VentanaAgregarContacto(this));
@@ -120,6 +122,8 @@ public class Controlador implements ActionListener{
 				contenidoMensaje=((VentanaPrincipal) ventana).getTextFieldMensaje();
 				UsuarioDTO user=((VentanaPrincipal) ventana).getContactoConversacionActual();
 				this.sistemaMensajeria.enviarMensaje(user, contenidoMensaje);
+				
+				((VentanaPrincipal) ventana).agregarMensajeAchat(contenidoMensaje,LocalDateTime.now(),this.sistemaMensajeria.getUsuario().getNickName());
 			}
 			break;
 		case "INICIAR CONVERSACIÓN":
@@ -154,8 +158,16 @@ public class Controlador implements ActionListener{
 		default:
 			break;
 		}
+		
 
+	}	
+	public void contactoSeleccionadoDesdeLista(UsuarioDTO contacto){
+	    
+	    if (ventana instanceof VentanaPrincipal) {
+	    	VentanaPrincipal vp = (VentanaPrincipal) ventana;
+	        vp.setTextFieldNameContacto(contacto.getNombre());
+	        vp.limpiarChat(); 
+	        this.cargaChat(contacto.getPuerto(), contacto.getIp()); // Mostrás historial
+	    }
 	}
-	
-	
 }

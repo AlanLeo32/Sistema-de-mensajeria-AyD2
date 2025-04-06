@@ -20,13 +20,14 @@ public class Usuario {
 	private List<Usuario> listaConversaciones = new LinkedList<>();
 
 	private ArrayList<Mensaje> mensajes = new ArrayList<>();
-	
+	//constructor para usuario main
 	public Usuario(String nickName, int puerto) {
 		super();
 		this.nickName = nickName;
 		this.ip = Util.IPLOCAL;
 		this.puerto = puerto;
 	}
+	//constructor para agregar contacto
 	public Usuario(String nickName, int puerto,String ip) {
 		super();
 		this.nickName = nickName;
@@ -74,7 +75,7 @@ public class Usuario {
         
     }
     //equals y hashCode ayudan a que el metodo contains en recibir y enviar msg
-    //en la lista de conver compare solo por puerto y no el puntero del objeto
+    //en la lista de conver compare solo por puerto e id y no el puntero del objeto
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -82,7 +83,7 @@ public class Usuario {
         if (obj == null || getClass() != obj.getClass())
             return false;
         Usuario other = (Usuario) obj;
-        return this.puerto == other.puerto;
+        return this.puerto == other.puerto && this.ip==other.ip;
     }
 
     @Override
@@ -94,15 +95,23 @@ public class Usuario {
     public ArrayList<Mensaje> getMensajes(){
       return this.mensajes;
     }
-    public ArrayList<MensajeDTO> getChat(int puerto,String ip){
-    	ArrayList<MensajeDTO> chat=new ArrayList<MensajeDTO>();
-    	for (Mensaje m : mensajes) {
-    	    if (m.getReceptor().getPuerto()==puerto && m.getReceptor().getIp()==ip) {
-    	    	chat.add(new MensajeDTO(m.getContenido(), m.getFechayhora(),m.getEmisor(),m.getReceptor()));
-    	    }
-    	}
-    	return chat;
+    public ArrayList<MensajeDTO> getChat(int puerto, String ip) {
+        ArrayList<MensajeDTO> chat = new ArrayList<>();
+        for (Mensaje m : mensajes) {
+        	//aca ves si sos emisor o receptor
+            boolean yoSoyEmisor = m.getEmisor().equals(this); 
+            boolean yoSoyReceptor = m.getReceptor().equals(this);
+            //aca se fija si CONTACTO que llega es el emisor o receptor
+            boolean otroEsEmisor = m.getEmisor().getPuerto() == puerto && m.getEmisor().getIp().equals(ip);
+            boolean otroEsReceptor = m.getReceptor().getPuerto() == puerto && m.getReceptor().getIp().equals(ip);
+            //Ya que no pueden ambos ser emisores o receptores
+            if ((yoSoyEmisor && otroEsReceptor) || (yoSoyReceptor && otroEsEmisor)) {
+                chat.add(new MensajeDTO(m.getContenido(), m.getFechayhora(), m.getEmisor(), m.getReceptor()));
+            }
+        }
+        return chat;
     }
+
    
 	public PriorityQueue<Usuario> getAgenda() {
 		return new PriorityQueue<>(agenda);

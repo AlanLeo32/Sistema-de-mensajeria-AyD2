@@ -16,13 +16,21 @@ import dto.UsuarioDTO;
 public class SistemaMensajeria {
 	private Usuario usuario;
 	private static SistemaMensajeria sistema_instancia=null;
-	private SistemaMensajeria() {
+	//Quitar despues de probar
+	public SistemaMensajeria() {
+		
+	}
+	
+	/*
+	  private SistemaMensajeria() {
+		
 	}
 	public static SistemaMensajeria get_Instancia() {
 		if(sistema_instancia==null)
 			sistema_instancia=new SistemaMensajeria();
 		return sistema_instancia;
-	}
+	} */
+	
 	public void setUsuario(String nickName,int puerto) {
 		this.usuario = new Usuario(nickName,puerto);
 	}
@@ -82,7 +90,9 @@ public class SistemaMensajeria {
 	    }
 	    return null; // o lanzar excepción si querés asegurarte que esté
 	}
-
+	public Usuario getUsuario() {
+		return this.usuario;
+	}
 	public void enviarMensaje(UsuarioDTO contacto, String mensaje) {
 	    try (Socket socket = new Socket(contacto.getIp(), contacto.getPuerto())) {
 	        PrintWriter salida = new PrintWriter(socket.getOutputStream(), true);

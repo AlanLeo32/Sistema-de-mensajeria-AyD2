@@ -18,6 +18,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.swing.JSplitPane;
@@ -70,7 +71,6 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	 */
 	public VentanaPrincipal(Controlador controlador) {
 		this.controlador=controlador;
-		setTitle("Messenger");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -109,7 +109,15 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 			}
 		});
 		scrollPane_1.setViewportView(listaConversacionesActivas);
-		
+		this.listaConversacionesActivas.addListSelectionListener(e -> {
+		    if (!e.getValueIsAdjusting()) {
+		        UsuarioDTO seleccionado = listaConversacionesActivas.getSelectedValue();
+		        if (seleccionado != null) {
+		            controlador.contactoSeleccionadoDesdeLista(seleccionado);
+		        }
+		    }
+		});
+
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		panel_2.setLayout(new BorderLayout(0, 0));
@@ -150,7 +158,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		this.botonNuevaConversacion.addActionListener(controlador);
 		this.botonEnviar.addActionListener(controlador);
 	}
-	//Este metodo actualiza la lista de conversaciones de la derecha
+	//Este metodo actualiza la lista de conversaciones de la izquierda
 	//de la ventana principal
 	public void actualizarListaChats(List<UsuarioDTO> contactos) {
 	    DefaultListModel<UsuarioDTO> modelo = new DefaultListModel<>();
@@ -166,11 +174,14 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	public void setTextFieldNameContacto(String name) {
 		this.textFieldNameContacto.setText(name);
 	}
+	public void TitulonameUsuario(String nombre) {
+		this.setTitle(nombre);
+	}
 	public void setDejarSeleccionadoContactoNuevaConversacion(UsuarioDTO contacto) {
 		this.listaConversacionesActivas.setSelectedValue(contacto, true);
 	}
-	public void agregarChat(String contenido, LocalDateTime fechayhora, String emisor ) {
-		this.textAreaChat.append(String.format("%s [%s]:\n%s\n\n", emisor, fechayhora, contenido));	
+	public void agregarMensajeAchat(String contenido, LocalDateTime fechayhora, String emisor ) {
+		this.textAreaChat.append(String.format("%s (%s): %s\n", emisor, fechayhora.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")), contenido));	
 	}
 	public String getTextFieldMensaje() {
 		return this.textFieldMensaje.getText();
@@ -178,6 +189,10 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	public void actionPerformed(ActionEvent e) {
 		
 	}
+	public void limpiarChat() {
+	    this.textAreaChat.setText("");
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
