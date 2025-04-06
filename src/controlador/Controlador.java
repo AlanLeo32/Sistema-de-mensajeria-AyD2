@@ -60,11 +60,9 @@ public class Controlador implements ActionListener{
 	}
 	public List<UsuarioDTO> getListaConversaciones() {
 	    List<UsuarioDTO> lista = new ArrayList<UsuarioDTO>();
-	    PriorityQueue<Usuario> copia = new PriorityQueue<>(sistemaMensajeria.getListaConversaciones());
-	    Usuario user;
-	    while (!copia.isEmpty()) {
-	    	 user = copia.poll();
-	         lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto()));
+	    List<Usuario> copia = new ArrayList<>(sistemaMensajeria.getListaConversaciones());
+	    for (Usuario user : copia) {
+	        lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto()));
 	    }
 
 	    return lista;
@@ -125,10 +123,12 @@ public class Controlador implements ActionListener{
 		        puerto = ventanaContactos.getPuerto(); 
 		        this.cargaChat(puerto);
 		        this.actualizaListaConversacion(puerto);
-		       
+		        
 		        // ACTUALIZA la lista en la ventana principal
 		        if (ventana instanceof VentanaPrincipal) { 	
 		            ((VentanaPrincipal) ventana).actualizarListaChats(this.getListaConversaciones());
+		            //pone nombre de user seleccionado en parte de chat
+		            ((VentanaPrincipal)ventana).setTextFieldNameContacto(ventanaContactos.getName());
 		        }
 
 		        this.ventana2.dispose();

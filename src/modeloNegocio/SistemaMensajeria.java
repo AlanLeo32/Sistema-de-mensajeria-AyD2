@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.PriorityQueue;
 
 import dto.MensajeDTO;
@@ -38,10 +39,6 @@ public class SistemaMensajeria {
 
 	public PriorityQueue<Usuario> getAgenda() {
 		return this.usuario.getAgenda();
-	}
-
-	public PriorityQueue<Usuario> getConversacionesDTO() {
-	    return this.usuario.getListaConversaciones();
 	}
 
 	public ArrayList<MensajeDTO> getChat(int puerto){
@@ -85,7 +82,7 @@ public class SistemaMensajeria {
 	        e.printStackTrace();
 	    }
 	}
-	public PriorityQueue<Usuario> getListaConversaciones() {
+	public List<Usuario> getListaConversaciones() {
 		return this.usuario.getListaConversaciones();
 	}
 

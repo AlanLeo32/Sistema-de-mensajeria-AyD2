@@ -3,6 +3,8 @@ package modeloNegocio;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.PriorityQueue;
 
 import dto.MensajeDTO;
@@ -14,7 +16,8 @@ public class Usuario {
 	private String ip;
 	private int puerto;
 	private PriorityQueue<Usuario> agenda = new PriorityQueue<>(Comparator.comparing(Usuario::getNickName));
-	private PriorityQueue<Usuario> listaConversaciones = new PriorityQueue<>(Comparator.comparing(Usuario::getNickName));
+	
+	private List<Usuario> listaConversaciones = new LinkedList<>();
 
 	private ArrayList<Mensaje> mensajes = new ArrayList<>();
 	
@@ -104,13 +107,15 @@ public class Usuario {
 	public PriorityQueue<Usuario> getAgenda() {
 		return new PriorityQueue<>(agenda);
 	}
-	public PriorityQueue<Usuario> getListaConversaciones() {
-		return new PriorityQueue<>(listaConversaciones);
+
+	public List<Usuario> getListaConversaciones() {
+	    return new ArrayList<>(listaConversaciones); 
 	}
+
 
 	public void agregarConversacion(Usuario contacto) {
 		if(this.listaConversaciones.isEmpty() || !this.listaConversaciones.contains(contacto)) {
-        	this.listaConversaciones.add(contacto);
+        	this.listaConversaciones.add(0,contacto);
         }
 	}
 	public void setAgenda(PriorityQueue<Usuario> agenda) {

@@ -47,6 +47,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	private JButton botonEnviar;
 	private JList<UsuarioDTO> listaContactos;
 	private JTextArea textAreaChat;
+	private JLabel textFieldNameContacto;
 	/**
 	 * Launch the application.
 	 */
@@ -88,11 +89,9 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		
 		this.botonAgregarContacto = new JButton("Agregar contacto");
 		this.botonAgregarContacto.setActionCommand("AGREGAR CONTACTO");
-		this.botonAgregarContacto.addActionListener(this);
 		panel_1.add(this.botonAgregarContacto);
 		
 		this.botonNuevaConversacion = new JButton("Nueva conversacion");
-		this.botonNuevaConversacion.addActionListener(this);
 		this.botonNuevaConversacion.setActionCommand("NUEVA CONVERSACIÓN");
 		panel_1.add(this.botonNuevaConversacion);
 		
@@ -115,7 +114,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		contentPane.add(panel_2);
 		panel_2.setLayout(new BorderLayout(0, 0));
 		
-		JLabel textFieldNameContacto = new JLabel("NombreContacto");
+		textFieldNameContacto = new JLabel();
 		textFieldNameContacto.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(textFieldNameContacto, BorderLayout.NORTH);
 		
@@ -131,7 +130,6 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		
 		this.botonEnviar = new JButton("Enviar");
 		this.botonEnviar.setEnabled(false);
-		this.botonEnviar.addActionListener(this);
 		this.botonEnviar.setActionCommand("ENVIAR");
 		panel_3.add(this.botonEnviar);
 		
@@ -158,6 +156,9 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	        modelo.addElement(u); 
 	    }
 	    this.listaContactos.setModel(modelo);
+	}
+	public void setTextFieldNameContacto(String name) {
+		this.textFieldNameContacto.setText(name);
 	}
 	public void agregarChat(String contenido, LocalDateTime fechayhora, String emisor ) {
 		this.textAreaChat.append(String.format("%s [%s]:\n%s\n\n", emisor, fechayhora, contenido));	
