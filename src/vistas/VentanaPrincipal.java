@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controlador.Controlador;
+import dto.UsuarioDTO;
 import modeloNegocio.Usuario;
 
 import java.awt.BorderLayout;
@@ -17,6 +18,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.swing.JSplitPane;
 import javax.swing.JScrollPane;
@@ -27,6 +29,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
+import javax.swing.DefaultListModel;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionEvent;
 
@@ -42,7 +45,8 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	private JButton botonAgregarContacto;
 	private JButton botonNuevaConversacion;
 	private JButton botonEnviar;
-	JTextArea textAreaChat;
+	private JList<UsuarioDTO> listaContactos;
+	private JTextArea textAreaChat;
 	/**
 	 * Launch the application.
 	 */
@@ -95,9 +99,9 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		JScrollPane scrollPane_1 = new JScrollPane();
 		panel.add(scrollPane_1, BorderLayout.CENTER);
 		
-		JList listaContactos = new JList();
+		listaContactos = new JList();
 		listaContactos.setModel(new AbstractListModel() {
-			String[] values = new String[] {"dadadda", "adadad", "222", "5353", "1", "423423", "1414", "1414", "222", "555", "11212", "1", "31232132", "11", "42424", "52525", "111", "11", "4", "11"};
+			String[] values = new String[] {};
 			public int getSize() {
 				return values.length;
 			}
@@ -147,6 +151,13 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		this.botonAgregarContacto.addActionListener(controlador);
 		this.botonNuevaConversacion.addActionListener(controlador);
 		this.botonEnviar.addActionListener(controlador);
+	}
+	public void actualizarListaChats(List<UsuarioDTO> contactos) {
+	    DefaultListModel<UsuarioDTO> modelo = new DefaultListModel<>();
+	    for (UsuarioDTO u : contactos) {
+	        modelo.addElement(u); 
+	    }
+	    this.listaContactos.setModel(modelo);
 	}
 	public void agregarChat(String contenido, LocalDateTime fechayhora, String emisor ) {
 		this.textAreaChat.append(String.format("%s [%s]:\n%s\n\n", emisor, fechayhora, contenido));	

@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 import dto.MensajeDTO;
+import dto.UsuarioDTO;
 import util.*;
 
 public class Usuario {
@@ -13,6 +14,8 @@ public class Usuario {
 	private String ip;
 	private int puerto;
 	private PriorityQueue<Usuario> agenda = new PriorityQueue<>(Comparator.comparing(Usuario::getNickName));
+	private PriorityQueue<Usuario> listaConversaciones = new PriorityQueue<>(Comparator.comparing(Usuario::getNickName));
+
 	private ArrayList<Mensaje> mensajes = new ArrayList<>();
 	
 	public Usuario(String nickName, int puerto) {
@@ -59,12 +62,31 @@ public class Usuario {
 	public void enviarMensaje(String contenido, Usuario receptor) {
         Mensaje m = new Mensaje(contenido, LocalDateTime.now(), this, receptor);
         this.mensajes.add(m);
+        this.agregarConversacion(receptor);
     }
 
     public void recibirMensaje(String contenido, Usuario emisor) {
         Mensaje m = new Mensaje(contenido, LocalDateTime.now(), emisor, this);
         this.mensajes.add(m);
+        this.agregarConversacion(emisor);
     }
+    //equals y hashCode ayudan a que el metodo contains en recibir y enviar msg
+    //en la lista de conver compare solo por puerto y no el puntero del objeto
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+        Usuario other = (Usuario) obj;
+        return this.puerto == other.puerto;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(puerto);
+    }
+
 
     public ArrayList<Mensaje> getMensajes(){
       return this.mensajes;
@@ -78,18 +100,18 @@ public class Usuario {
     	}
     	return chat;
     }
-    // ******VA EN LA VISTA DE LA CONVERSACION******
-   /* public void ListarMensajes(Usuario contacto) 
-    {
-    	    this.mensajes.sort(Comparator.comparing(Mensaje::getFechayhora));
-        for (Mensaje m : mensajes)
-        {
-            if (m.getEmisor().equals(contacto) || m.getReceptor().equals(contacto))
-        }
-    }
-	*/
+   
 	public PriorityQueue<Usuario> getAgenda() {
 		return new PriorityQueue<>(agenda);
+	}
+	public PriorityQueue<Usuario> getListaConversaciones() {
+		return new PriorityQueue<>(listaConversaciones);
+	}
+
+	public void agregarConversacion(Usuario contacto) {
+		if(this.listaConversaciones.isEmpty() || !this.listaConversaciones.contains(contacto)) {
+        	this.listaConversaciones.add(contacto);
+        }
 	}
 	public void setAgenda(PriorityQueue<Usuario> agenda) {
 		this.agenda = agenda;
@@ -107,5 +129,16 @@ public class Usuario {
 	        System.out.println(contacto.getNickName());
 	    }
 	}
-	
+
+	public Usuario getBuscaContacto(int puerto) {
+	    PriorityQueue<Usuario> agendaCopia = new PriorityQueue<>(agenda);
+	    while (!agendaCopia.isEmpty()) {
+	        Usuario contacto = agendaCopia.poll();
+	        if (contacto.getPuerto() == puerto) {
+	            return contacto;
+	        }
+	    }
+	    return null; // No se encontró
+	}
+
 }

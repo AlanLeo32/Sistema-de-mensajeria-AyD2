@@ -58,6 +58,17 @@ public class Controlador implements ActionListener{
 
 	    return lista;
 	}
+	public List<UsuarioDTO> getListaConversaciones() {
+	    List<UsuarioDTO> lista = new ArrayList<UsuarioDTO>();
+	    PriorityQueue<Usuario> copia = new PriorityQueue<>(sistemaMensajeria.getListaConversaciones());
+	    Usuario user;
+	    while (!copia.isEmpty()) {
+	    	 user = copia.poll();
+	         lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto()));
+	    }
+
+	    return lista;
+	}
 	public IVista getVentana2() {
 		return ventana2;
 	}
@@ -79,6 +90,9 @@ public class Controlador implements ActionListener{
 		        }
 		    }
 	}
+	public void actualizaListaConversacion(int puerto) {
+		this.sistemaMensajeria.setConversacion(puerto);
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -91,6 +105,7 @@ public class Controlador implements ActionListener{
 				Ventanalogin ventanalogin = (Ventanalogin) this.ventana;
 				puerto=Integer.parseInt(ventanalogin.getPuerto());
 				setUser(ventanalogin.getName(),puerto);
+				this.sistemaMensajeria.iniciarServidor(puerto);
 			}
 			this.ventana.setVisible(false);
 			this.setVentana(new VentanaPrincipal(this));
@@ -105,13 +120,19 @@ public class Controlador implements ActionListener{
 			
 			break;
 		case "INICIAR CONVERSACIÓN":
-			
 			if (this.ventana2 instanceof VentanaContactos) {
-			    VentanaContactos ventanaContactos = (VentanaContactos) this.ventana2;
-			    puerto=ventanaContactos.getPuerto(); 
-			    this.cargaChat(puerto);
-			    this.ventana2.dispose();
-			}
+		        VentanaContactos ventanaContactos = (VentanaContactos) this.ventana2;
+		        puerto = ventanaContactos.getPuerto(); 
+		        this.cargaChat(puerto);
+		        this.actualizaListaConversacion(puerto);
+		       
+		        // ACTUALIZA la lista en la ventana principal
+		        if (ventana instanceof VentanaPrincipal) { 	
+		            ((VentanaPrincipal) ventana).actualizarListaChats(this.getListaConversaciones());
+		        }
+
+		        this.ventana2.dispose();
+		    }
 			break;
 		case "AGREGAR":
 			if (this.ventana2 instanceof VentanaAgregarContacto) {
