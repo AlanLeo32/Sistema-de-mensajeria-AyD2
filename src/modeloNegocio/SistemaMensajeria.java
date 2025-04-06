@@ -1,6 +1,9 @@
 package modeloNegocio;
 
+import java.util.ArrayList;
 import java.util.PriorityQueue;
+
+import dto.MensajeDTO;
 
 public class SistemaMensajeria {
 	private Usuario usuario;
@@ -25,7 +28,16 @@ public class SistemaMensajeria {
 		Usuario contacto=new Usuario(nickName,puerto,ip);
 		this.usuario.agregaContacto(contacto);
 	}
+
 	public PriorityQueue<Usuario> getAgenda() {
 		return this.usuario.getAgenda();
 	}
+	public ArrayList<MensajeDTO> getChat(int puerto){
+		return usuario.getChat(puerto);
+	}
+	public ArrayList<Mensaje> getMensajes()
+    {
+      return usuario.getMensajes();
+    }
+	
 }

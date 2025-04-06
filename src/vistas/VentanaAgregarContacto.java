@@ -61,7 +61,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		this.controlador=controlador;
 		setTitle("Agregar contacto");
 		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 262, 284);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -140,17 +140,20 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		this.btnAgregarButton.setActionCommand("AGREGAR");
 		btnAgregarButton.setBounds(75, 24, 80, 23);
 		this.btnAgregarButton.setToolTipText("Agregar");
-		this.btnAgregarButton.addActionListener(this);
+		
 		panel_3.setLayout(null);
 		this.btnAgregarButton.setEnabled(false);
 		panel_3.add(btnAgregarButton);
 	}
-
-	public void actionPerformed(ActionEvent e) {
-		controlador.agregaContacto(this.textFieldNickname.getText(),this.textFieldIP.getText(),Integer.parseInt(this.textFieldPuerto.getText()));
-		System.out.println("Se registro Bien"); //quitar
+	public String getNickname() {
+		return textFieldNickname.getText();
 	}
-
+	public String getIp() {
+		return this.textFieldIP.getText();
+	}
+	public String getPuerto() {
+		return this.textFieldPuerto.getText();
+	}
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -173,5 +176,10 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	public void setActionListener(ActionListener controlador) {
 		// TODO Auto-generated method stub
 		this.btnAgregarButton.addActionListener(controlador);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

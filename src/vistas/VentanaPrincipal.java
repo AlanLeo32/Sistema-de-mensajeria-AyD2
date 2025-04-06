@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controlador.Controlador;
+import modeloNegocio.Usuario;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -15,6 +16,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.time.LocalDateTime;
 
 import javax.swing.JSplitPane;
 import javax.swing.JScrollPane;
@@ -40,6 +42,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	private JButton botonAgregarContacto;
 	private JButton botonNuevaConversacion;
 	private JButton botonEnviar;
+	JTextArea textAreaChat;
 	/**
 	 * Launch the application.
 	 */
@@ -131,11 +134,11 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		JScrollPane scrollPane = new JScrollPane();
 		panel_2.add(scrollPane, BorderLayout.CENTER);
 		
-		JTextArea textAreaChat = new JTextArea();
+		textAreaChat = new JTextArea();
 		textAreaChat.setWrapStyleWord(true);
 		textAreaChat.setLineWrap(true);
 		textAreaChat.setEditable(false);
-		textAreaChat.setText("asfasfafsafasfasf\r\nafafafafafaf\r\nafafafafaf\r\nwwwwffw\r\n🧊");
+		textAreaChat.setText("");
 		scrollPane.setViewportView(textAreaChat);
 	}
 	@Override
@@ -145,7 +148,9 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		this.botonNuevaConversacion.addActionListener(controlador);
 		this.botonEnviar.addActionListener(controlador);
 	}
-
+	public void agregarChat(String contenido, LocalDateTime fechayhora, String emisor ) {
+		this.textAreaChat.append(String.format("%s [%s]:\n%s\n\n", emisor, fechayhora, contenido));	
+	}
 	public void actionPerformed(ActionEvent e) {
 		
 	}

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+import dto.MensajeDTO;
 import util.*;
 
 public class Usuario {
@@ -65,9 +66,17 @@ public class Usuario {
         this.mensajes.add(m);
     }
 
-    public ArrayList<Mensaje> traerMensajes()
-    {
+    public ArrayList<Mensaje> getMensajes(){
       return this.mensajes;
+    }
+    public ArrayList<MensajeDTO> getChat(int puerto){
+    	ArrayList<MensajeDTO> chat=new ArrayList<MensajeDTO>();
+    	for (Mensaje m : mensajes) {
+    	    if (m.getPuertoReceptor()==puerto) {
+    	    	chat.add(new MensajeDTO(m.getContenido(), m.getFechayhora(),m.getEmisor(),m.getReceptor()));
+    	    }
+    	}
+    	return chat;
     }
     // ******VA EN LA VISTA DE LA CONVERSACION******
    /* public void ListarMensajes(Usuario contacto) 
@@ -87,18 +96,16 @@ public class Usuario {
 	}
 	public void agregaContacto(Usuario contacto) {
 		agenda.add(contacto);
-		//this.muestraContactos();
+		this.muestraContactos();
 	}
-	/* para ver si agrego bien 
+	
 	public void muestraContactos() {
-		PriorityQueue<Usuario> agenda2 = new PriorityQueue<>(Comparator.comparing(Usuario::getNickName));
-        Usuario contacto;    
-		while (!agenda.isEmpty()) {
-			contacto=agenda.poll();
-			agenda2.add(contacto);
-            System.out.println(contacto.getNickName());
-        }
-		agenda=agenda2;
+		PriorityQueue<Usuario> agendaCopia = new PriorityQueue<>(agenda);
+	    
+	    while (!agendaCopia.isEmpty()) {
+	        Usuario contacto = agendaCopia.poll();
+	        System.out.println(contacto.getNickName());
+	    }
 	}
-	*/
+	
 }

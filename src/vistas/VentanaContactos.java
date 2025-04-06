@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controlador.Controlador;
+import dto.UsuarioDTO;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -27,7 +28,7 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 	private JPanel panelIniciar;
 	private JButton btnIniciarConversacion;
 	private JScrollPane scrollPane;
-	private JList<String> list;
+	private JList<UsuarioDTO> list;
 	private Controlador controlador;
 	/**
 	 * Launch the application.
@@ -51,7 +52,7 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 	 */
 	public VentanaContactos(Controlador controlador) {
 		this.controlador=controlador;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		this.contentPane = new JPanel();
 		this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -64,23 +65,28 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 		
 		this.btnIniciarConversacion = new JButton("Iniciar conversacion");
 		this.btnIniciarConversacion.setActionCommand("INICIAR CONVERSACIÓN");
-		this.btnIniciarConversacion.addActionListener(this);
 		this.btnIniciarConversacion.setToolTipText("Iniciar conversacion");
 		this.panelIniciar.add(this.btnIniciarConversacion);
 		
 		this.scrollPane = new JScrollPane();
 		this.contentPane.add(this.scrollPane, BorderLayout.CENTER);
 		
-		DefaultListModel<String> modelo = new DefaultListModel<>();
+		DefaultListModel<UsuarioDTO> modelo = new DefaultListModel<>();
 		modelo.clear();
-		this.list = new JList<>(modelo);
-		for (String nick : controlador.getAgenda()) {
-		        modelo.addElement(nick);
+		
+		for (UsuarioDTO c : controlador.getAgenda()) {
+		    modelo.addElement(c);
 		}
+
+		this.list  = new JList<>(modelo);
 		this.scrollPane.setViewportView(this.list);
 	}
-
+	public int getPuerto() {
+		
+		return this.list.getSelectedValue().getPuerto();
+	}
 	public void actionPerformed(ActionEvent e) {
+
 	}
 
 	@Override
