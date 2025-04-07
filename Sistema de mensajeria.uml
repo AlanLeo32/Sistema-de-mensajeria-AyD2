@@ -1,0 +1,2355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_7xEiYBNZEfCsRqADsEa1jQ" name="Sistema_de_mensajeria">
+    <eAnnotations xmi:id="_AP8hcBNaEfCsRqADsEa1jQ" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_AP8hcRNaEfCsRqADsEa1jQ" source="codegen">
+        <details xmi:id="_AP8hchNaEfCsRqADsEa1jQ" key="codegenDirectory" value="/Sistema de mensajeria/src"/>
+        <details xmi:id="_Ac28EBNaEfCsRqADsEa1jQ" key="AssociatedSourceCode" value="/Sistema de mensajeria/src/controlador/Controlador.java;2192563455/1;/Sistema de mensajeria/src/dto/MensajeDTO.java;1652486025/1;/Sistema de mensajeria/src/dto/UsuarioDTO.java;2036697063/1;/Sistema de mensajeria/src/modeloNegocio/Mensaje.java;986711288/1;/Sistema de mensajeria/src/modeloNegocio/SistemaMensajeria.java;4073083222/1;/Sistema de mensajeria/src/modeloNegocio/Usuario.java;1689956361/1;/Sistema de mensajeria/src/sistemaMensajeria/Main.java;3744381032/1;/Sistema de mensajeria/src/util/Util.java;1075787928/1;/Sistema de mensajeria/src/vistas/IVista.java;1415110083/1;/Sistema de mensajeria/src/vistas/VentanaAgregarContacto.java;151577984/1;/Sistema de mensajeria/src/vistas/VentanaContactos.java;2174400541/1;/Sistema de mensajeria/src/vistas/VentanaPrincipal.java;451470386/1;/Sistema de mensajeria/src/vistas/Ventanalogin.java;1384494737/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_AN22wBNaEfCsRqADsEa1jQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_AN9kcBNaEfCsRqADsEa1jQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_AN-LgBNaEfCsRqADsEa1jQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_AN-LgRNaEfCsRqADsEa1jQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_AN-LghNaEfCsRqADsEa1jQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_AN-LgxNaEfCsRqADsEa1jQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_AN-LhBNaEfCsRqADsEa1jQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_AN-LhRNaEfCsRqADsEa1jQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_AN_ZoBNaEfCsRqADsEa1jQ">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AOGHUBNaEfCsRqADsEa1jQ" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_AOGHURNaEfCsRqADsEa1jQ" name="awt">
+        <packagedElement xmi:type="uml:Package" xmi:id="_AOGuYBNaEfCsRqADsEa1jQ" name="event">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ATHxQBNaEfCsRqADsEa1jQ" name="ActionEvent"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_ATIYURNaEfCsRqADsEa1jQ" name="ActionListener"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_AToHkRNaEfCsRqADsEa1jQ" name="KeyAdapter"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_ATpVsRNaEfCsRqADsEa1jQ" name="KeyEvent"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_ATqj0BNaEfCsRqADsEa1jQ" name="KeyListener"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_AUEzgBNaEfCsRqADsEa1jQ" name="MouseEvent"/>
+          <packagedElement xmi:type="uml:Interface" xmi:id="_AUFakRNaEfCsRqADsEa1jQ" name="MouseListener"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATiA8BNaEfCsRqADsEa1jQ" name="EventQueue"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATlEQBNaEfCsRqADsEa1jQ" name="GridLayout"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATrK4RNaEfCsRqADsEa1jQ" name="FlowLayout"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AT-F0BNaEfCsRqADsEa1jQ" name="BorderLayout"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_AOGuYRNaEfCsRqADsEa1jQ" name="io">
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATI_YRNaEfCsRqADsEa1jQ" name="IOException"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ATPGABNaEfCsRqADsEa1jQ" name="Serializable"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATVzsBNaEfCsRqADsEa1jQ" name="BufferedReader"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATWawRNaEfCsRqADsEa1jQ" name="InputStreamReader"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATXB0RNaEfCsRqADsEa1jQ" name="ObjectInputStream"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATYP8BNaEfCsRqADsEa1jQ" name="ObjectOutputStream"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATY3ARNaEfCsRqADsEa1jQ" name="PrintWriter"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_AOGuYhNaEfCsRqADsEa1jQ" name="time">
+        <packagedElement xmi:type="uml:Package" xmi:id="_AOkocBNaEfCsRqADsEa1jQ" name="format">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ATTXcBNaEfCsRqADsEa1jQ" name="DateTimeFormatter"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATJmcRNaEfCsRqADsEa1jQ" name="LocalDateTime"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_AOGuYxNaEfCsRqADsEa1jQ" name="util">
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATKNgRNaEfCsRqADsEa1jQ" name="ArrayList"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ATKNgxNaEfCsRqADsEa1jQ" name="List"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATK0kRNaEfCsRqADsEa1jQ" name="Observable"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ATLboRNaEfCsRqADsEa1jQ" name="Observer"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATMCsBNaEfCsRqADsEa1jQ" name="PriorityQueue"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATQ7MBNaEfCsRqADsEa1jQ" name="Objects"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ATchYBNaEfCsRqADsEa1jQ" name="Comparator"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATchYhNaEfCsRqADsEa1jQ" name="LinkedList"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_AOnrwBNaEfCsRqADsEa1jQ" name="net">
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATZeERNaEfCsRqADsEa1jQ" name="ServerSocket"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATaFIRNaEfCsRqADsEa1jQ" name="Socket"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_AUd1EBNaEfCsRqADsEa1jQ" name="lang">
+        <packagedElement xmi:type="uml:Class" xmi:id="_AUd1ERNaEfCsRqADsEa1jQ" name="Object"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AOHVcBNaEfCsRqADsEa1jQ" name="dto">
+      <packagedElement xmi:type="uml:Class" xmi:id="_AQQqgBNaEfCsRqADsEa1jQ" name="MensajeDTO">
+        <ownedAttribute xmi:id="_AVESARNaEfCsRqADsEa1jQ" name="contenido" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVFgIBNaEfCsRqADsEa1jQ" name="fechayhora" type="_ATJmcRNaEfCsRqADsEa1jQ" isReadOnly="true" association="_AWIpARNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVFgIRNaEfCsRqADsEa1jQ" name="emisor" type="_AQxA0BNaEfCsRqADsEa1jQ" isReadOnly="true" association="_AWIpBBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVFgIhNaEfCsRqADsEa1jQ" name="receptor" type="_AQxA0BNaEfCsRqADsEa1jQ" isReadOnly="true" association="_AWJQERNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUfqQBNaEfCsRqADsEa1jQ" client="_AQQqgBNaEfCsRqADsEa1jQ" supplier="_ATPGABNaEfCsRqADsEa1jQ" contract="_ATPGABNaEfCsRqADsEa1jQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVuZUBNaEfCsRqADsEa1jQ" name="MensajeDTO" specification="_AUgRUBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVuZURNaEfCsRqADsEa1jQ" name="contenido">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVuZUhNaEfCsRqADsEa1jQ" name="fechayhora" type="_ATJmcRNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVuZUxNaEfCsRqADsEa1jQ" name="emisor" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVuZVBNaEfCsRqADsEa1jQ" name="receptor" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVuZVRNaEfCsRqADsEa1jQ" type="_AQQqgBNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.contenido = contenido;&#xD;
+		this.fechayhora = fechayhora;&#xD;
+		this.emisor = emisor;&#xD;
+		this.receptor = receptor;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_AUgRUBNaEfCsRqADsEa1jQ" name="MensajeDTO" method="_AVuZUBNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AUgRVRNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AUgRVhNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_AUgRURNaEfCsRqADsEa1jQ" name="contenido">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AUgRUhNaEfCsRqADsEa1jQ" name="fechayhora" type="_ATJmcRNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUgRUxNaEfCsRqADsEa1jQ" name="emisor" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUgRVBNaEfCsRqADsEa1jQ" name="receptor" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUgRVxNaEfCsRqADsEa1jQ" type="_AQQqgBNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AQVjABNaEfCsRqADsEa1jQ" name="UsuarioDTO">
+        <ownedAttribute xmi:id="_AVGHMBNaEfCsRqADsEa1jQ" name="nombre" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVGHMRNaEfCsRqADsEa1jQ" name="puerto" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVGHMhNaEfCsRqADsEa1jQ" name="ip" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <interfaceRealization xmi:id="_AUg4YBNaEfCsRqADsEa1jQ" client="_AQVjABNaEfCsRqADsEa1jQ" supplier="_ATPGABNaEfCsRqADsEa1jQ" contract="_ATPGABNaEfCsRqADsEa1jQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVuZVhNaEfCsRqADsEa1jQ" name="UsuarioDTO" specification="_AQWxIBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVuZVxNaEfCsRqADsEa1jQ" name="nombre">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVuZWBNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVuZWRNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVuZWhNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.nombre = nombre;&#xD;
+		this.puerto = puerto;&#xD;
+		this.ip=ip;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVuZWxNaEfCsRqADsEa1jQ" name="toString" specification="_AQX_QBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVuZXBNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return nombre + &quot;(ip=&quot; + ip +&quot;,puerto=&quot; + puerto +  &quot;)&quot;;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVuZXRNaEfCsRqADsEa1jQ" name="equals" specification="_AUg4YRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVuZXhNaEfCsRqADsEa1jQ" name="obj" type="_AUd1ERNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVuZXxNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>if (this == obj) return true;&#xD;
+	    if (obj == null || getClass() != obj.getClass()) return false;&#xD;
+	    UsuarioDTO other = (UsuarioDTO) obj;&#xD;
+	    return puerto == other.puerto &amp;&amp; ip.equals(other.ip);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVuZYBNaEfCsRqADsEa1jQ" name="hashCode" specification="_AQhwQBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVuZYRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return Objects.hash(ip, puerto);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_AQWxIBNaEfCsRqADsEa1jQ" name="UsuarioDTO" method="_AVuZVhNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AQXYMhNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AQXYMxNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_AQWxIRNaEfCsRqADsEa1jQ" name="nombre">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQXYMBNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQXYMRNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQXYNBNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQX_QBNaEfCsRqADsEa1jQ" name="toString" method="_AVuZWxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQX_QRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQhwQBNaEfCsRqADsEa1jQ" name="hashCode" method="_AVuZYBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQiXUBNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUg4YRNaEfCsRqADsEa1jQ" name="equals" method="_AVuZXRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUg4YhNaEfCsRqADsEa1jQ" name="obj" type="_AUd1ERNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUg4YxNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWIpARNaEfCsRqADsEa1jQ" name="" memberEnd="_AWIpAhNaEfCsRqADsEa1jQ _AVFgIBNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWIpAhNaEfCsRqADsEa1jQ" name="" type="_AQQqgBNaEfCsRqADsEa1jQ" association="_AWIpARNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWIpBBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWIpBRNaEfCsRqADsEa1jQ _AVFgIRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWIpBRNaEfCsRqADsEa1jQ" name="" type="_AQQqgBNaEfCsRqADsEa1jQ" association="_AWIpBBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWJQERNaEfCsRqADsEa1jQ" name="" memberEnd="_AWJQEhNaEfCsRqADsEa1jQ _AVFgIhNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWJQEhNaEfCsRqADsEa1jQ" name="" type="_AQQqgBNaEfCsRqADsEa1jQ" association="_AWJQERNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AOJKoBNaEfCsRqADsEa1jQ" name="modeloNegocio">
+      <packagedElement xmi:type="uml:Class" xmi:id="_AQkMgBNaEfCsRqADsEa1jQ" name="Mensaje">
+        <ownedAttribute xmi:id="_AVGHMxNaEfCsRqADsEa1jQ" name="contenido">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVGuQBNaEfCsRqADsEa1jQ" name="fechayhora" type="_ATJmcRNaEfCsRqADsEa1jQ" association="_AV4xYBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVGuQRNaEfCsRqADsEa1jQ" name="emisor" type="_AQxA0BNaEfCsRqADsEa1jQ" association="_AV5YcBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVGuQhNaEfCsRqADsEa1jQ" name="receptor" type="_AQxA0BNaEfCsRqADsEa1jQ" association="_AV5YchNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUiGgBNaEfCsRqADsEa1jQ" client="_AQkMgBNaEfCsRqADsEa1jQ" supplier="_ATPGABNaEfCsRqADsEa1jQ" contract="_ATPGABNaEfCsRqADsEa1jQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVvAYBNaEfCsRqADsEa1jQ" name="Mensaje" specification="_AUitkBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVvAYRNaEfCsRqADsEa1jQ" name="contenido">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVvAYhNaEfCsRqADsEa1jQ" name="fechayhora" type="_ATJmcRNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVvAYxNaEfCsRqADsEa1jQ" name="emisor" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVvAZBNaEfCsRqADsEa1jQ" name="receptor" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVvAZRNaEfCsRqADsEa1jQ" type="_AQkMgBNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.contenido = contenido;&#xD;
+		this.fechayhora = fechayhora;&#xD;
+		this.emisor = emisor;&#xD;
+		this.receptor = receptor;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVvAZhNaEfCsRqADsEa1jQ" name="toString" specification="_AQlaoBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVvAZxNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return String.format(&quot;%s (%s): %s&quot;, emisor, fechayhora.format(DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy HH:mm&quot;)), contenido);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_AQlaoBNaEfCsRqADsEa1jQ" name="toString" method="_AVvAZhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQmBsBNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUitkBNaEfCsRqADsEa1jQ" name="Mensaje" method="_AVvAYBNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AUitlRNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AUitlhNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_AUitkRNaEfCsRqADsEa1jQ" name="contenido">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AUitkhNaEfCsRqADsEa1jQ" name="fechayhora" type="_ATJmcRNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUitkxNaEfCsRqADsEa1jQ" name="emisor" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUitlBNaEfCsRqADsEa1jQ" name="receptor" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUitlxNaEfCsRqADsEa1jQ" type="_AQkMgBNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AQn24BNaEfCsRqADsEa1jQ" name="SistemaMensajeria">
+        <generalization xmi:id="_AUj7sxNaEfCsRqADsEa1jQ" general="_ATK0kRNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVHVUBNaEfCsRqADsEa1jQ" name="usuario" type="_AQxA0BNaEfCsRqADsEa1jQ" isReadOnly="true" association="_AWJQFBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVHVURNaEfCsRqADsEa1jQ" name="sistema_instancia" visibility="private" isStatic="true" type="_AQn24BNaEfCsRqADsEa1jQ" association="_AWJ3IRNaEfCsRqADsEa1jQ">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AVHVUhNaEfCsRqADsEa1jQ" value="null"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVvAaBNaEfCsRqADsEa1jQ" name="get_Instancia" specification="_AQqTIBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVvAaRNaEfCsRqADsEa1jQ" type="_AQn24BNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>if(sistema_instancia==null)&#xD;
+			sistema_instancia=new SistemaMensajeria();&#xD;
+		return sistema_instancia;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVvAahNaEfCsRqADsEa1jQ" name="setUsuario" specification="_AQqTIRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVvAaxNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVvAbBNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.usuario = new Usuario(nickName,puerto);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVvAbRNaEfCsRqADsEa1jQ" name="getnickName" specification="_AQqTJBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVvAbhNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return usuario.getNickName();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVvAbxNaEfCsRqADsEa1jQ" name="getPuerto" specification="_AQq6MRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVvAcBNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return usuario.getPuerto();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVvAcRNaEfCsRqADsEa1jQ" name="agregaContacto" specification="_AQq6MxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVvAchNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVvAcxNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVvAdBNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Usuario contacto=new Usuario(nickName,puerto,ip);&#xD;
+		this.usuario.agregaContacto(contacto);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVvAdRNaEfCsRqADsEa1jQ" name="getAgenda" specification="_AQrhQBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVvAdhNaEfCsRqADsEa1jQ" type="_ATMCsBNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>return this.usuario.getAgenda();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVwOgBNaEfCsRqADsEa1jQ" name="getChat" specification="_AQsvYBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVwOgRNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVwOghNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVwOgxNaEfCsRqADsEa1jQ" type="_ATKNgRNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>return usuario.getChat(puerto,ip);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVwOhBNaEfCsRqADsEa1jQ" name="getMensajes" specification="_AQtWcRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVwOhRNaEfCsRqADsEa1jQ" type="_ATKNgRNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>return usuario.getMensajes();&#xD;
+ </body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVwOhhNaEfCsRqADsEa1jQ" name="setContactoActual" specification="_AQukkBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVwOhxNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVwOiBNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Usuario contacto=usuario.getBuscaContacto(puerto);&#xD;
+		if(contacto!=null) {&#xD;
+			this.usuario.agregarConversacion(contacto);&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVwOiRNaEfCsRqADsEa1jQ" name="iniciarServidor" specification="_AQukkxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVwOihNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Thread serverThread = new Thread(() -> {&#xD;
+	        try (ServerSocket serverSocket = new ServerSocket(puerto)) {&#xD;
+	            while (true) {&#xD;
+	                Socket socket = serverSocket.accept();&#xD;
+	                try (ObjectInputStream ois = new ObjectInputStream(socket.getInputStream())) {&#xD;
+	                    Object recibido = ois.readObject();&#xD;
+	                    if (recibido instanceof Mensaje) {&#xD;
+	                        Mensaje mensaje = (Mensaje) recibido;&#xD;
+	                        this.usuario.recibirMensaje(mensaje);&#xD;
+	                        setChanged(); // importante&#xD;
+	     		           	notifyObservers(mensaje);&#xD;
+	     		         &#xD;
+	                        &#xD;
+&#xD;
+	                       &#xD;
+&#xD;
+	                        &#xD;
+	                    }&#xD;
+	                } catch (ClassNotFoundException e) {&#xD;
+	                    e.printStackTrace();&#xD;
+	                }&#xD;
+	                socket.close();&#xD;
+	            }&#xD;
+	        } catch (IOException e) {&#xD;
+	            e.printStackTrace();&#xD;
+	        }&#xD;
+	    });&#xD;
+	    serverThread.start();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVwOixNaEfCsRqADsEa1jQ" name="buscarUsuarioPorDTO" specification="_ATbTQBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVw1kBNaEfCsRqADsEa1jQ" name="dto" type="_AQVjABNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVw1kRNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>for (Usuario u : usuario.getAgenda()) {&#xD;
+	        if (u.getPuerto() == dto.getPuerto() &amp;&amp; u.getIp()== dto.getIp()) {&#xD;
+	            return u;&#xD;
+	        }&#xD;
+	    }&#xD;
+	    return null; // o lanzar excepción si querés asegurarte que esté&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVw1khNaEfCsRqADsEa1jQ" name="enviarMensaje" specification="_ATbTQxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVw1kxNaEfCsRqADsEa1jQ" name="contacto" type="_AQVjABNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVw1lBNaEfCsRqADsEa1jQ" name="mensaje">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>try (Socket socket = new Socket(contacto.getIp(), contacto.getPuerto())) {&#xD;
+	    	   ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());&#xD;
+	    	   Usuario ureceptor=this.buscarUsuarioPorDTO(contacto);&#xD;
+	    	   Mensaje msg;&#xD;
+	    	   if(ureceptor!=null) {&#xD;
+	    		   msg=new Mensaje(mensaje,LocalDateTime.now(),this.usuario,ureceptor);&#xD;
+	    		   &#xD;
+	    		   oos.writeObject(msg);&#xD;
+	    		   oos.flush();&#xD;
+		    	   oos.close();&#xD;
+		    	   this.usuario.guardarMensaje(msg);&#xD;
+		    	   setChanged(); // importante&#xD;
+			       notifyObservers(msg);&#xD;
+	    	   }&#xD;
+&#xD;
+	    } catch (IOException e) {&#xD;
+	    	setChanged(); // importante&#xD;
+	        notifyObservers(e);&#xD;
+	    }&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVw1lRNaEfCsRqADsEa1jQ" name="getListaConversaciones" specification="_AQvLoBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVw1lhNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" isOrdered="true" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AVw1lxNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return this.usuario.getListaConversaciones();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_AQpFABNaEfCsRqADsEa1jQ" name="SistemaMensajeria" visibility="private">
+          <eAnnotations xmi:id="_AQpsEBNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AQpsERNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_AQpsExNaEfCsRqADsEa1jQ" type="_AQn24BNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQqTIBNaEfCsRqADsEa1jQ" name="get_Instancia" isStatic="true" method="_AVvAaBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATasMRNaEfCsRqADsEa1jQ" type="_AQn24BNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQqTIRNaEfCsRqADsEa1jQ" name="setUsuario" method="_AVvAahNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQqTIhNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQqTIxNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQqTJBNaEfCsRqADsEa1jQ" name="getnickName" method="_AVvAbRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQq6MBNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQq6MRNaEfCsRqADsEa1jQ" name="getPuerto" method="_AVvAbxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQq6MhNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQq6MxNaEfCsRqADsEa1jQ" name="agregaContacto" method="_AVvAcRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQq6NBNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQq6NRNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQq6NhNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQrhQBNaEfCsRqADsEa1jQ" name="getAgenda" method="_AVvAdRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUj7sBNaEfCsRqADsEa1jQ" type="_ATMCsBNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQsvYBNaEfCsRqADsEa1jQ" name="getChat" method="_AVwOgBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQsvYRNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQsvYhNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AUj7sRNaEfCsRqADsEa1jQ" type="_ATKNgRNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQtWcRNaEfCsRqADsEa1jQ" name="getMensajes" method="_AVwOhBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUj7shNaEfCsRqADsEa1jQ" type="_ATKNgRNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQukkBNaEfCsRqADsEa1jQ" name="setContactoActual" method="_AVwOhhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQukkRNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQukkhNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQukkxNaEfCsRqADsEa1jQ" name="iniciarServidor" method="_AVwOiRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQuklBNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQvLoBNaEfCsRqADsEa1jQ" name="getListaConversaciones" method="_AVw1lRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQvLoRNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" isOrdered="true" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AQvLohNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATbTQBNaEfCsRqADsEa1jQ" name="buscarUsuarioPorDTO" method="_AVwOixNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATbTQRNaEfCsRqADsEa1jQ" name="dto" type="_AQVjABNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_ATbTQhNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATbTQxNaEfCsRqADsEa1jQ" name="enviarMensaje" method="_AVw1khNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATbTRBNaEfCsRqADsEa1jQ" name="contacto" type="_AQVjABNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_ATbTRRNaEfCsRqADsEa1jQ" name="mensaje">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AQxA0BNaEfCsRqADsEa1jQ" name="Usuario">
+        <ownedAttribute xmi:id="_AVH8YBNaEfCsRqADsEa1jQ" name="nickName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVH8YRNaEfCsRqADsEa1jQ" name="ip">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVIjcBNaEfCsRqADsEa1jQ" name="puerto">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVIjcRNaEfCsRqADsEa1jQ" name="agenda" type="_ATMCsBNaEfCsRqADsEa1jQ" association="_AWJ3JBNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AVJKgBNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AVJKgRNaEfCsRqADsEa1jQ" key="transient"/>
+          </eAnnotations>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AVJKgxNaEfCsRqADsEa1jQ" value="new PriorityQueue&lt;>(Comparator.comparing(Usuario::getNickName))"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVKYoxNaEfCsRqADsEa1jQ" name="listaConversaciones" visibility="private" type="_AQxA0BNaEfCsRqADsEa1jQ" isOrdered="true" association="_AWKeMRNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AVKYpBNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AVKYpRNaEfCsRqADsEa1jQ" key="transient"/>
+          </eAnnotations>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AVKYphNaEfCsRqADsEa1jQ" value="*"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AVKYpxNaEfCsRqADsEa1jQ" value="new LinkedList&lt;>()"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVLmwRNaEfCsRqADsEa1jQ" name="mensajes" type="_ATKNgRNaEfCsRqADsEa1jQ" isReadOnly="true" association="_AWKeNBNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AVLmwhNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AVLmwxNaEfCsRqADsEa1jQ" key="transient"/>
+          </eAnnotations>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AVLmxRNaEfCsRqADsEa1jQ" value="new ArrayList&lt;>()"/>
+        </ownedAttribute>
+        <interfaceRealization xmi:id="_AUkiwBNaEfCsRqADsEa1jQ" client="_AQxA0BNaEfCsRqADsEa1jQ" supplier="_ATPGABNaEfCsRqADsEa1jQ" contract="_ATPGABNaEfCsRqADsEa1jQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVxcoBNaEfCsRqADsEa1jQ" name="Usuario" specification="_AQxn4BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVxcoRNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVxcohNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVxcoxNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.nickName = nickName;&#xD;
+		this.ip = Util.IPLOCAL;&#xD;
+		this.puerto = puerto;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVxcpBNaEfCsRqADsEa1jQ" name="Usuario" specification="_AQy2BBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVxcpRNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVxcphNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVxcpxNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVxcqBNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.nickName = nickName;&#xD;
+		this.ip =ip;&#xD;
+		this.puerto = puerto;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVxcqRNaEfCsRqADsEa1jQ" name="toString" specification="_AQzdFBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVxcqhNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return String.format(&quot;%s&quot;, nickName);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVxcqxNaEfCsRqADsEa1jQ" name="guardarMensaje" specification="_ATe9oBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVxcrBNaEfCsRqADsEa1jQ" name="msg" type="_AQkMgBNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.mensajes.add(msg);&#xD;
+ </body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVxcrRNaEfCsRqADsEa1jQ" name="recibirMensaje" specification="_ATe9ohNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVxcrhNaEfCsRqADsEa1jQ" name="m" type="_AQkMgBNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.agregarConversacion(m.getEmisor());&#xD;
+ 	//Mensaje m = new Mensaje(contenido, LocalDateTime.now(), emisor, this);&#xD;
+     this.guardarMensaje(m);&#xD;
+ </body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVxcrxNaEfCsRqADsEa1jQ" name="equals" specification="_AUlJ0BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVxcsBNaEfCsRqADsEa1jQ" name="obj" type="_AUd1ERNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVxcsRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>if (this == obj)&#xD;
+         return true;&#xD;
+     if (obj == null || getClass() != obj.getClass())&#xD;
+         return false;&#xD;
+     Usuario other = (Usuario) obj;&#xD;
+     return this.puerto == other.puerto &amp;&amp; this.ip.equals(other.ip);&#xD;
+ </body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVyDsBNaEfCsRqADsEa1jQ" name="hashCode" specification="_AQ0rMBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVyDsRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return Integer.hashCode(puerto);&#xD;
+ </body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVyDshNaEfCsRqADsEa1jQ" name="getChat" specification="_AQ0rNRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVyDsxNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVyDtBNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVyDtRNaEfCsRqADsEa1jQ" type="_ATKNgRNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>ArrayList&lt;MensajeDTO> chat = new ArrayList&lt;>();&#xD;
+     for (Mensaje m : mensajes) {&#xD;
+     	//aca ves si sos emisor o receptor&#xD;
+         boolean yoSoyEmisor = m.getEmisor().equals(this); &#xD;
+         boolean yoSoyReceptor = m.getReceptor().equals(this);&#xD;
+         //aca se fija si CONTACTO que llega es el emisor o receptor&#xD;
+         boolean otroEsEmisor = m.getEmisor().getPuerto() == puerto &amp;&amp; m.getEmisor().getIp().equals(ip);&#xD;
+         boolean otroEsReceptor = m.getReceptor().getPuerto() == puerto &amp;&amp; m.getReceptor().getIp().equals(ip);&#xD;
+         //Ya que no pueden ambos ser emisores o receptores&#xD;
+         if ((yoSoyEmisor &amp;&amp; otroEsReceptor) || (yoSoyReceptor &amp;&amp; otroEsEmisor)) {&#xD;
+             chat.add(new MensajeDTO(m.getContenido(), m.getFechayhora(), m.getEmisor(), m.getReceptor()));&#xD;
+         }&#xD;
+     }&#xD;
+     return chat;&#xD;
+ </body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVyDthNaEfCsRqADsEa1jQ" name="getListaConversaciones" specification="_AQ15UBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVyDtxNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" isOrdered="true" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AVyDuBNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return new ArrayList&lt;>(listaConversaciones); &#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVyDuRNaEfCsRqADsEa1jQ" name="agregarConversacion" specification="_ATfksRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVyDuhNaEfCsRqADsEa1jQ" name="contacto" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>if(!this.agenda.contains(contacto)) {&#xD;
+			this.agenda.add(contacto);&#xD;
+		}&#xD;
+		if(this.listaConversaciones.isEmpty() || !this.listaConversaciones.contains(contacto)) {&#xD;
+     	&#xD;
+			this.listaConversaciones.add(0,contacto);&#xD;
+     }&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVyDuxNaEfCsRqADsEa1jQ" name="agregaContacto" specification="_ATfksxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVyDvBNaEfCsRqADsEa1jQ" name="contacto" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>agenda.add(contacto);&#xD;
+		this.muestraContactos();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVyDvRNaEfCsRqADsEa1jQ" name="muestraContactos" specification="_AQ15UxNaEfCsRqADsEa1jQ">
+          <language>java</language>
+          <body>PriorityQueue&lt;Usuario> agendaCopia = new PriorityQueue&lt;>(agenda);&#xD;
+	    &#xD;
+	    while (!agendaCopia.isEmpty()) {&#xD;
+	        Usuario contacto = agendaCopia.poll();&#xD;
+&#xD;
+	    }&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVyDvhNaEfCsRqADsEa1jQ" name="getBuscaContacto" specification="_AQ2gYBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVyDvxNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVyDwBNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>PriorityQueue&lt;Usuario> agendaCopia = new PriorityQueue&lt;>(agenda);&#xD;
+	    while (!agendaCopia.isEmpty()) {&#xD;
+	        Usuario contacto = agendaCopia.poll();&#xD;
+	        if (contacto.getPuerto() == puerto) {&#xD;
+	            return contacto;&#xD;
+	        }&#xD;
+	    }&#xD;
+	    return null; // No se encontró&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_AQxn4BNaEfCsRqADsEa1jQ" name="Usuario" method="_AVxcoBNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AQy2ARNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AQy2AhNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_AQxn4RNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQy2ABNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQy2AxNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQy2BBNaEfCsRqADsEa1jQ" name="Usuario" method="_AVxcpBNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AQzdERNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AQzdEhNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_AQy2BRNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQy2BhNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQzdEBNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQzdExNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQzdFBNaEfCsRqADsEa1jQ" name="toString" method="_AVxcqRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQzdFRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQ0rMBNaEfCsRqADsEa1jQ" name="hashCode" method="_AVyDsBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQ0rMRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQ0rNRNaEfCsRqADsEa1jQ" name="getChat" method="_AVyDshNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQ0rNhNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQ0rNxNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AUlw5BNaEfCsRqADsEa1jQ" type="_ATKNgRNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQ15UBNaEfCsRqADsEa1jQ" name="getListaConversaciones" method="_AVyDthNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQ15URNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" isOrdered="true" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AQ15UhNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQ15UxNaEfCsRqADsEa1jQ" name="muestraContactos" method="_AVyDvRNaEfCsRqADsEa1jQ"/>
+        <ownedOperation xmi:id="_AQ2gYBNaEfCsRqADsEa1jQ" name="getBuscaContacto" method="_AVyDvhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQ2gYRNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_ATgLwBNaEfCsRqADsEa1jQ" type="_AQxA0BNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATe9oBNaEfCsRqADsEa1jQ" name="guardarMensaje" method="_AVxcqxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATe9oRNaEfCsRqADsEa1jQ" name="msg" type="_AQkMgBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATe9ohNaEfCsRqADsEa1jQ" name="recibirMensaje" method="_AVxcrRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATfksBNaEfCsRqADsEa1jQ" name="m" type="_AQkMgBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATfksRNaEfCsRqADsEa1jQ" name="agregarConversacion" method="_AVyDuRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATfkshNaEfCsRqADsEa1jQ" name="contacto" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATfksxNaEfCsRqADsEa1jQ" name="agregaContacto" method="_AVyDuxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATfktBNaEfCsRqADsEa1jQ" name="contacto" type="_AQxA0BNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUlJ0BNaEfCsRqADsEa1jQ" name="equals" method="_AVxcrxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUlJ0RNaEfCsRqADsEa1jQ" name="obj" type="_AUd1ERNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUlw4BNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AV4xYBNaEfCsRqADsEa1jQ" name="" memberEnd="_AVGuQBNaEfCsRqADsEa1jQ _AV4xYRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AV4xYRNaEfCsRqADsEa1jQ" name="" type="_AQkMgBNaEfCsRqADsEa1jQ" association="_AV4xYBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AV5YcBNaEfCsRqADsEa1jQ" name="" memberEnd="_AVGuQRNaEfCsRqADsEa1jQ _AV5YcRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AV5YcRNaEfCsRqADsEa1jQ" name="" type="_AQkMgBNaEfCsRqADsEa1jQ" association="_AV5YcBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AV5YchNaEfCsRqADsEa1jQ" name="" memberEnd="_AVGuQhNaEfCsRqADsEa1jQ _AV5YcxNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AV5YcxNaEfCsRqADsEa1jQ" name="" type="_AQkMgBNaEfCsRqADsEa1jQ" association="_AV5YchNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWJQFBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWJQFRNaEfCsRqADsEa1jQ _AVHVUBNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWJQFRNaEfCsRqADsEa1jQ" name="" type="_AQn24BNaEfCsRqADsEa1jQ" association="_AWJQFBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWJ3IRNaEfCsRqADsEa1jQ" name="" memberEnd="_AWJ3IhNaEfCsRqADsEa1jQ _AVHVURNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWJ3IhNaEfCsRqADsEa1jQ" name="" type="_AQn24BNaEfCsRqADsEa1jQ" association="_AWJ3IRNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWJ3JBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWJ3JRNaEfCsRqADsEa1jQ _AVIjcRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWJ3JRNaEfCsRqADsEa1jQ" name="" type="_AQxA0BNaEfCsRqADsEa1jQ" association="_AWJ3JBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWKeMRNaEfCsRqADsEa1jQ" name="" memberEnd="_AWKeMhNaEfCsRqADsEa1jQ _AVKYoxNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWKeMhNaEfCsRqADsEa1jQ" name="" type="_AQxA0BNaEfCsRqADsEa1jQ" association="_AWKeMRNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWKeNBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWKeNRNaEfCsRqADsEa1jQ _AVLmwRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWKeNRNaEfCsRqADsEa1jQ" name="" type="_AQxA0BNaEfCsRqADsEa1jQ" association="_AWKeNBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AOM1ABNaEfCsRqADsEa1jQ" name="vistas">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_AQ6x0hNaEfCsRqADsEa1jQ" name="IVista">
+        <ownedOperation xmi:id="_AQ7Y4BNaEfCsRqADsEa1jQ" name="setVisible">
+          <ownedParameter xmi:id="_AQ7Y4RNaEfCsRqADsEa1jQ" name="b">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQ7Y4hNaEfCsRqADsEa1jQ" name="dispose"/>
+        <ownedOperation xmi:id="_AUm_ABNaEfCsRqADsEa1jQ" name="setActionListener">
+          <ownedParameter xmi:id="_AUm_ARNaEfCsRqADsEa1jQ" name="controlador" type="_ATIYURNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_AQ7_8BNaEfCsRqADsEa1jQ" name="VentanaAgregarContacto">
+        <generalization xmi:id="_AUrQchNaEfCsRqADsEa1jQ" general="_ATioARNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVM04BNaEfCsRqADsEa1jQ" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AVM04RNaEfCsRqADsEa1jQ" value="1L"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVM04hNaEfCsRqADsEa1jQ" name="contentPane" visibility="private" type="_ATjPERNaEfCsRqADsEa1jQ" association="_AWLFQRNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVM05BNaEfCsRqADsEa1jQ" name="panelIP" visibility="private" type="_ATjPERNaEfCsRqADsEa1jQ" association="_AWLFRBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVNb8RNaEfCsRqADsEa1jQ" name="ipLabel" visibility="private" type="_ATlrURNaEfCsRqADsEa1jQ" association="_AWLFRxNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVNb8xNaEfCsRqADsEa1jQ" name="panelPuerto" visibility="private" type="_ATjPERNaEfCsRqADsEa1jQ" association="_AWLFShNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVNb9RNaEfCsRqADsEa1jQ" name="puertoLabel" visibility="private" type="_ATlrURNaEfCsRqADsEa1jQ" association="_AWLsURNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVNb9xNaEfCsRqADsEa1jQ" name="panel_3" visibility="private" type="_ATjPERNaEfCsRqADsEa1jQ" association="_AWLsVBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVODARNaEfCsRqADsEa1jQ" name="btnAgregarButton" visibility="private" type="_ATnggRNaEfCsRqADsEa1jQ" association="_AWLsVxNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVODAxNaEfCsRqADsEa1jQ" name="textFieldPuerto" visibility="private" type="_ATm5cRNaEfCsRqADsEa1jQ" association="_AWMTYRNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVODBRNaEfCsRqADsEa1jQ" name="textFieldIP" visibility="private" type="_ATm5cRNaEfCsRqADsEa1jQ" association="_AWM6cRNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVOqERNaEfCsRqADsEa1jQ" name="textFieldNickname" visibility="private" type="_ATm5cRNaEfCsRqADsEa1jQ" association="_AWM6dBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVOqExNaEfCsRqADsEa1jQ" name="controlador" visibility="private" type="_APq0oBNaEfCsRqADsEa1jQ" association="_AWM6dxNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AT3YIBNaEfCsRqADsEa1jQ" client="_AQ7_8BNaEfCsRqADsEa1jQ" supplier="_AQ6x0hNaEfCsRqADsEa1jQ" contract="_AQ6x0hNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUm_AhNaEfCsRqADsEa1jQ" client="_AQ7_8BNaEfCsRqADsEa1jQ" supplier="_ATIYURNaEfCsRqADsEa1jQ" contract="_ATIYURNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUnmEBNaEfCsRqADsEa1jQ" client="_AQ7_8BNaEfCsRqADsEa1jQ" supplier="_ATqj0BNaEfCsRqADsEa1jQ" contract="_ATqj0BNaEfCsRqADsEa1jQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVzR0xNaEfCsRqADsEa1jQ" name="VentanaAgregarContacto" specification="_AT5NUBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVzR1BNaEfCsRqADsEa1jQ" name="controlador" type="_APq0oBNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVzR1RNaEfCsRqADsEa1jQ" type="_AQ7_8BNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>this.controlador=controlador;&#xD;
+		setTitle(&quot;Agregar contacto&quot;);&#xD;
+		setResizable(false);&#xD;
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);&#xD;
+		setBounds(100, 100, 367, 284);&#xD;
+		contentPane = new JPanel();&#xD;
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));&#xD;
+&#xD;
+		setContentPane(contentPane);&#xD;
+		contentPane.setLayout(new GridLayout(4, 2, 0, 0));&#xD;
+		&#xD;
+		JPanel panelNickname = new JPanel();&#xD;
+		contentPane.add(panelNickname);&#xD;
+		panelNickname.setLayout(null);&#xD;
+		&#xD;
+		JLabel nicknameLabel = new JLabel(&quot;Nickname&quot;);&#xD;
+		nicknameLabel.setBounds(0, 0, 127, 62);&#xD;
+		panelNickname.add(nicknameLabel);&#xD;
+		&#xD;
+		textFieldNickname = new JTextField();&#xD;
+		textFieldNickname.setBounds(176, 22, 86, 20);&#xD;
+		this.textFieldNickname.addKeyListener(this);&#xD;
+		panelNickname.add(textFieldNickname);&#xD;
+		textFieldNickname.setColumns(10);&#xD;
+		&#xD;
+		panelIP = new JPanel();&#xD;
+		contentPane.add(panelIP);&#xD;
+		panelIP.setLayout(null);&#xD;
+		&#xD;
+		ipLabel = new JLabel(&quot;Dirección IP&quot;);&#xD;
+		ipLabel.setBounds(0, 0, 127, 62);&#xD;
+		panelIP.add(ipLabel);&#xD;
+		&#xD;
+		textFieldIP = new JTextField();&#xD;
+		textFieldIP.setText(&quot;localhost&quot;);&#xD;
+		textFieldIP.setBounds(176, 21, 86, 20);&#xD;
+		panelIP.add(textFieldIP);&#xD;
+		this.textFieldIP.addKeyListener(new KeyAdapter() {&#xD;
+         @Override&#xD;
+         public void keyTyped(KeyEvent e) {&#xD;
+             char c = e.getKeyChar();&#xD;
+             if (!(Character.isDigit(c) || c == '.')) { // Si no es un número, se ignora el evento&#xD;
+                 e.consume();&#xD;
+             }&#xD;
+         }&#xD;
+			public void keyReleased(KeyEvent e) {&#xD;
+				btnAgregarButton.setEnabled(!(textFieldIP.getText().isEmpty()));&#xD;
+			}&#xD;
+     });&#xD;
+		textFieldIP.setColumns(10);&#xD;
+		&#xD;
+		panelPuerto = new JPanel();&#xD;
+		contentPane.add(panelPuerto);&#xD;
+		panelPuerto.setLayout(null);&#xD;
+		&#xD;
+		puertoLabel = new JLabel(&quot;Puerto\r\n(1023&lt;P&lt;65536)&quot;);&#xD;
+		puertoLabel.setBounds(0, 0, 343, 62);&#xD;
+		panelPuerto.add(puertoLabel);&#xD;
+		&#xD;
+		textFieldPuerto = new JTextField();&#xD;
+		textFieldPuerto.setBounds(176, 22, 86, 20);&#xD;
+		panelPuerto.add(textFieldPuerto);&#xD;
+		this.textFieldPuerto.addKeyListener(new KeyAdapter() {&#xD;
+         @Override&#xD;
+         public void keyTyped(KeyEvent e) {&#xD;
+             char c = e.getKeyChar();&#xD;
+             if (!Character.isDigit(c)) { // Si no es un número, se ignora el evento&#xD;
+                 e.consume();&#xD;
+             }&#xD;
+         }&#xD;
+			public void keyReleased(KeyEvent e) {&#xD;
+				btnAgregarButton.setEnabled(!(textFieldIP.getText().isEmpty()));&#xD;
+			}&#xD;
+     });&#xD;
+		textFieldPuerto.setColumns(10);&#xD;
+		&#xD;
+		panel_3 = new JPanel();&#xD;
+		contentPane.add(panel_3);&#xD;
+		&#xD;
+		btnAgregarButton = new JButton(&quot;Agregar&quot;);&#xD;
+		this.btnAgregarButton.setActionCommand(&quot;AGREGAR&quot;);&#xD;
+		btnAgregarButton.setBounds(75, 24, 80, 23);&#xD;
+		this.btnAgregarButton.setToolTipText(&quot;Agregar&quot;);&#xD;
+		&#xD;
+		panel_3.setLayout(null);&#xD;
+		this.btnAgregarButton.setEnabled(false);&#xD;
+		panel_3.add(btnAgregarButton);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVzR1hNaEfCsRqADsEa1jQ" name="getNickname" specification="_AQ9OEBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVzR1xNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return textFieldNickname.getText();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVzR2BNaEfCsRqADsEa1jQ" name="getIp" specification="_AQ91IBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVzR2RNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return this.textFieldIP.getText();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVzR2hNaEfCsRqADsEa1jQ" name="getPuerto" specification="_AQ91IhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVzR2xNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return this.textFieldPuerto.getText();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVz44BNaEfCsRqADsEa1jQ" name="keyReleased" specification="_AUpbQhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVz44RNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>String puertoTexto = this.textFieldPuerto.getText();&#xD;
+	    boolean camposLlenos = &#xD;
+	        !this.textFieldNickname.getText().isEmpty() &amp;&amp;&#xD;
+	        !this.textFieldIP.getText().isEmpty() &amp;&amp;&#xD;
+	        !puertoTexto.isEmpty();&#xD;
+&#xD;
+	    boolean puertoValido = puertoTexto.matches(&quot;\\d+&quot;) &amp;&amp;&#xD;
+	        Integer.parseInt(puertoTexto) > 1023 &amp;&amp;&#xD;
+	        Integer.parseInt(puertoTexto) &lt; 65536;&#xD;
+&#xD;
+	    this.btnAgregarButton.setEnabled(camposLlenos &amp;&amp; puertoValido);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVz44hNaEfCsRqADsEa1jQ" name="mostrarConfirmacionContactoAgregado" specification="_AQ_DQBNaEfCsRqADsEa1jQ">
+          <language>java</language>
+          <body>JOptionPane.showMessageDialog(this, &quot;¡Contacto agregado exitosamente!&quot;, &quot;Registro exitoso&quot;, JOptionPane.INFORMATION_MESSAGE);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVz44xNaEfCsRqADsEa1jQ" name="setActionListener" specification="_AUqCUhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVz45BNaEfCsRqADsEa1jQ" name="controlador" type="_ATIYURNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.btnAgregarButton.addActionListener(controlador);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_AQ9OEBNaEfCsRqADsEa1jQ" name="getNickname" method="_AVzR1hNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQ9OERNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQ91IBNaEfCsRqADsEa1jQ" name="getIp" method="_AVzR2BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQ91IRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQ91IhNaEfCsRqADsEa1jQ" name="getPuerto" method="_AVzR2hNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQ91IxNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQ_DQBNaEfCsRqADsEa1jQ" name="mostrarConfirmacionContactoAgregado" method="_AVz44hNaEfCsRqADsEa1jQ"/>
+        <ownedOperation xmi:id="_AT5NUBNaEfCsRqADsEa1jQ" name="VentanaAgregarContacto" method="_AVzR0xNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AT5NUhNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AT5NUxNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_AV5_gBNaEfCsRqADsEa1jQ">
+            <body>Launch the application.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_AT5NURNaEfCsRqADsEa1jQ" name="controlador" type="_APq0oBNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AT5NVBNaEfCsRqADsEa1jQ" type="_AQ7_8BNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUoNIBNaEfCsRqADsEa1jQ" name="keyTyped">
+          <ownedParameter xmi:id="_AUoNIRNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUo0MhNaEfCsRqADsEa1jQ" name="keyPressed">
+          <ownedParameter xmi:id="_AUo0MxNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUpbQhNaEfCsRqADsEa1jQ" name="keyReleased" method="_AVz44BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUpbQxNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUqCUhNaEfCsRqADsEa1jQ" name="setActionListener" method="_AVz44xNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUqCUxNaEfCsRqADsEa1jQ" name="controlador" type="_ATIYURNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUqpYhNaEfCsRqADsEa1jQ" name="actionPerformed">
+          <ownedParameter xmi:id="_AUqpYxNaEfCsRqADsEa1jQ" name="e" type="_ATHxQBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ARD7wBNaEfCsRqADsEa1jQ" name="VentanaContactos">
+        <generalization xmi:id="_AUu60hNaEfCsRqADsEa1jQ" general="_ATioARNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVPRIBNaEfCsRqADsEa1jQ" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AVPRIRNaEfCsRqADsEa1jQ" value="1L"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVPRIhNaEfCsRqADsEa1jQ" name="contentPane" visibility="private" type="_ATjPERNaEfCsRqADsEa1jQ" association="_AWNhgRNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVQfQRNaEfCsRqADsEa1jQ" name="panelIniciar" visibility="private" type="_ATjPERNaEfCsRqADsEa1jQ" association="_AWNhhBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVQfQxNaEfCsRqADsEa1jQ" name="btnIniciarConversacion" visibility="private" type="_ATnggRNaEfCsRqADsEa1jQ" association="_AWNhhxNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVQfRRNaEfCsRqADsEa1jQ" name="scrollPane" visibility="private" type="_AUBJIRNaEfCsRqADsEa1jQ" association="_AWOvoBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVRGURNaEfCsRqADsEa1jQ" name="list" visibility="private" type="_AT_T8RNaEfCsRqADsEa1jQ" association="_AWOvoxNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVRGVBNaEfCsRqADsEa1jQ" name="controlador" visibility="private" type="_APq0oBNaEfCsRqADsEa1jQ" association="_AWOvphNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUBJIxNaEfCsRqADsEa1jQ" client="_ARD7wBNaEfCsRqADsEa1jQ" supplier="_AQ6x0hNaEfCsRqADsEa1jQ" contract="_AQ6x0hNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUsekBNaEfCsRqADsEa1jQ" client="_ARD7wBNaEfCsRqADsEa1jQ" supplier="_ATIYURNaEfCsRqADsEa1jQ" contract="_ATIYURNaEfCsRqADsEa1jQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVz45RNaEfCsRqADsEa1jQ" name="VentanaContactos" specification="_AUCXQBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVz45hNaEfCsRqADsEa1jQ" name="controlador" type="_APq0oBNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVz45xNaEfCsRqADsEa1jQ" type="_ARD7wBNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>this.controlador=controlador;&#xD;
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);&#xD;
+		setBounds(100, 100, 450, 300);&#xD;
+		this.contentPane = new JPanel();&#xD;
+		this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));&#xD;
+&#xD;
+		setContentPane(this.contentPane);&#xD;
+		this.contentPane.setLayout(new BorderLayout(0, 0));&#xD;
+		&#xD;
+		this.panelIniciar = new JPanel();&#xD;
+		this.contentPane.add(this.panelIniciar, BorderLayout.SOUTH);&#xD;
+		&#xD;
+		this.btnIniciarConversacion = new JButton(&quot;Iniciar conversacion&quot;);&#xD;
+		this.btnIniciarConversacion.setActionCommand(&quot;INICIAR CONVERSACIÓN&quot;);&#xD;
+		this.btnIniciarConversacion.setToolTipText(&quot;Iniciar conversacion&quot;);&#xD;
+		this.panelIniciar.add(this.btnIniciarConversacion);&#xD;
+		&#xD;
+		this.scrollPane = new JScrollPane();&#xD;
+		this.contentPane.add(this.scrollPane, BorderLayout.CENTER);&#xD;
+		&#xD;
+		DefaultListModel&lt;UsuarioDTO> modelo = new DefaultListModel&lt;>();&#xD;
+		modelo.clear();&#xD;
+		&#xD;
+		for (UsuarioDTO c : controlador.getAgenda()) {&#xD;
+		    modelo.addElement(c);&#xD;
+		}&#xD;
+&#xD;
+		this.list  = new JList&lt;>(modelo);&#xD;
+		this.scrollPane.setViewportView(this.list);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVz46BNaEfCsRqADsEa1jQ" name="getUsuario" specification="_ARFJ4BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVz46RNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>return this.list.getSelectedValue();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV0f8BNaEfCsRqADsEa1jQ" name="setActionListener" specification="_AUuTwBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV0f8RNaEfCsRqADsEa1jQ" name="controlador" type="_ATIYURNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.btnIniciarConversacion.addActionListener(controlador);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ARFJ4BNaEfCsRqADsEa1jQ" name="getUsuario" method="_AVz46BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUCXRRNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUCXQBNaEfCsRqADsEa1jQ" name="VentanaContactos" method="_AVz45RNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AUCXQhNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AUCXQxNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_AV6mkBNaEfCsRqADsEa1jQ">
+            <body>Launch the application.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_AUCXQRNaEfCsRqADsEa1jQ" name="controlador" type="_APq0oBNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUCXRBNaEfCsRqADsEa1jQ" type="_ARD7wBNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUtFoBNaEfCsRqADsEa1jQ" name="actionPerformed">
+          <ownedParameter xmi:id="_AUtFoRNaEfCsRqADsEa1jQ" name="e" type="_ATHxQBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUuTwBNaEfCsRqADsEa1jQ" name="setActionListener" method="_AV0f8BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUuTwRNaEfCsRqADsEa1jQ" name="controlador" type="_ATIYURNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ARHmIBNaEfCsRqADsEa1jQ" name="VentanaPrincipal">
+        <generalization xmi:id="_AU5S5xNaEfCsRqADsEa1jQ" general="_ATioARNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVRtYBNaEfCsRqADsEa1jQ" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AVRtYRNaEfCsRqADsEa1jQ" value="1L"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVRtYhNaEfCsRqADsEa1jQ" name="contentPane" visibility="private" type="_ATjPERNaEfCsRqADsEa1jQ" association="_AWPWsRNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVRtZBNaEfCsRqADsEa1jQ" name="textFieldMensaje" type="_ATm5cRNaEfCsRqADsEa1jQ" isReadOnly="true" association="_AWPWtBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVSUchNaEfCsRqADsEa1jQ" name="controlador" visibility="private" type="_APq0oBNaEfCsRqADsEa1jQ" association="_AWPWtxNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVS7gRNaEfCsRqADsEa1jQ" name="botonAgregarContacto" visibility="private" type="_ATnggRNaEfCsRqADsEa1jQ" association="_AWP9wRNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVS7gxNaEfCsRqADsEa1jQ" name="botonNuevaConversacion" visibility="private" type="_ATnggRNaEfCsRqADsEa1jQ" association="_AWP9xBNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVTikRNaEfCsRqADsEa1jQ" name="botonEnviar" visibility="private" type="_ATnggRNaEfCsRqADsEa1jQ" association="_AWP9xxNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVTikxNaEfCsRqADsEa1jQ" name="listaConversacionesActivas" visibility="private" type="_AT_T8RNaEfCsRqADsEa1jQ" association="_AWQk0RNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVTilhNaEfCsRqADsEa1jQ" name="textAreaChat" visibility="private" type="_AUId4BNaEfCsRqADsEa1jQ" association="_AWQk1BNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVUwsRNaEfCsRqADsEa1jQ" name="textFieldNameContacto" visibility="private" type="_ATlrURNaEfCsRqADsEa1jQ" association="_AWRL4BNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUJE8BNaEfCsRqADsEa1jQ" client="_ARHmIBNaEfCsRqADsEa1jQ" supplier="_AQ6x0hNaEfCsRqADsEa1jQ" contract="_AQ6x0hNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUwI8BNaEfCsRqADsEa1jQ" client="_ARHmIBNaEfCsRqADsEa1jQ" supplier="_ATIYURNaEfCsRqADsEa1jQ" contract="_ATIYURNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUwwABNaEfCsRqADsEa1jQ" client="_ARHmIBNaEfCsRqADsEa1jQ" supplier="_ATqj0BNaEfCsRqADsEa1jQ" contract="_ATqj0BNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUwwARNaEfCsRqADsEa1jQ" client="_ARHmIBNaEfCsRqADsEa1jQ" supplier="_AUFakRNaEfCsRqADsEa1jQ" contract="_AUFakRNaEfCsRqADsEa1jQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV0f9BNaEfCsRqADsEa1jQ" name="VentanaPrincipal" specification="_AUJsABNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV0f9RNaEfCsRqADsEa1jQ" name="controlador" type="_APq0oBNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AV0f9hNaEfCsRqADsEa1jQ" type="_ARHmIBNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>this.controlador=controlador;&#xD;
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#xD;
+		setBounds(100, 100, 450, 300);&#xD;
+		contentPane = new JPanel();&#xD;
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));&#xD;
+&#xD;
+		setContentPane(contentPane);&#xD;
+		contentPane.setLayout(new GridLayout(1, 2, 0, 0));&#xD;
+		&#xD;
+		JPanel panel = new JPanel();&#xD;
+		contentPane.add(panel);&#xD;
+		panel.setLayout(new BorderLayout(0, 0));&#xD;
+		&#xD;
+		JPanel panel_1 = new JPanel();&#xD;
+		panel.add(panel_1, BorderLayout.SOUTH);&#xD;
+		panel_1.setLayout(new GridLayout(1, 2, 0, 0));&#xD;
+		&#xD;
+		this.botonAgregarContacto = new JButton(&quot;Agregar contacto&quot;);&#xD;
+		this.botonAgregarContacto.setActionCommand(&quot;AGREGAR CONTACTO&quot;);&#xD;
+		panel_1.add(this.botonAgregarContacto);&#xD;
+		&#xD;
+		this.botonNuevaConversacion = new JButton(&quot;Nueva conversacion&quot;);&#xD;
+		this.botonNuevaConversacion.setActionCommand(&quot;NUEVA CONVERSACIÓN&quot;);&#xD;
+		panel_1.add(this.botonNuevaConversacion);&#xD;
+		&#xD;
+		JScrollPane scrollPane_1 = new JScrollPane();&#xD;
+		panel.add(scrollPane_1, BorderLayout.CENTER);&#xD;
+		&#xD;
+		listaConversacionesActivas = new JList();&#xD;
+		listaConversacionesActivas.setModel(new AbstractListModel() {&#xD;
+			String[] values = new String[] {};&#xD;
+			public int getSize() {&#xD;
+				return values.length;&#xD;
+			}&#xD;
+			public Object getElementAt(int index) {&#xD;
+				return values[index];&#xD;
+			}&#xD;
+		});&#xD;
+		scrollPane_1.setViewportView(listaConversacionesActivas);&#xD;
+		this.listaConversacionesActivas.addListSelectionListener(e -> {&#xD;
+		    if (!e.getValueIsAdjusting()) {&#xD;
+		        UsuarioDTO seleccionado = listaConversacionesActivas.getSelectedValue();&#xD;
+		        if (seleccionado != null) {&#xD;
+		            controlador.contactoSeleccionadoDesdeLista(seleccionado);&#xD;
+		        }&#xD;
+		    }&#xD;
+		});&#xD;
+&#xD;
+		JPanel panel_2 = new JPanel();&#xD;
+		contentPane.add(panel_2);&#xD;
+		panel_2.setLayout(new BorderLayout(0, 0));&#xD;
+		&#xD;
+		textFieldNameContacto = new JLabel();&#xD;
+		textFieldNameContacto.setHorizontalAlignment(SwingConstants.CENTER);&#xD;
+		panel_2.add(textFieldNameContacto, BorderLayout.NORTH);&#xD;
+		&#xD;
+		JPanel panel_3 = new JPanel();&#xD;
+		panel_2.add(panel_3, BorderLayout.SOUTH);&#xD;
+		panel_3.setLayout(new GridLayout(1, 2, 0, 0));&#xD;
+		&#xD;
+		textFieldMensaje = new JTextField();&#xD;
+		this.textFieldMensaje.addKeyListener(this);&#xD;
+		this.textFieldMensaje.setToolTipText(&quot;Mensaje&quot;);&#xD;
+		panel_3.add(textFieldMensaje);&#xD;
+		textFieldMensaje.setColumns(10);&#xD;
+		&#xD;
+		this.botonEnviar = new JButton(&quot;Enviar&quot;);&#xD;
+		this.botonEnviar.setEnabled(false);&#xD;
+		this.botonEnviar.setActionCommand(&quot;ENVIAR&quot;);&#xD;
+		panel_3.add(this.botonEnviar);&#xD;
+		&#xD;
+		JScrollPane scrollPane = new JScrollPane();&#xD;
+		panel_2.add(scrollPane, BorderLayout.CENTER);&#xD;
+		&#xD;
+		textAreaChat = new JTextArea();&#xD;
+		textAreaChat.setWrapStyleWord(true);&#xD;
+		textAreaChat.setLineWrap(true);&#xD;
+		textAreaChat.setEditable(false);&#xD;
+		textAreaChat.setText(&quot;&quot;);&#xD;
+		scrollPane.setViewportView(textAreaChat);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV0f9xNaEfCsRqADsEa1jQ" name="setActionListener" specification="_AUx-IBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV0f-BNaEfCsRqADsEa1jQ" name="controlador" type="_ATIYURNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.botonAgregarContacto.addActionListener(controlador);&#xD;
+		this.botonNuevaConversacion.addActionListener(controlador);&#xD;
+		this.botonEnviar.addActionListener(controlador);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV0f-RNaEfCsRqADsEa1jQ" name="actualizarListaChats" specification="_AUzMQhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV0f-hNaEfCsRqADsEa1jQ" name="contactos" type="_ATKNgxNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>DefaultListModel&lt;UsuarioDTO> modelo = new DefaultListModel&lt;>();&#xD;
+	    for (UsuarioDTO u : contactos) {&#xD;
+	        modelo.addElement(u); &#xD;
+	    }&#xD;
+	    this.listaConversacionesActivas.setModel(modelo);&#xD;
+	    &#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1HABNaEfCsRqADsEa1jQ" name="hayConversaciones" specification="_ARJbUBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV1HARNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return listaConversacionesActivas.getModel().getSize() != 0;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1HAhNaEfCsRqADsEa1jQ" name="getContactoConversacionActual" specification="_ARKCYBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV1HAxNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>return this.listaConversacionesActivas.getSelectedValue();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1HBBNaEfCsRqADsEa1jQ" name="setTextFieldNameContacto" specification="_ARKpcBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV1HBRNaEfCsRqADsEa1jQ" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.textFieldNameContacto.setText(name);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1HBhNaEfCsRqADsEa1jQ" name="TitulonameUsuario" specification="_ARKpchNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV1HBxNaEfCsRqADsEa1jQ" name="nombre">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.setTitle(nombre);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1HCBNaEfCsRqADsEa1jQ" name="setDejarSeleccionadoContactoNuevaConversacion" specification="_AUKTExNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV1HCRNaEfCsRqADsEa1jQ" name="contacto" type="_AQVjABNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.listaConversacionesActivas.setSelectedValue(contacto, true);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1HChNaEfCsRqADsEa1jQ" name="agregarMensajeAchat" specification="_AUzzURNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV1HCxNaEfCsRqADsEa1jQ" name="contenido">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AV1HDBNaEfCsRqADsEa1jQ" name="fechayhora" type="_ATJmcRNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AV1HDRNaEfCsRqADsEa1jQ" name="emisor">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.textAreaChat.append(String.format(&quot;%s (%s): %s\n&quot;, emisor, fechayhora.format(DateTimeFormatter.ofPattern(&quot;dd/MM/yyyy HH:mm&quot;)), contenido));	&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1HDhNaEfCsRqADsEa1jQ" name="mostrarErrorEnvioMensaje" specification="_ARLQgBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV1HDxNaEfCsRqADsEa1jQ" name="error">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>JOptionPane.showMessageDialog(this, error, &quot;Error&quot;, JOptionPane.ERROR_MESSAGE);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1uEBNaEfCsRqADsEa1jQ" name="limpiarChat" specification="_ARL3kRNaEfCsRqADsEa1jQ">
+          <language>java</language>
+          <body>this.textAreaChat.setText(&quot;&quot;);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1uERNaEfCsRqADsEa1jQ" name="mouseClicked" specification="_AU1BcRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV1uEhNaEfCsRqADsEa1jQ" name="e" type="_AUEzgBNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.controlador.contactoSeleccionadoDesdeLista(getContactoConversacionActual());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1uExNaEfCsRqADsEa1jQ" name="keyReleased" specification="_AU5S4hNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV1uFBNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.botonEnviar.setEnabled(!(textFieldMensaje.getText().isEmpty()) &amp;&amp; (listaConversacionesActivas.getSelectedValue()!=null));&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV1uFRNaEfCsRqADsEa1jQ" name="limpiarBuffer" specification="_ARMeoBNaEfCsRqADsEa1jQ">
+          <language>java</language>
+          <body>this.textFieldMensaje.setText(&quot;&quot;);&#xD;
+		this.botonEnviar.setEnabled(false);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ARJbUBNaEfCsRqADsEa1jQ" name="hayConversaciones" method="_AV1HABNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ARJbURNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ARKCYBNaEfCsRqADsEa1jQ" name="getContactoConversacionActual" method="_AV1HAhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUKTEhNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ARKpcBNaEfCsRqADsEa1jQ" name="setTextFieldNameContacto" method="_AV1HBBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ARKpcRNaEfCsRqADsEa1jQ" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ARKpchNaEfCsRqADsEa1jQ" name="TitulonameUsuario" method="_AV1HBhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ARKpcxNaEfCsRqADsEa1jQ" name="nombre">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ARLQgBNaEfCsRqADsEa1jQ" name="mostrarErrorEnvioMensaje" method="_AV1HDhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ARL3kBNaEfCsRqADsEa1jQ" name="error">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ARL3kRNaEfCsRqADsEa1jQ" name="limpiarChat" method="_AV1uEBNaEfCsRqADsEa1jQ"/>
+        <ownedOperation xmi:id="_ARMeoBNaEfCsRqADsEa1jQ" name="limpiarBuffer" method="_AV1uFRNaEfCsRqADsEa1jQ"/>
+        <ownedOperation xmi:id="_AUJsABNaEfCsRqADsEa1jQ" name="VentanaPrincipal" method="_AV0f9BNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AUJsAhNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AUKTEBNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_AV6mkRNaEfCsRqADsEa1jQ">
+            <body>Launch the application.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_AUJsARNaEfCsRqADsEa1jQ" name="controlador" type="_APq0oBNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUKTERNaEfCsRqADsEa1jQ" type="_ARHmIBNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUKTExNaEfCsRqADsEa1jQ" name="setDejarSeleccionadoContactoNuevaConversacion" method="_AV1HCBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUKTFBNaEfCsRqADsEa1jQ" name="contacto" type="_AQVjABNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUx-IBNaEfCsRqADsEa1jQ" name="setActionListener" method="_AV0f9xNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUx-IRNaEfCsRqADsEa1jQ" name="controlador" type="_ATIYURNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUzMQhNaEfCsRqADsEa1jQ" name="actualizarListaChats" method="_AV0f-RNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUzMQxNaEfCsRqADsEa1jQ" name="contactos" type="_ATKNgxNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUzzURNaEfCsRqADsEa1jQ" name="agregarMensajeAchat" method="_AV1HChNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUzzUhNaEfCsRqADsEa1jQ" name="contenido">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AU0aYBNaEfCsRqADsEa1jQ" name="fechayhora" type="_ATJmcRNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AU0aYRNaEfCsRqADsEa1jQ" name="emisor">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU0aYhNaEfCsRqADsEa1jQ" name="actionPerformed">
+          <ownedParameter xmi:id="_AU0aYxNaEfCsRqADsEa1jQ" name="e" type="_ATHxQBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU1BcRNaEfCsRqADsEa1jQ" name="mouseClicked" method="_AV1uERNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AU1BchNaEfCsRqADsEa1jQ" name="e" type="_AUEzgBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU1ogxNaEfCsRqADsEa1jQ" name="mousePressed">
+          <ownedParameter xmi:id="_AU1ohBNaEfCsRqADsEa1jQ" name="e" type="_AUEzgBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU2PkxNaEfCsRqADsEa1jQ" name="mouseReleased">
+          <ownedParameter xmi:id="_AU2PlBNaEfCsRqADsEa1jQ" name="e" type="_AUEzgBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU22oxNaEfCsRqADsEa1jQ" name="mouseEntered">
+          <ownedParameter xmi:id="_AU22pBNaEfCsRqADsEa1jQ" name="e" type="_AUEzgBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU3dsxNaEfCsRqADsEa1jQ" name="mouseExited">
+          <ownedParameter xmi:id="_AU3dtBNaEfCsRqADsEa1jQ" name="e" type="_AUEzgBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU4EwxNaEfCsRqADsEa1jQ" name="keyTyped">
+          <ownedParameter xmi:id="_AU4ExBNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU4r0hNaEfCsRqADsEa1jQ" name="keyPressed">
+          <ownedParameter xmi:id="_AU4r0xNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU5S4hNaEfCsRqADsEa1jQ" name="keyReleased" method="_AV1uExNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AU5S4xNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ARSlQBNaEfCsRqADsEa1jQ" name="Ventanalogin">
+        <generalization xmi:id="_AU-ychNaEfCsRqADsEa1jQ" general="_ATioARNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVVXwBNaEfCsRqADsEa1jQ" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AVVXwRNaEfCsRqADsEa1jQ" value="1L"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_AVV-0BNaEfCsRqADsEa1jQ" name="contentPane" visibility="private" type="_ATjPERNaEfCsRqADsEa1jQ" association="_AWRL4xNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVV-0hNaEfCsRqADsEa1jQ" name="txtUsuario" visibility="private" type="_ATm5cRNaEfCsRqADsEa1jQ" association="_AWRL5hNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVWl4RNaEfCsRqADsEa1jQ" name="botonRegistrar" visibility="private" type="_ATnggRNaEfCsRqADsEa1jQ" association="_AWRL6RNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVWl4xNaEfCsRqADsEa1jQ" name="textFieldPuerto" visibility="private" type="_ATm5cRNaEfCsRqADsEa1jQ" association="_AWRy8RNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVWl5RNaEfCsRqADsEa1jQ" name="controlador" visibility="private" type="_APq0oBNaEfCsRqADsEa1jQ" association="_AWRy9BNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AURAwBNaEfCsRqADsEa1jQ" client="_ARSlQBNaEfCsRqADsEa1jQ" supplier="_AQ6x0hNaEfCsRqADsEa1jQ" contract="_AQ6x0hNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AU7IEBNaEfCsRqADsEa1jQ" client="_ARSlQBNaEfCsRqADsEa1jQ" supplier="_ATIYURNaEfCsRqADsEa1jQ" contract="_ATIYURNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AU7IERNaEfCsRqADsEa1jQ" client="_ARSlQBNaEfCsRqADsEa1jQ" supplier="_ATqj0BNaEfCsRqADsEa1jQ" contract="_ATqj0BNaEfCsRqADsEa1jQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV2VIBNaEfCsRqADsEa1jQ" name="Ventanalogin" specification="_AURn0BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV2VIRNaEfCsRqADsEa1jQ" name="controlador" type="_APq0oBNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AV2VIhNaEfCsRqADsEa1jQ" type="_ARSlQBNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>this.controlador=controlador;&#xD;
+		setTitle(&quot;Sistema de mensajería&quot;);&#xD;
+		setResizable(false);&#xD;
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);&#xD;
+		setBounds(100, 100, 308, 227);&#xD;
+		contentPane = new JPanel();&#xD;
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));&#xD;
+&#xD;
+		setContentPane(contentPane);&#xD;
+		contentPane.setLayout(new BorderLayout(0, 0));&#xD;
+		&#xD;
+		JPanel panel = new JPanel();&#xD;
+		contentPane.add(panel, BorderLayout.CENTER);&#xD;
+		panel.setLayout(new GridLayout(2, 2, 0, 0));&#xD;
+		&#xD;
+		JLabel lblNewLabel_1 = new JLabel(&quot;NickName:&quot;);&#xD;
+		panel.add(lblNewLabel_1);&#xD;
+		&#xD;
+		JPanel panel_2 = new JPanel();&#xD;
+		FlowLayout flowLayout = (FlowLayout) panel_2.getLayout();&#xD;
+		flowLayout.setVgap(25);&#xD;
+		flowLayout.setAlignment(FlowLayout.LEFT);&#xD;
+		panel.add(panel_2);&#xD;
+		&#xD;
+		txtUsuario = new JTextField();&#xD;
+		panel_2.add(txtUsuario);&#xD;
+		txtUsuario.setColumns(10);&#xD;
+		this.txtUsuario.addKeyListener(this);&#xD;
+		&#xD;
+		JLabel lblNewLabel = new JLabel(&quot;Puerto(1023&lt;P&lt;65536):&quot;);&#xD;
+		panel.add(lblNewLabel);&#xD;
+		&#xD;
+		JPanel panel_3 = new JPanel();&#xD;
+		FlowLayout flowLayout_1 = (FlowLayout) panel_3.getLayout();&#xD;
+		flowLayout_1.setVgap(25);&#xD;
+		flowLayout_1.setAlignment(FlowLayout.LEFT);&#xD;
+		panel.add(panel_3);&#xD;
+		&#xD;
+		this.textFieldPuerto = new JTextField();&#xD;
+		panel_3.add(this.textFieldPuerto);&#xD;
+		this.textFieldPuerto.setColumns(10);&#xD;
+		this.textFieldPuerto.addKeyListener(new KeyAdapter() {&#xD;
+         @Override&#xD;
+         public void keyTyped(KeyEvent e) {&#xD;
+             char c = e.getKeyChar();&#xD;
+             if (!Character.isDigit(c)) { // Si no es un número, se ignora el evento&#xD;
+                 e.consume();&#xD;
+             }&#xD;
+         }&#xD;
+			public void keyReleased(KeyEvent e) {&#xD;
+				botonRegistrar.setEnabled(!(getPuerto().isEmpty()));&#xD;
+			}&#xD;
+     });&#xD;
+		&#xD;
+		JPanel panel_1 = new JPanel();&#xD;
+		contentPane.add(panel_1, BorderLayout.SOUTH);&#xD;
+		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));&#xD;
+		&#xD;
+		this.botonRegistrar = new JButton(&quot;Registrar&quot;);&#xD;
+		this.botonRegistrar.setActionCommand(&quot;REGISTRAR&quot;);&#xD;
+		this.botonRegistrar.setToolTipText(&quot;Registrar&quot;);&#xD;
+		this.botonRegistrar.setEnabled(false);&#xD;
+		panel_1.add(this.botonRegistrar);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV2VIxNaEfCsRqADsEa1jQ" name="getUsuario" specification="_ARTzYBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV2VJBNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return txtUsuario.getText();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV2VJRNaEfCsRqADsEa1jQ" name="getPuerto" specification="_ARUacBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV2VJhNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return this.textFieldPuerto.getText();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV2VJxNaEfCsRqADsEa1jQ" name="keyReleased" specification="_AU89QxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV2VKBNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.botonRegistrar.setEnabled(!(this.getUsuario().isEmpty() || this.getPuerto().isEmpty()) &amp;&amp; (Integer.parseInt(this.getPuerto())>1023) &amp;&amp;(Integer.parseInt(this.getPuerto())&lt;65536));&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AV2VKRNaEfCsRqADsEa1jQ" name="setActionListener" specification="_AU-LYxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AV2VKhNaEfCsRqADsEa1jQ" name="controlador" type="_ATIYURNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.botonRegistrar.addActionListener(controlador);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_ARTzYBNaEfCsRqADsEa1jQ" name="getUsuario" method="_AV2VIxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ARTzYRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ARUacBNaEfCsRqADsEa1jQ" name="getPuerto" method="_AV2VJRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ARUacRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AURn0BNaEfCsRqADsEa1jQ" name="Ventanalogin" method="_AV2VIBNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_AURn0hNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_AURn0xNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedComment xmi:id="_AV6mkhNaEfCsRqADsEa1jQ">
+            <body>Launch the application.</body>
+          </ownedComment>
+          <ownedParameter xmi:id="_AURn0RNaEfCsRqADsEa1jQ" name="controlador" type="_APq0oBNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AURn1BNaEfCsRqADsEa1jQ" type="_ARSlQBNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU7vIBNaEfCsRqADsEa1jQ" name="keyTyped">
+          <ownedParameter xmi:id="_AU7vIRNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU8WMxNaEfCsRqADsEa1jQ" name="keyPressed">
+          <ownedParameter xmi:id="_AU8WNBNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU89QxNaEfCsRqADsEa1jQ" name="keyReleased" method="_AV2VJxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AU89RBNaEfCsRqADsEa1jQ" name="e" type="_ATpVsRNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU9kUxNaEfCsRqADsEa1jQ" name="actionPerformed">
+          <ownedParameter xmi:id="_AU9kVBNaEfCsRqADsEa1jQ" name="e" type="_ATHxQBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AU-LYxNaEfCsRqADsEa1jQ" name="setActionListener" method="_AV2VKRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AU-LZBNaEfCsRqADsEa1jQ" name="controlador" type="_ATIYURNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWLFQRNaEfCsRqADsEa1jQ" name="" memberEnd="_AWLFQhNaEfCsRqADsEa1jQ _AVM04hNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWLFQhNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWLFQRNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWLFRBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWLFRRNaEfCsRqADsEa1jQ _AVM05BNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWLFRRNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWLFRBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWLFRxNaEfCsRqADsEa1jQ" name="" memberEnd="_AWLFSBNaEfCsRqADsEa1jQ _AVNb8RNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWLFSBNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWLFRxNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWLFShNaEfCsRqADsEa1jQ" name="" memberEnd="_AWLFSxNaEfCsRqADsEa1jQ _AVNb8xNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWLFSxNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWLFShNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWLsURNaEfCsRqADsEa1jQ" name="" memberEnd="_AWLsUhNaEfCsRqADsEa1jQ _AVNb9RNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWLsUhNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWLsURNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWLsVBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWLsVRNaEfCsRqADsEa1jQ _AVNb9xNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWLsVRNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWLsVBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWLsVxNaEfCsRqADsEa1jQ" name="" memberEnd="_AWLsWBNaEfCsRqADsEa1jQ _AVODARNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWLsWBNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWLsVxNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWMTYRNaEfCsRqADsEa1jQ" name="" memberEnd="_AWMTYhNaEfCsRqADsEa1jQ _AVODAxNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWMTYhNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWMTYRNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWM6cRNaEfCsRqADsEa1jQ" name="" memberEnd="_AWM6chNaEfCsRqADsEa1jQ _AVODBRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWM6chNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWM6cRNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWM6dBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWM6dRNaEfCsRqADsEa1jQ _AVOqERNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWM6dRNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWM6dBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWM6dxNaEfCsRqADsEa1jQ" name="" memberEnd="_AWM6eBNaEfCsRqADsEa1jQ _AVOqExNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWM6eBNaEfCsRqADsEa1jQ" name="" type="_AQ7_8BNaEfCsRqADsEa1jQ" association="_AWM6dxNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWNhgRNaEfCsRqADsEa1jQ" name="" memberEnd="_AWNhghNaEfCsRqADsEa1jQ _AVPRIhNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWNhghNaEfCsRqADsEa1jQ" name="" type="_ARD7wBNaEfCsRqADsEa1jQ" association="_AWNhgRNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWNhhBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWNhhRNaEfCsRqADsEa1jQ _AVQfQRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWNhhRNaEfCsRqADsEa1jQ" name="" type="_ARD7wBNaEfCsRqADsEa1jQ" association="_AWNhhBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWNhhxNaEfCsRqADsEa1jQ" name="" memberEnd="_AWNhiBNaEfCsRqADsEa1jQ _AVQfQxNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWNhiBNaEfCsRqADsEa1jQ" name="" type="_ARD7wBNaEfCsRqADsEa1jQ" association="_AWNhhxNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWOvoBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWOvoRNaEfCsRqADsEa1jQ _AVQfRRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWOvoRNaEfCsRqADsEa1jQ" name="" type="_ARD7wBNaEfCsRqADsEa1jQ" association="_AWOvoBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWOvoxNaEfCsRqADsEa1jQ" name="" memberEnd="_AWOvpBNaEfCsRqADsEa1jQ _AVRGURNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWOvpBNaEfCsRqADsEa1jQ" name="" type="_ARD7wBNaEfCsRqADsEa1jQ" association="_AWOvoxNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWOvphNaEfCsRqADsEa1jQ" name="" memberEnd="_AWOvpxNaEfCsRqADsEa1jQ _AVRGVBNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWOvpxNaEfCsRqADsEa1jQ" name="" type="_ARD7wBNaEfCsRqADsEa1jQ" association="_AWOvphNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWPWsRNaEfCsRqADsEa1jQ" name="" memberEnd="_AWPWshNaEfCsRqADsEa1jQ _AVRtYhNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWPWshNaEfCsRqADsEa1jQ" name="" type="_ARHmIBNaEfCsRqADsEa1jQ" association="_AWPWsRNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWPWtBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWPWtRNaEfCsRqADsEa1jQ _AVRtZBNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWPWtRNaEfCsRqADsEa1jQ" name="" type="_ARHmIBNaEfCsRqADsEa1jQ" association="_AWPWtBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWPWtxNaEfCsRqADsEa1jQ" name="" memberEnd="_AWPWuBNaEfCsRqADsEa1jQ _AVSUchNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWPWuBNaEfCsRqADsEa1jQ" name="" type="_ARHmIBNaEfCsRqADsEa1jQ" association="_AWPWtxNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWP9wRNaEfCsRqADsEa1jQ" name="" memberEnd="_AWP9whNaEfCsRqADsEa1jQ _AVS7gRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWP9whNaEfCsRqADsEa1jQ" name="" type="_ARHmIBNaEfCsRqADsEa1jQ" association="_AWP9wRNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWP9xBNaEfCsRqADsEa1jQ" name="" memberEnd="_AWP9xRNaEfCsRqADsEa1jQ _AVS7gxNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWP9xRNaEfCsRqADsEa1jQ" name="" type="_ARHmIBNaEfCsRqADsEa1jQ" association="_AWP9xBNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWP9xxNaEfCsRqADsEa1jQ" name="" memberEnd="_AWP9yBNaEfCsRqADsEa1jQ _AVTikRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWP9yBNaEfCsRqADsEa1jQ" name="" type="_ARHmIBNaEfCsRqADsEa1jQ" association="_AWP9xxNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWQk0RNaEfCsRqADsEa1jQ" name="" memberEnd="_AWQk0hNaEfCsRqADsEa1jQ _AVTikxNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWQk0hNaEfCsRqADsEa1jQ" name="" type="_ARHmIBNaEfCsRqADsEa1jQ" association="_AWQk0RNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWQk1BNaEfCsRqADsEa1jQ" name="" memberEnd="_AWQk1RNaEfCsRqADsEa1jQ _AVTilhNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWQk1RNaEfCsRqADsEa1jQ" name="" type="_ARHmIBNaEfCsRqADsEa1jQ" association="_AWQk1BNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWRL4BNaEfCsRqADsEa1jQ" name="" memberEnd="_AWRL4RNaEfCsRqADsEa1jQ _AVUwsRNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWRL4RNaEfCsRqADsEa1jQ" name="" type="_ARHmIBNaEfCsRqADsEa1jQ" association="_AWRL4BNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWRL4xNaEfCsRqADsEa1jQ" name="" memberEnd="_AWRL5BNaEfCsRqADsEa1jQ _AVV-0BNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWRL5BNaEfCsRqADsEa1jQ" name="" type="_ARSlQBNaEfCsRqADsEa1jQ" association="_AWRL4xNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWRL5hNaEfCsRqADsEa1jQ" name="" memberEnd="_AWRL5xNaEfCsRqADsEa1jQ _AVV-0hNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWRL5xNaEfCsRqADsEa1jQ" name="" type="_ARSlQBNaEfCsRqADsEa1jQ" association="_AWRL5hNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWRL6RNaEfCsRqADsEa1jQ" name="" memberEnd="_AWRL6hNaEfCsRqADsEa1jQ _AVWl4RNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWRL6hNaEfCsRqADsEa1jQ" name="" type="_ARSlQBNaEfCsRqADsEa1jQ" association="_AWRL6RNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWRy8RNaEfCsRqADsEa1jQ" name="" memberEnd="_AWRy8hNaEfCsRqADsEa1jQ _AVWl4xNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWRy8hNaEfCsRqADsEa1jQ" name="" type="_ARSlQBNaEfCsRqADsEa1jQ" association="_AWRy8RNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWRy9BNaEfCsRqADsEa1jQ" name="" memberEnd="_AWRy9RNaEfCsRqADsEa1jQ _AVWl5RNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWRy9RNaEfCsRqADsEa1jQ" name="" type="_ARSlQBNaEfCsRqADsEa1jQ" association="_AWRy9BNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AOXNEBNaEfCsRqADsEa1jQ" name="controlador">
+      <packagedElement xmi:type="uml:Class" xmi:id="_APq0oBNaEfCsRqADsEa1jQ" name="Controlador">
+        <ownedAttribute xmi:id="_AVB1wBNaEfCsRqADsEa1jQ" name="ventana" visibility="protected" type="_AQ6x0hNaEfCsRqADsEa1jQ" association="_AWGz0BNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVDD4BNaEfCsRqADsEa1jQ" name="ventana2" visibility="protected" type="_AQ6x0hNaEfCsRqADsEa1jQ" association="_AWHa4RNaEfCsRqADsEa1jQ"/>
+        <ownedAttribute xmi:id="_AVDq8RNaEfCsRqADsEa1jQ" name="sistemaMensajeria" visibility="protected" type="_AQn24BNaEfCsRqADsEa1jQ" association="_AWHa5BNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUbY0BNaEfCsRqADsEa1jQ" client="_APq0oBNaEfCsRqADsEa1jQ" supplier="_ATIYURNaEfCsRqADsEa1jQ" contract="_ATIYURNaEfCsRqADsEa1jQ"/>
+        <interfaceRealization xmi:id="_AUb_4BNaEfCsRqADsEa1jQ" client="_APq0oBNaEfCsRqADsEa1jQ" supplier="_ATLboRNaEfCsRqADsEa1jQ" contract="_ATLboRNaEfCsRqADsEa1jQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVkoUBNaEfCsRqADsEa1jQ" name="Controlador" specification="_ATMpwBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVlPYBNaEfCsRqADsEa1jQ" name="sistemaMensajeria" type="_AQn24BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVlPYRNaEfCsRqADsEa1jQ" type="_APq0oBNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>this.ventana = new Ventanalogin(this);&#xD;
+		ventana.setVisible(true);&#xD;
+		this.sistemaMensajeria=sistemaMensajeria;&#xD;
+		this.ventana.setActionListener(this);&#xD;
+		sistemaMensajeria.addObserver(this);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVrWABNaEfCsRqADsEa1jQ" name="getVentana" specification="_AQAL0BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVrWARNaEfCsRqADsEa1jQ" type="_AQ6x0hNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>return ventana;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVr9EBNaEfCsRqADsEa1jQ" name="getSistemaMensajeria" specification="_AQD2MBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVr9ERNaEfCsRqADsEa1jQ" type="_AQn24BNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>return sistemaMensajeria;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVr9EhNaEfCsRqADsEa1jQ" name="setVentana" specification="_ATNQ0hNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVr9ExNaEfCsRqADsEa1jQ" name="ventana" type="_AQ6x0hNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.ventana = ventana;&#xD;
+		this.ventana.setActionListener(this);&#xD;
+		this.ventana.setVisible(true);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVr9FBNaEfCsRqADsEa1jQ" name="setUser" specification="_AQFEUBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVr9FRNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVr9FhNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>sistemaMensajeria.setUsuario(nickName,puerto);&#xD;
+		this.ventana.setVisible(false);&#xD;
+		this.setVentana(new VentanaPrincipal(this));&#xD;
+		this.ventana.setVisible(true);&#xD;
+		this.ventana.setActionListener(this);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVr9FxNaEfCsRqADsEa1jQ" name="getNickNamePuerto" specification="_AQGScBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVr9GBNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return &quot;Nickname:&quot;+sistemaMensajeria.getnickName()+&quot;\nPuerto:&quot;+sistemaMensajeria.getPuerto();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVr9GRNaEfCsRqADsEa1jQ" name="getAgenda" specification="_AQGSchNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVr9GhNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" isOrdered="true" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AVr9GxNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>List&lt;UsuarioDTO> lista = new ArrayList&lt;UsuarioDTO>();&#xD;
+	    PriorityQueue&lt;Usuario> copia = new PriorityQueue&lt;>(sistemaMensajeria.getAgenda());&#xD;
+	    Usuario user;&#xD;
+	    while (!copia.isEmpty()) {&#xD;
+	    	 user = copia.poll();&#xD;
+	         lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto(),user.getIp()));&#xD;
+	    }&#xD;
+&#xD;
+	    return lista;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVtLMBNaEfCsRqADsEa1jQ" name="getListaConversaciones" specification="_AQHgkBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVtLMRNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" isOrdered="true" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AVtLMhNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>List&lt;UsuarioDTO> lista = new ArrayList&lt;UsuarioDTO>();&#xD;
+	    List&lt;Usuario> copia = new ArrayList&lt;>(sistemaMensajeria.getListaConversaciones());&#xD;
+	    for (Usuario user : copia) {&#xD;
+	        lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto(),user.getIp()));&#xD;
+	    }&#xD;
+&#xD;
+	    return lista;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVtLMxNaEfCsRqADsEa1jQ" name="getVentana2" specification="_AQIHoBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVtLNBNaEfCsRqADsEa1jQ" type="_AQ6x0hNaEfCsRqADsEa1jQ" direction="return"/>
+          <language>java</language>
+          <body>return ventana2;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVtLNRNaEfCsRqADsEa1jQ" name="setVentana2" specification="_ATNQ1RNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVtLNhNaEfCsRqADsEa1jQ" name="ventana2" type="_AQ6x0hNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>this.ventana2 = ventana2;&#xD;
+		this.ventana2.setActionListener(this);&#xD;
+		this.ventana2.setVisible(true);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVtLNxNaEfCsRqADsEa1jQ" name="agregaContacto" specification="_AQIHoRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVtLOBNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVtLORNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVtLOhNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.sistemaMensajeria.agregaContacto(nickName,ip,puerto);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVtyQBNaEfCsRqADsEa1jQ" name="cargaChat" specification="_AQIusxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVtyQRNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVtyQhNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>for (MensajeDTO msg : this.sistemaMensajeria.getChat(puerto,ip)) {&#xD;
+		        if (ventana instanceof VentanaPrincipal) {&#xD;
+		            ((VentanaPrincipal) ventana).agregarMensajeAchat(msg.getContenido(), msg.getFechayhora(), msg.getEmisor().getNickName());&#xD;
+		        }&#xD;
+		    }&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVtyQxNaEfCsRqADsEa1jQ" name="actualizaListaConversacion" specification="_AQJVwhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVtyRBNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AVtyRRNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>this.sistemaMensajeria.setContactoActual(puerto,ip);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVtyRhNaEfCsRqADsEa1jQ" name="actionPerformed" specification="_AUcm8BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVtyRxNaEfCsRqADsEa1jQ" name="e" type="_ATHxQBNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>int puerto;&#xD;
+		switch (e.getActionCommand()) {&#xD;
+		case &quot;REGISTRAR&quot;:&#xD;
+			&#xD;
+			if (this.ventana instanceof Ventanalogin) {&#xD;
+				Ventanalogin ventanalogin = (Ventanalogin) this.ventana;&#xD;
+				puerto=Integer.parseInt(ventanalogin.getPuerto());&#xD;
+				setUser(ventanalogin.getUsuario(),puerto);&#xD;
+				this.sistemaMensajeria.iniciarServidor(puerto);&#xD;
+				this.ventana.setVisible(false);&#xD;
+				this.setVentana(new VentanaPrincipal(this));&#xD;
+				((VentanaPrincipal) ventana).TitulonameUsuario(ventanalogin.getUsuario());&#xD;
+			}&#xD;
+			&#xD;
+			break;&#xD;
+		case &quot;AGREGAR CONTACTO&quot;:&#xD;
+			this.setVentana2(new VentanaAgregarContacto(this));&#xD;
+			break;&#xD;
+		case &quot;NUEVA CONVERSACIÓN&quot;:&#xD;
+			this.setVentana2(new VentanaContactos(this));&#xD;
+			break;&#xD;
+		case &quot;ENVIAR&quot;:&#xD;
+			if (ventana instanceof VentanaPrincipal) {&#xD;
+				String contenidoMensaje;&#xD;
+	&#xD;
+				contenidoMensaje=((VentanaPrincipal) ventana).getTextFieldMensaje();&#xD;
+				UsuarioDTO user=((VentanaPrincipal) ventana).getContactoConversacionActual();&#xD;
+				this.sistemaMensajeria.enviarMensaje(user, contenidoMensaje);&#xD;
+				&#xD;
+				&#xD;
+			}&#xD;
+			break;&#xD;
+		case &quot;INICIAR CONVERSACIÓN&quot;:&#xD;
+			if (this.ventana2 instanceof VentanaContactos) {&#xD;
+		        VentanaContactos ventanaContactos = (VentanaContactos) this.ventana2;&#xD;
+		        &#xD;
+		        UsuarioDTO contacto=ventanaContactos.getUsuario();&#xD;
+		        this.cargaChat(contacto.getPuerto(),contacto.getIp());&#xD;
+		        this.actualizaListaConversacion(contacto.getPuerto(),contacto.getIp());&#xD;
+		        // ACTUALIZA la lista en la ventana principal&#xD;
+		        if (ventana instanceof VentanaPrincipal) { 	&#xD;
+		            ((VentanaPrincipal) ventana).actualizarListaChats(this.getListaConversaciones());&#xD;
+		            //pone nombre de user seleccionado en parte de chat&#xD;
+		            &#xD;
+		            ((VentanaPrincipal)ventana).setTextFieldNameContacto(contacto.getNombre());&#xD;
+		            ((VentanaPrincipal)ventana).setDejarSeleccionadoContactoNuevaConversacion(contacto);;&#xD;
+		        }&#xD;
+&#xD;
+		        this.ventana2.dispose();&#xD;
+		    }&#xD;
+			break;&#xD;
+		case &quot;AGREGAR&quot;:&#xD;
+			if (this.ventana2 instanceof VentanaAgregarContacto) {&#xD;
+			    VentanaAgregarContacto ventanaAgregar = (VentanaAgregarContacto) this.ventana2;&#xD;
+			    String nick = ventanaAgregar.getNickname();&#xD;
+			    String ip = ventanaAgregar.getIp();&#xD;
+			    puerto = Integer.parseInt(ventanaAgregar.getPuerto());&#xD;
+			    this.agregaContacto(nick, ip, puerto);&#xD;
+			    ((VentanaAgregarContacto) ventana2).mostrarConfirmacionContactoAgregado();&#xD;
+			    ventana2.dispose(); // cerrar la ventana luego de agregar&#xD;
+			    &#xD;
+&#xD;
+			}&#xD;
+			break;&#xD;
+		default:&#xD;
+			break;&#xD;
+		}&#xD;
+		&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVtySBNaEfCsRqADsEa1jQ" name="contactoSeleccionadoDesdeLista" specification="_ATN34BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVtySRNaEfCsRqADsEa1jQ" name="contacto" type="_AQVjABNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>if (ventana instanceof VentanaPrincipal) {&#xD;
+	    	VentanaPrincipal vp = (VentanaPrincipal) ventana;&#xD;
+	        vp.setTextFieldNameContacto(contacto.getNombre());&#xD;
+	        vp.limpiarChat(); &#xD;
+	        this.cargaChat(contacto.getPuerto(), contacto.getIp()); // Mostrás historial&#xD;
+	    }&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVtyShNaEfCsRqADsEa1jQ" name="update" specification="_AUecIBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVtySxNaEfCsRqADsEa1jQ" name="o" type="_ATK0kRNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AVtyTBNaEfCsRqADsEa1jQ" name="arg" type="_AUd1ERNaEfCsRqADsEa1jQ"/>
+          <language>java</language>
+          <body>if (arg instanceof Mensaje ) {&#xD;
+			 	Mensaje mensaje = (Mensaje) arg;&#xD;
+             if (mensaje.getEmisor().equals(this.sistemaMensajeria.getUsuario()))&#xD;
+             {&#xD;
+             	((VentanaPrincipal) ventana).agregarMensajeAchat(mensaje.getContenido(),LocalDateTime.now(),this.sistemaMensajeria.getUsuario().getNickName());&#xD;
+ 				((VentanaPrincipal) ventana).limpiarBuffer();&#xD;
+             }&#xD;
+             else&#xD;
+             {&#xD;
+	            if (ventana instanceof VentanaPrincipal) {&#xD;
+	            	VentanaPrincipal vp = (VentanaPrincipal) ventana;&#xD;
+	            	//chequeo si soy receptor&#xD;
+	            	if(!(mensaje.getEmisor().getIp().equals(this.sistemaMensajeria.getUsuario().getIp()) &amp;&amp; (mensaje.getEmisor().getPuerto()==this.sistemaMensajeria.getUsuario().getPuerto()))) {&#xD;
+	            		//this.sistemaMensajeria.getUsuario().recibirMensaje(mensaje);&#xD;
+	            		//Si emisor es el contacto con el que estoy hablando muestra en pantalla	&#xD;
+	            		if((vp.hayConversaciones()) &amp;&amp; (!(vp.getContactoConversacionActual()==null)) &amp;&amp; mensaje.getEmisor().getIp().equals(vp.getContactoConversacionActual().getIp())&amp;&amp; (mensaje.getEmisor().getPuerto()==vp.getContactoConversacionActual().getPuerto()) ) {&#xD;
+	            			vp.agregarMensajeAchat(mensaje.getContenido(),mensaje.getFechayhora(),mensaje.getEmisor().getNickName());&#xD;
+	            			vp.limpiarChat(); &#xD;
+         		        this.cargaChat(mensaje.getEmisor().getPuerto(), mensaje.getEmisor().getIp()); // Mostrás historial&#xD;
+&#xD;
+	            		}//notifica llega cuando no hay conversaciones o no es contacto actual&#xD;
+	            		else {&#xD;
+	            			vp.actualizarListaChats(this.getListaConversaciones());&#xD;
+	            			&#xD;
+	            		} &#xD;
+	            	}&#xD;
+	        &#xD;
+	            }&#xD;
+             }&#xD;
+	            &#xD;
+	     }&#xD;
+		 else&#xD;
+			 if (arg instanceof IOException) {&#xD;
+				 String error = (String) arg.toString();&#xD;
+				 ((VentanaPrincipal) ventana).mostrarErrorEnvioMensaje(error);&#xD;
+			 }&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_AQAL0BNaEfCsRqADsEa1jQ" name="getVentana" method="_AVrWABNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATNQ0BNaEfCsRqADsEa1jQ" type="_AQ6x0hNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQD2MBNaEfCsRqADsEa1jQ" name="getSistemaMensajeria" method="_AVr9EBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATNQ0RNaEfCsRqADsEa1jQ" type="_AQn24BNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQFEUBNaEfCsRqADsEa1jQ" name="setUser" method="_AVr9FBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQFEURNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQFrYBNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQGScBNaEfCsRqADsEa1jQ" name="getNickNamePuerto" method="_AVr9FxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQGScRNaEfCsRqADsEa1jQ" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQGSchNaEfCsRqADsEa1jQ" name="getAgenda" method="_AVr9GRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQG5gBNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" isOrdered="true" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AQG5gRNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQHgkBNaEfCsRqADsEa1jQ" name="getListaConversaciones" method="_AVtLMBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQHgkRNaEfCsRqADsEa1jQ" type="_AQVjABNaEfCsRqADsEa1jQ" isOrdered="true" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AQHgkhNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQIHoBNaEfCsRqADsEa1jQ" name="getVentana2" method="_AVtLMxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATNQ1BNaEfCsRqADsEa1jQ" type="_AQ6x0hNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQIHoRNaEfCsRqADsEa1jQ" name="agregaContacto" method="_AVtLNxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQIusBNaEfCsRqADsEa1jQ" name="nickName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQIusRNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQIushNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQIusxNaEfCsRqADsEa1jQ" name="cargaChat" method="_AVtyQBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQJVwBNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQJVwRNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AQJVwhNaEfCsRqADsEa1jQ" name="actualizaListaConversacion" method="_AVtyQxNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQJVwxNaEfCsRqADsEa1jQ" name="puerto">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_AQJ80BNaEfCsRqADsEa1jQ" name="ip">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATMpwBNaEfCsRqADsEa1jQ" name="Controlador" method="_AVkoUBNaEfCsRqADsEa1jQ">
+          <eAnnotations xmi:id="_ATMpwhNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_ATMpwxNaEfCsRqADsEa1jQ" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_ATMpwRNaEfCsRqADsEa1jQ" name="sistemaMensajeria" type="_AQn24BNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_ATMpxBNaEfCsRqADsEa1jQ" type="_APq0oBNaEfCsRqADsEa1jQ" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATNQ0hNaEfCsRqADsEa1jQ" name="setVentana" method="_AVr9EhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATNQ0xNaEfCsRqADsEa1jQ" name="ventana" type="_AQ6x0hNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATNQ1RNaEfCsRqADsEa1jQ" name="setVentana2" method="_AVtLNRNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATNQ1hNaEfCsRqADsEa1jQ" name="ventana2" type="_AQ6x0hNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_ATN34BNaEfCsRqADsEa1jQ" name="contactoSeleccionadoDesdeLista" method="_AVtySBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_ATN34RNaEfCsRqADsEa1jQ" name="contacto" type="_AQVjABNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUcm8BNaEfCsRqADsEa1jQ" name="actionPerformed" method="_AVtyRhNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUcm8RNaEfCsRqADsEa1jQ" name="e" type="_ATHxQBNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_AUecIBNaEfCsRqADsEa1jQ" name="update" method="_AVtyShNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AUecIRNaEfCsRqADsEa1jQ" name="o" type="_ATK0kRNaEfCsRqADsEa1jQ"/>
+          <ownedParameter xmi:id="_AUecIhNaEfCsRqADsEa1jQ" name="arg" type="_AUd1ERNaEfCsRqADsEa1jQ"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWGz0BNaEfCsRqADsEa1jQ" name="" memberEnd="_AWGz0RNaEfCsRqADsEa1jQ _AVB1wBNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWGz0RNaEfCsRqADsEa1jQ" name="" type="_APq0oBNaEfCsRqADsEa1jQ" association="_AWGz0BNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWHa4RNaEfCsRqADsEa1jQ" name="" memberEnd="_AWHa4hNaEfCsRqADsEa1jQ _AVDD4BNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWHa4hNaEfCsRqADsEa1jQ" name="" type="_APq0oBNaEfCsRqADsEa1jQ" association="_AWHa4RNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_AWHa5BNaEfCsRqADsEa1jQ" name="" memberEnd="_AWHa5RNaEfCsRqADsEa1jQ _AVDq8RNaEfCsRqADsEa1jQ">
+        <ownedEnd xmi:id="_AWHa5RNaEfCsRqADsEa1jQ" name="" type="_APq0oBNaEfCsRqADsEa1jQ" association="_AWHa5BNaEfCsRqADsEa1jQ"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AOrWIBNaEfCsRqADsEa1jQ" name="util">
+      <packagedElement xmi:type="uml:Class" xmi:id="_AQ6x0RNaEfCsRqADsEa1jQ" name="Util">
+        <ownedAttribute xmi:id="_AVMN0BNaEfCsRqADsEa1jQ" name="IPLOCAL" isLeaf="true" isStatic="true" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_AVMN0RNaEfCsRqADsEa1jQ" value="&quot;localhost&quot;"/>
+        </ownedAttribute>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AOxcwBNaEfCsRqADsEa1jQ" name="sistemaMensajeria">
+      <packagedElement xmi:type="uml:Class" xmi:id="_AQ5jsBNaEfCsRqADsEa1jQ" name="Main">
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_AVzR0BNaEfCsRqADsEa1jQ" name="main" specification="_AQ6KwBNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AVzR0RNaEfCsRqADsEa1jQ" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AVzR0hNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>SistemaMensajeria sMensajeria=SistemaMensajeria.get_Instancia();&#xD;
+		Controlador controlador=new Controlador(sMensajeria);&#xD;
+			&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_AQ6KwBNaEfCsRqADsEa1jQ" name="main" isStatic="true" method="_AVzR0BNaEfCsRqADsEa1jQ">
+          <ownedParameter xmi:id="_AQ6KwRNaEfCsRqADsEa1jQ" name="args">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AQ6x0BNaEfCsRqADsEa1jQ" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AOyq4BNaEfCsRqADsEa1jQ" name="javax">
+      <packagedElement xmi:type="uml:Package" xmi:id="_AOzR8BNaEfCsRqADsEa1jQ" name="swing">
+        <packagedElement xmi:type="uml:Package" xmi:id="_AOzR8RNaEfCsRqADsEa1jQ" name="border">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ATj2IRNaEfCsRqADsEa1jQ" name="EmptyBorder"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATioARNaEfCsRqADsEa1jQ" name="JFrame"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATjPERNaEfCsRqADsEa1jQ" name="JPanel"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATlrURNaEfCsRqADsEa1jQ" name="JLabel"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATmSYRNaEfCsRqADsEa1jQ" name="JOptionPane"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATm5cRNaEfCsRqADsEa1jQ" name="JTextField"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ATnggRNaEfCsRqADsEa1jQ" name="JButton"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ATrx8RNaEfCsRqADsEa1jQ" name="SwingConstants"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AT_T8RNaEfCsRqADsEa1jQ" name="JList"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AT_7ARNaEfCsRqADsEa1jQ" name="AbstractListModel"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AUAiERNaEfCsRqADsEa1jQ" name="DefaultListModel"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AUBJIRNaEfCsRqADsEa1jQ" name="JScrollPane"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AUGBoRNaEfCsRqADsEa1jQ" name="JSplitPane"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_AUGosRNaEfCsRqADsEa1jQ" name="ScrollPaneConstants"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_AUHPwRNaEfCsRqADsEa1jQ" name="ListModel"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_AUId4BNaEfCsRqADsEa1jQ" name="JTextArea"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_APrbsBNaEfCsRqADsEa1jQ">
+      <eAnnotations xmi:id="_APxiUBNaEfCsRqADsEa1jQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AQbCkBNaEfCsRqADsEa1jQ" base_Element="_AQX_QBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AQgiIBNaEfCsRqADsEa1jQ" base_Element="_AQX_QBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AQhJMBNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AQiXURNaEfCsRqADsEa1jQ" base_Element="_AQhwQBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AQiXUhNaEfCsRqADsEa1jQ" base_Element="_AQhwQBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AQi-YBNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AQmBsRNaEfCsRqADsEa1jQ" base_Element="_AQlaoBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AQmowBNaEfCsRqADsEa1jQ" base_Element="_AQlaoBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AQmowRNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AQpsEhNaEfCsRqADsEa1jQ" base_Element="_AQpFABNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Generics xmi:id="_AQrhQRNaEfCsRqADsEa1jQ" genericsValue="Usuario" base_Element="_AQrhQBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Generics xmi:id="_AQtWcBNaEfCsRqADsEa1jQ" genericsValue="MensajeDTO" base_Element="_AQsvYBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Generics xmi:id="_AQt9gBNaEfCsRqADsEa1jQ" genericsValue="Mensaje" base_Element="_AQtWcRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AQ0EIBNaEfCsRqADsEa1jQ" base_Element="_AQzdFBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AQ0EIRNaEfCsRqADsEa1jQ" base_Element="_AQzdFBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AQ0EIhNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AQ0rMhNaEfCsRqADsEa1jQ" base_Element="_AQ0rMBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AQ0rMxNaEfCsRqADsEa1jQ" base_Element="_AQ0rMBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AQ0rNBNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Generics xmi:id="_AQ1SQBNaEfCsRqADsEa1jQ" genericsValue="MensajeDTO" base_Element="_AQ0rNRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATIYUBNaEfCsRqADsEa1jQ" base_Element="_ATHxQBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATI_YBNaEfCsRqADsEa1jQ" base_Element="_ATIYURNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATJmcBNaEfCsRqADsEa1jQ" base_Element="_ATI_YRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATKNgBNaEfCsRqADsEa1jQ" base_Element="_ATJmcRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATKNghNaEfCsRqADsEa1jQ" base_Element="_ATKNgRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATK0kBNaEfCsRqADsEa1jQ" base_Element="_ATKNgxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATLboBNaEfCsRqADsEa1jQ" base_Element="_ATK0kRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATLbohNaEfCsRqADsEa1jQ" base_Element="_ATLboRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATMCsRNaEfCsRqADsEa1jQ" base_Element="_ATMCsBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATPtEBNaEfCsRqADsEa1jQ" base_Element="_ATPGABNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATSJUBNaEfCsRqADsEa1jQ" base_Element="_ATQ7MBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATT-gBNaEfCsRqADsEa1jQ" base_Element="_ATTXcBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATWawBNaEfCsRqADsEa1jQ" base_Element="_ATVzsBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATXB0BNaEfCsRqADsEa1jQ" base_Element="_ATWawRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATXo4BNaEfCsRqADsEa1jQ" base_Element="_ATXB0RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATY3ABNaEfCsRqADsEa1jQ" base_Element="_ATYP8BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATZeEBNaEfCsRqADsEa1jQ" base_Element="_ATY3ARNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATaFIBNaEfCsRqADsEa1jQ" base_Element="_ATZeERNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATasMBNaEfCsRqADsEa1jQ" base_Element="_ATaFIRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATchYRNaEfCsRqADsEa1jQ" base_Element="_ATchYBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATdvgBNaEfCsRqADsEa1jQ" base_Element="_ATchYhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATioABNaEfCsRqADsEa1jQ" base_Element="_ATiA8BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATjPEBNaEfCsRqADsEa1jQ" base_Element="_ATioARNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATj2IBNaEfCsRqADsEa1jQ" base_Element="_ATjPERNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATkdMBNaEfCsRqADsEa1jQ" base_Element="_ATj2IRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATlrUBNaEfCsRqADsEa1jQ" base_Element="_ATlEQBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATmSYBNaEfCsRqADsEa1jQ" base_Element="_ATlrURNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATm5cBNaEfCsRqADsEa1jQ" base_Element="_ATmSYRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATnggBNaEfCsRqADsEa1jQ" base_Element="_ATm5cRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AToHkBNaEfCsRqADsEa1jQ" base_Element="_ATnggRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATpVsBNaEfCsRqADsEa1jQ" base_Element="_AToHkRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATp8wBNaEfCsRqADsEa1jQ" base_Element="_ATpVsRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATrK4BNaEfCsRqADsEa1jQ" base_Element="_ATqj0BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATrx8BNaEfCsRqADsEa1jQ" base_Element="_ATrK4RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_ATrx8hNaEfCsRqADsEa1jQ" base_Element="_ATrx8RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AT_T8BNaEfCsRqADsEa1jQ" base_Element="_AT-F0BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AT_7ABNaEfCsRqADsEa1jQ" base_Element="_AT_T8RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AUAiEBNaEfCsRqADsEa1jQ" base_Element="_AT_7ARNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AUBJIBNaEfCsRqADsEa1jQ" base_Element="_AUAiERNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AUBJIhNaEfCsRqADsEa1jQ" base_Element="_AUBJIRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AUFakBNaEfCsRqADsEa1jQ" base_Element="_AUEzgBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AUGBoBNaEfCsRqADsEa1jQ" base_Element="_AUFakRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AUGosBNaEfCsRqADsEa1jQ" base_Element="_AUGBoRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AUHPwBNaEfCsRqADsEa1jQ" base_Element="_AUGosRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AUHPwhNaEfCsRqADsEa1jQ" base_Element="_AUHPwRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AUId4RNaEfCsRqADsEa1jQ" base_Element="_AUId4BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUdOABNaEfCsRqADsEa1jQ" base_Element="_AUcm8BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUdOARNaEfCsRqADsEa1jQ" base_Element="_AUcm8BNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUdOAhNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_AUd1EhNaEfCsRqADsEa1jQ" base_Element="_AUd1ERNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUecIxNaEfCsRqADsEa1jQ" base_Element="_AUecIBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUfDMBNaEfCsRqADsEa1jQ" base_Element="_AUecIBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUfDMRNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUhfcBNaEfCsRqADsEa1jQ" base_Element="_AUg4YRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUhfcRNaEfCsRqADsEa1jQ" base_Element="_AUg4YRNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUhfchNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUlw4RNaEfCsRqADsEa1jQ" base_Element="_AUlJ0BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUlw4hNaEfCsRqADsEa1jQ" base_Element="_AUlJ0BNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUlw4xNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUoNIhNaEfCsRqADsEa1jQ" base_Element="_AUoNIBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUo0MBNaEfCsRqADsEa1jQ" base_Element="_AUoNIBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUo0MRNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUo0NBNaEfCsRqADsEa1jQ" base_Element="_AUo0MhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUpbQBNaEfCsRqADsEa1jQ" base_Element="_AUo0MhNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUpbQRNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUpbRBNaEfCsRqADsEa1jQ" base_Element="_AUpbQhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUqCUBNaEfCsRqADsEa1jQ" base_Element="_AUpbQhNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUqCURNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUqCVBNaEfCsRqADsEa1jQ" base_Element="_AUqCUhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUqpYBNaEfCsRqADsEa1jQ" base_Element="_AUqCUhNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUqpYRNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUqpZBNaEfCsRqADsEa1jQ" base_Element="_AUqpYhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUrQcBNaEfCsRqADsEa1jQ" base_Element="_AUqpYhNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUrQcRNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUtssBNaEfCsRqADsEa1jQ" base_Element="_AUtFoBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUuTwhNaEfCsRqADsEa1jQ" base_Element="_AUuTwBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUu60BNaEfCsRqADsEa1jQ" base_Element="_AUuTwBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUu60RNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AUx-IhNaEfCsRqADsEa1jQ" base_Element="_AUx-IBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AUzMQBNaEfCsRqADsEa1jQ" base_Element="_AUx-IBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AUzMQRNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Generics xmi:id="_AUzzUBNaEfCsRqADsEa1jQ" genericsValue="UsuarioDTO" base_Element="_AUzMQxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU1BcBNaEfCsRqADsEa1jQ" base_Element="_AU0aYhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU1ogBNaEfCsRqADsEa1jQ" base_Element="_AU1BcRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU1ogRNaEfCsRqADsEa1jQ" base_Element="_AU1BcRNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU1oghNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU2PkBNaEfCsRqADsEa1jQ" base_Element="_AU1ogxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU2PkRNaEfCsRqADsEa1jQ" base_Element="_AU1ogxNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU2PkhNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU22oBNaEfCsRqADsEa1jQ" base_Element="_AU2PkxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU22oRNaEfCsRqADsEa1jQ" base_Element="_AU2PkxNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU22ohNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU3dsBNaEfCsRqADsEa1jQ" base_Element="_AU22oxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU3dsRNaEfCsRqADsEa1jQ" base_Element="_AU22oxNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU3dshNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU4EwBNaEfCsRqADsEa1jQ" base_Element="_AU3dsxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU4EwRNaEfCsRqADsEa1jQ" base_Element="_AU3dsxNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU4EwhNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU4ExRNaEfCsRqADsEa1jQ" base_Element="_AU4EwxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU4r0BNaEfCsRqADsEa1jQ" base_Element="_AU4EwxNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU4r0RNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU4r1BNaEfCsRqADsEa1jQ" base_Element="_AU4r0hNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU5S4BNaEfCsRqADsEa1jQ" base_Element="_AU4r0hNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU5S4RNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU5S5BNaEfCsRqADsEa1jQ" base_Element="_AU5S4hNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU5S5RNaEfCsRqADsEa1jQ" base_Element="_AU5S4hNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU5S5hNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU8WMBNaEfCsRqADsEa1jQ" base_Element="_AU7vIBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU8WMRNaEfCsRqADsEa1jQ" base_Element="_AU7vIBNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU8WMhNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU89QBNaEfCsRqADsEa1jQ" base_Element="_AU8WMxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU89QRNaEfCsRqADsEa1jQ" base_Element="_AU8WMxNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU89QhNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU9kUBNaEfCsRqADsEa1jQ" base_Element="_AU89QxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU9kURNaEfCsRqADsEa1jQ" base_Element="_AU89QxNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU9kUhNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU-LYBNaEfCsRqADsEa1jQ" base_Element="_AU9kUxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU-LYRNaEfCsRqADsEa1jQ" base_Element="_AU9kUxNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU-LYhNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AU-LZRNaEfCsRqADsEa1jQ" base_Element="_AU-LYxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Annotations xmi:id="_AU-ycBNaEfCsRqADsEa1jQ" base_Element="_AU-LYxNaEfCsRqADsEa1jQ">
+    <annotations xmi:id="_AU-ycRNaEfCsRqADsEa1jQ" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVCc0BNaEfCsRqADsEa1jQ" base_Element="_AVB1wBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVDq8BNaEfCsRqADsEa1jQ" base_Element="_AVDD4BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVESABNaEfCsRqADsEa1jQ" base_Element="_AVDq8RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVHVUxNaEfCsRqADsEa1jQ" base_Element="_AVHVURNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVIjchNaEfCsRqADsEa1jQ" base_Element="_AVIjcRNaEfCsRqADsEa1jQ">
+    <associatedElement xmi:type="uml:Operation" xmi:id="_AVJxkBNaEfCsRqADsEa1jQ" name="getAgenda" method="_AVw1mBNaEfCsRqADsEa1jQ">
+      <ownedParameter xmi:id="_AVKYoRNaEfCsRqADsEa1jQ" type="_ATMCsBNaEfCsRqADsEa1jQ" direction="return"/>
+    </associatedElement>
+    <associatedElement xmi:type="uml:Operation" xmi:id="_AVJxkRNaEfCsRqADsEa1jQ" name="setAgenda" method="_AVw1mhNaEfCsRqADsEa1jQ">
+      <ownedParameter xmi:id="_AVJxkhNaEfCsRqADsEa1jQ" name="agenda" type="_ATMCsBNaEfCsRqADsEa1jQ"/>
+    </associatedElement>
+  </UMLLabProfile:LegacyStyledElement>
+  <UMLLabProfile:Generics xmi:id="_AVJKghNaEfCsRqADsEa1jQ" genericsValue="Usuario" base_Element="_AVIjcRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Generics xmi:id="_AVKYoBNaEfCsRqADsEa1jQ" genericsValue="Usuario" base_Element="_AVJxkBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Generics xmi:id="_AVKYohNaEfCsRqADsEa1jQ" genericsValue="Usuario" base_Element="_AVJxkhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVLmwBNaEfCsRqADsEa1jQ" base_Element="_AVKYoxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Generics xmi:id="_AVLmxBNaEfCsRqADsEa1jQ" genericsValue="Mensaje" base_Element="_AVLmwRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVM04xNaEfCsRqADsEa1jQ" base_Element="_AVM04hNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVNb8BNaEfCsRqADsEa1jQ" base_Element="_AVM05BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVNb8hNaEfCsRqADsEa1jQ" base_Element="_AVNb8RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVNb9BNaEfCsRqADsEa1jQ" base_Element="_AVNb8xNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVNb9hNaEfCsRqADsEa1jQ" base_Element="_AVNb9RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVODABNaEfCsRqADsEa1jQ" base_Element="_AVNb9xNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVODAhNaEfCsRqADsEa1jQ" base_Element="_AVODARNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVODBBNaEfCsRqADsEa1jQ" base_Element="_AVODAxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVOqEBNaEfCsRqADsEa1jQ" base_Element="_AVODBRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVOqEhNaEfCsRqADsEa1jQ" base_Element="_AVOqERNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVOqFBNaEfCsRqADsEa1jQ" base_Element="_AVOqExNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVQfQBNaEfCsRqADsEa1jQ" base_Element="_AVPRIhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVQfQhNaEfCsRqADsEa1jQ" base_Element="_AVQfQRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVQfRBNaEfCsRqADsEa1jQ" base_Element="_AVQfQxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVRGUBNaEfCsRqADsEa1jQ" base_Element="_AVQfRRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Generics xmi:id="_AVRGUhNaEfCsRqADsEa1jQ" genericsValue="UsuarioDTO" base_Element="_AVRGURNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVRGUxNaEfCsRqADsEa1jQ" base_Element="_AVRGURNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVRGVRNaEfCsRqADsEa1jQ" base_Element="_AVRGVBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVRtYxNaEfCsRqADsEa1jQ" base_Element="_AVRtYhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVRtZRNaEfCsRqADsEa1jQ" base_Element="_AVRtZBNaEfCsRqADsEa1jQ">
+    <associatedElement xmi:type="uml:Operation" xmi:id="_AVSUcBNaEfCsRqADsEa1jQ" name="getTextFieldMensaje" method="_AV0f8hNaEfCsRqADsEa1jQ">
+      <ownedParameter xmi:id="_AVSUcRNaEfCsRqADsEa1jQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </associatedElement>
+  </UMLLabProfile:LegacyStyledElement>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVS7gBNaEfCsRqADsEa1jQ" base_Element="_AVSUchNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVS7ghNaEfCsRqADsEa1jQ" base_Element="_AVS7gRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVTikBNaEfCsRqADsEa1jQ" base_Element="_AVS7gxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVTikhNaEfCsRqADsEa1jQ" base_Element="_AVTikRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Generics xmi:id="_AVTilBNaEfCsRqADsEa1jQ" genericsValue="UsuarioDTO" base_Element="_AVTikxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVTilRNaEfCsRqADsEa1jQ" base_Element="_AVTikxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVUwsBNaEfCsRqADsEa1jQ" base_Element="_AVTilhNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVUwshNaEfCsRqADsEa1jQ" base_Element="_AVUwsRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVV-0RNaEfCsRqADsEa1jQ" base_Element="_AVV-0BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVWl4BNaEfCsRqADsEa1jQ" base_Element="_AVV-0hNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVWl4hNaEfCsRqADsEa1jQ" base_Element="_AVWl4RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVWl5BNaEfCsRqADsEa1jQ" base_Element="_AVWl4xNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_AVXM8BNaEfCsRqADsEa1jQ" base_Element="_AVWl5RNaEfCsRqADsEa1jQ"/>
+  <uml:OpaqueBehavior xmi:id="_AVw1mBNaEfCsRqADsEa1jQ" name="getAgenda" specification="_AVJxkBNaEfCsRqADsEa1jQ">
+    <ownedParameter xmi:id="_AVw1mRNaEfCsRqADsEa1jQ" type="_ATMCsBNaEfCsRqADsEa1jQ" direction="return"/>
+    <language>java</language>
+    <body>return new PriorityQueue&lt;>(agenda);&#xD;
+	</body>
+  </uml:OpaqueBehavior>
+  <uml:OpaqueBehavior xmi:id="_AVw1mhNaEfCsRqADsEa1jQ" name="setAgenda" specification="_AVJxkRNaEfCsRqADsEa1jQ">
+    <ownedParameter xmi:id="_AVw1mxNaEfCsRqADsEa1jQ" name="agenda" type="_ATMCsBNaEfCsRqADsEa1jQ"/>
+    <language>java</language>
+    <body>this.agenda = agenda;&#xD;
+	</body>
+  </uml:OpaqueBehavior>
+  <uml:OpaqueBehavior xmi:id="_AV0f8hNaEfCsRqADsEa1jQ" name="getTextFieldMensaje" specification="_AVSUcBNaEfCsRqADsEa1jQ">
+    <ownedParameter xmi:id="_AV0f8xNaEfCsRqADsEa1jQ" direction="return">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedParameter>
+    <language>java</language>
+    <body>return this.textFieldMensaje.getText();&#xD;
+	</body>
+  </uml:OpaqueBehavior>
+  <UMLLabProfile:Reference xmi:id="_AWHa4BNaEfCsRqADsEa1jQ" base_Element="_AWGz0BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWHa4xNaEfCsRqADsEa1jQ" base_Element="_AWHa4RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWIpABNaEfCsRqADsEa1jQ" base_Element="_AWHa5BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWIpAxNaEfCsRqADsEa1jQ" base_Element="_AWIpARNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWJQEBNaEfCsRqADsEa1jQ" base_Element="_AWIpBBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWJQExNaEfCsRqADsEa1jQ" base_Element="_AWJQERNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWJ3IBNaEfCsRqADsEa1jQ" base_Element="_AWJQFBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWJ3IxNaEfCsRqADsEa1jQ" base_Element="_AWJ3IRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWKeMBNaEfCsRqADsEa1jQ" base_Element="_AWJ3JBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWKeMxNaEfCsRqADsEa1jQ" base_Element="_AWKeMRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWLFQBNaEfCsRqADsEa1jQ" base_Element="_AWKeNBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWLFQxNaEfCsRqADsEa1jQ" base_Element="_AWLFQRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWLFRhNaEfCsRqADsEa1jQ" base_Element="_AWLFRBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWLFSRNaEfCsRqADsEa1jQ" base_Element="_AWLFRxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWLsUBNaEfCsRqADsEa1jQ" base_Element="_AWLFShNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWLsUxNaEfCsRqADsEa1jQ" base_Element="_AWLsURNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWLsVhNaEfCsRqADsEa1jQ" base_Element="_AWLsVBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWMTYBNaEfCsRqADsEa1jQ" base_Element="_AWLsVxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWM6cBNaEfCsRqADsEa1jQ" base_Element="_AWMTYRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWM6cxNaEfCsRqADsEa1jQ" base_Element="_AWM6cRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWM6dhNaEfCsRqADsEa1jQ" base_Element="_AWM6dBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWNhgBNaEfCsRqADsEa1jQ" base_Element="_AWM6dxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWNhgxNaEfCsRqADsEa1jQ" base_Element="_AWNhgRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWNhhhNaEfCsRqADsEa1jQ" base_Element="_AWNhhBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWNhiRNaEfCsRqADsEa1jQ" base_Element="_AWNhhxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWOvohNaEfCsRqADsEa1jQ" base_Element="_AWOvoBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWOvpRNaEfCsRqADsEa1jQ" base_Element="_AWOvoxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWPWsBNaEfCsRqADsEa1jQ" base_Element="_AWOvphNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWPWsxNaEfCsRqADsEa1jQ" base_Element="_AWPWsRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWPWthNaEfCsRqADsEa1jQ" base_Element="_AWPWtBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWP9wBNaEfCsRqADsEa1jQ" base_Element="_AWPWtxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWP9wxNaEfCsRqADsEa1jQ" base_Element="_AWP9wRNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWP9xhNaEfCsRqADsEa1jQ" base_Element="_AWP9xBNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWQk0BNaEfCsRqADsEa1jQ" base_Element="_AWP9xxNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWQk0xNaEfCsRqADsEa1jQ" base_Element="_AWQk0RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWQk1hNaEfCsRqADsEa1jQ" base_Element="_AWQk1BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWRL4hNaEfCsRqADsEa1jQ" base_Element="_AWRL4BNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWRL5RNaEfCsRqADsEa1jQ" base_Element="_AWRL4xNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWRL6BNaEfCsRqADsEa1jQ" base_Element="_AWRL5hNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWRy8BNaEfCsRqADsEa1jQ" base_Element="_AWRL6RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWRy8xNaEfCsRqADsEa1jQ" base_Element="_AWRy8RNaEfCsRqADsEa1jQ"/>
+  <UMLLabProfile:Reference xmi:id="_AWSaABNaEfCsRqADsEa1jQ" base_Element="_AWRy9BNaEfCsRqADsEa1jQ"/>
+</xmi:XMI>
