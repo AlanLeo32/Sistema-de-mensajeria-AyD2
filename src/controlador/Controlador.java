@@ -2,6 +2,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -126,8 +127,7 @@ public class Controlador implements ActionListener,Observer{
 				UsuarioDTO user=((VentanaPrincipal) ventana).getContactoConversacionActual();
 				this.sistemaMensajeria.enviarMensaje(user, contenidoMensaje);
 				
-				((VentanaPrincipal) ventana).agregarMensajeAchat(contenidoMensaje,LocalDateTime.now(),this.sistemaMensajeria.getUsuario().getNickName());
-				((VentanaPrincipal) ventana).limpiarBuffer();
+				
 			}
 			break;
 		case "INICIAR CONVERSACIÓN":
@@ -183,7 +183,13 @@ public class Controlador implements ActionListener,Observer{
 		// TODO Auto-generated method stub
 		 if (arg instanceof Mensaje ) {
 			 	Mensaje mensaje = (Mensaje) arg;
-	            System.out.println("Nuevo mensaje recibido en el controlador: " + mensaje.getContenido());
+                if (mensaje.getEmisor().equals(this.sistemaMensajeria.getUsuario()))
+                {
+                	((VentanaPrincipal) ventana).agregarMensajeAchat(mensaje.getContenido(),LocalDateTime.now(),this.sistemaMensajeria.getUsuario().getNickName());
+    				((VentanaPrincipal) ventana).limpiarBuffer();
+                }
+                else
+                {
 	            if (ventana instanceof VentanaPrincipal) {
 	            	VentanaPrincipal vp = (VentanaPrincipal) ventana;
 	            	//chequeo si soy receptor
@@ -194,7 +200,7 @@ public class Controlador implements ActionListener,Observer{
 	            			vp.agregarMensajeAchat(mensaje.getContenido(),mensaje.getFechayhora(),mensaje.getEmisor().getNickName());
 	            			vp.limpiarChat(); 
             		        this.cargaChat(mensaje.getEmisor().getPuerto(), mensaje.getEmisor().getIp()); // Mostrás historial
-	            			System.out.println("Llego");
+
 	            		}//notifica llega cuando no hay conversaciones o no es contacto actual
 	            		else {
 	            			vp.actualizarListaChats(this.getListaConversaciones());
@@ -203,6 +209,13 @@ public class Controlador implements ActionListener,Observer{
 	            	}
 	        
 	            }
+                }
+	            
 	     }
+		 else
+			 if (arg instanceof IOException) {
+				 String error = (String) arg.toString();
+				 ((VentanaPrincipal) ventana).mostrarErrorEnvioMensaje(error);
+			 }
 	}
 }

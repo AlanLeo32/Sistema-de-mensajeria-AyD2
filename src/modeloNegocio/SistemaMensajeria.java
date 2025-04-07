@@ -121,14 +121,18 @@ public class SistemaMensajeria extends Observable{
 	    	   Mensaje msg;
 	    	   if(ureceptor!=null) {
 	    		   msg=new Mensaje(mensaje,LocalDateTime.now(),this.usuario,ureceptor);
-	    		   this.usuario.guardarMensaje(msg);
+	    		   
 	    		   oos.writeObject(msg);
 	    		   oos.flush();
 		    	   oos.close();
+		    	   this.usuario.guardarMensaje(msg);
+		    	   setChanged(); // importante
+			       notifyObservers(msg);
 	    	   }
 
 	    } catch (IOException e) {
-	        e.printStackTrace();
+	    	setChanged(); // importante
+	        notifyObservers(e);
 	    }
 	}
 	

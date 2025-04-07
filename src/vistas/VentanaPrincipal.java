@@ -30,6 +30,7 @@ import javax.swing.JTextField;
 import javax.swing.ListModel;
 import javax.swing.JTextArea;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
 import javax.swing.DefaultListModel;
 import javax.swing.SwingConstants;
@@ -193,6 +194,11 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	public void actionPerformed(ActionEvent e) {
 		
 	}
+	
+	public void mostrarErrorEnvioMensaje(String error) {
+		JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
+	}
+	
 	public void limpiarChat() {
 	    this.textAreaChat.setText("");
 	}
