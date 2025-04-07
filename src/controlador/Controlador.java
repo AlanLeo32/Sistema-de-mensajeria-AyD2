@@ -156,7 +156,10 @@ public class Controlador implements ActionListener,Observer{
 			    String ip = ventanaAgregar.getIp();
 			    puerto = Integer.parseInt(ventanaAgregar.getPuerto());
 			    this.agregaContacto(nick, ip, puerto);
+			    ((VentanaAgregarContacto) ventana2).mostrarConfirmacionContactoAgregado();
 			    ventana2.dispose(); // cerrar la ventana luego de agregar
+			    
+
 			}
 			break;
 		default:

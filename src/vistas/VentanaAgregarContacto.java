@@ -10,6 +10,7 @@ import controlador.Controlador;
 
 import java.awt.GridLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -157,7 +158,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub	
+		
 	}
 
 	@Override
@@ -165,11 +166,29 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		// TODO Auto-generated method stub
 		
 	}
-
+/*
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		this.btnAgregarButton.setEnabled(!(this.textFieldNickname.getText().isEmpty() || this.textFieldIP.getText().isEmpty() || this.textFieldPuerto.getText().isEmpty()) && (Integer.parseInt(this.textFieldPuerto.getText())>1000));
+		this.btnAgregarButton.setEnabled(!(this.textFieldNickname.getText().isEmpty() || this.textFieldIP.getText().isEmpty() || this.textFieldPuerto.getText().isEmpty() || this.textFieldPuerto.getText().c) && (Integer.parseInt(this.textFieldPuerto.getText())>1000) &&(Integer.parseInt(this.getPuerto())<65536));
+	}
+*/
+	@Override
+	public void keyReleased(KeyEvent e) {
+	    String puertoTexto = this.textFieldPuerto.getText();
+	    boolean camposLlenos = 
+	        !this.textFieldNickname.getText().isEmpty() &&
+	        !this.textFieldIP.getText().isEmpty() &&
+	        !puertoTexto.isEmpty();
+
+	    boolean puertoValido = puertoTexto.matches("\\d+") &&
+	        Integer.parseInt(puertoTexto) > 1000 &&
+	        Integer.parseInt(puertoTexto) < 65536;
+
+	    this.btnAgregarButton.setEnabled(camposLlenos && puertoValido);
+	}
+	public void mostrarConfirmacionContactoAgregado() {
+	    JOptionPane.showMessageDialog(this, "¡Contacto agregado exitosamente!", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	@Override
