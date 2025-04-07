@@ -143,7 +143,7 @@ public class Usuario implements Serializable {
 	    
 	    while (!agendaCopia.isEmpty()) {
 	        Usuario contacto = agendaCopia.poll();
-	        System.out.println(contacto.getNickName());
+
 	    }
 	}
 

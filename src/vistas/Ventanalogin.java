@@ -35,19 +35,7 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 	/**
 	 * Launch the application.
 	 */
-	/*public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Ventanalogin frame = new Ventanalogin();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-*/
+
 	/**
 	 * Create the frame.
 	 */
@@ -81,7 +69,7 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 		txtUsuario.setColumns(10);
 		this.txtUsuario.addKeyListener(this);
 		
-		JLabel lblNewLabel = new JLabel("Puerto(1000<P<65535):");
+		JLabel lblNewLabel = new JLabel("Puerto(1023<P<65536):");
 		panel.add(lblNewLabel);
 		
 		JPanel panel_3 = new JPanel();
@@ -141,7 +129,7 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		this.botonRegistrar.setEnabled(!(this.getUsuario().isEmpty() || this.getPuerto().isEmpty()) && (Integer.parseInt(this.getPuerto())>1000) &&(Integer.parseInt(this.getPuerto())<65535));
+		this.botonRegistrar.setEnabled(!(this.getUsuario().isEmpty() || this.getPuerto().isEmpty()) && (Integer.parseInt(this.getPuerto())>1023) &&(Integer.parseInt(this.getPuerto())<65536));
 	}
 	
 	@Override

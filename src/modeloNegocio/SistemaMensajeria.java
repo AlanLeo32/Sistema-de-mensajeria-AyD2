@@ -20,12 +20,10 @@ import dto.UsuarioDTO;
 public class SistemaMensajeria extends Observable{
 	private Usuario usuario;
 	private static SistemaMensajeria sistema_instancia=null;
-	//Quitar despues de probar
-	public SistemaMensajeria() {
-		
-	} 
 	
-	/*
+	 
+	
+	
 	  private SistemaMensajeria() {
 		
 	}
@@ -34,7 +32,7 @@ public class SistemaMensajeria extends Observable{
 			sistema_instancia=new SistemaMensajeria();
 		return sistema_instancia;
 	} 
-	*/
+	
 	public void setUsuario(String nickName,int puerto) {
 		this.usuario = new Usuario(nickName,puerto);
 	}
@@ -70,7 +68,6 @@ public class SistemaMensajeria extends Observable{
 	public void iniciarServidor(int puerto) {
 	    Thread serverThread = new Thread(() -> {
 	        try (ServerSocket serverSocket = new ServerSocket(puerto)) {
-	            System.out.println("Servidor escuchando en puerto " + puerto);
 	            while (true) {
 	                Socket socket = serverSocket.accept();
 	                try (ObjectInputStream ois = new ObjectInputStream(socket.getInputStream())) {
@@ -82,14 +79,10 @@ public class SistemaMensajeria extends Observable{
 	     		           	notifyObservers(mensaje);
 	     		         
 	                        
-	                        System.out.println("AAAAa");
-	                        for (Mensaje msj : this.usuario.getMensajes()) {
-	                            System.out.println(msj.toString());
-	                        }
 
-	                        System.out.println("Mensaje recibido de " + mensaje.getEmisor().getNickName() + ": " + mensaje.getContenido());
-	                    } else {
-	                        System.out.println("Objeto recibido no es de tipo Mensaje");
+	                       
+
+	                        
 	                    }
 	                } catch (ClassNotFoundException e) {
 	                    e.printStackTrace();

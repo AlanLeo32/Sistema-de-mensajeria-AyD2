@@ -41,20 +41,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	/**
 	 * Launch the application.
 	 */
-	/*
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaAgregarContacto frame = new VentanaAgregarContacto();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-*/
+
 	/**
 	 * Create the frame.
 	 */
@@ -63,7 +50,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		setTitle("Agregar contacto");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 262, 284);
+		setBounds(100, 100, 367, 284);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -79,7 +66,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		panelNickname.add(nicknameLabel);
 		
 		textFieldNickname = new JTextField();
-		textFieldNickname.setBounds(100, 21, 86, 20);
+		textFieldNickname.setBounds(176, 22, 86, 20);
 		this.textFieldNickname.addKeyListener(this);
 		panelNickname.add(textFieldNickname);
 		textFieldNickname.setColumns(10);
@@ -94,7 +81,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		
 		textFieldIP = new JTextField();
 		textFieldIP.setText("localhost");
-		textFieldIP.setBounds(100, 21, 86, 20);
+		textFieldIP.setBounds(176, 21, 86, 20);
 		panelIP.add(textFieldIP);
 		this.textFieldIP.addKeyListener(new KeyAdapter() {
             @Override
@@ -114,12 +101,12 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		contentPane.add(panelPuerto);
 		panelPuerto.setLayout(null);
 		
-		puertoLabel = new JLabel("Puerto\r\n(> 1000)");
-		puertoLabel.setBounds(0, 0, 254, 62);
+		puertoLabel = new JLabel("Puerto\r\n(1023<P<65536)");
+		puertoLabel.setBounds(0, 0, 343, 62);
 		panelPuerto.add(puertoLabel);
 		
 		textFieldPuerto = new JTextField();
-		textFieldPuerto.setBounds(100, 21, 86, 20);
+		textFieldPuerto.setBounds(176, 22, 86, 20);
 		panelPuerto.add(textFieldPuerto);
 		this.textFieldPuerto.addKeyListener(new KeyAdapter() {
             @Override
@@ -166,13 +153,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		// TODO Auto-generated method stub
 		
 	}
-/*
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		this.btnAgregarButton.setEnabled(!(this.textFieldNickname.getText().isEmpty() || this.textFieldIP.getText().isEmpty() || this.textFieldPuerto.getText().isEmpty() || this.textFieldPuerto.getText().c) && (Integer.parseInt(this.textFieldPuerto.getText())>1000) &&(Integer.parseInt(this.getPuerto())<65536));
-	}
-*/
+
 	@Override
 	public void keyReleased(KeyEvent e) {
 	    String puertoTexto = this.textFieldPuerto.getText();
@@ -182,7 +163,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	        !puertoTexto.isEmpty();
 
 	    boolean puertoValido = puertoTexto.matches("\\d+") &&
-	        Integer.parseInt(puertoTexto) > 1000 &&
+	        Integer.parseInt(puertoTexto) > 1023 &&
 	        Integer.parseInt(puertoTexto) < 65536;
 
 	    this.btnAgregarButton.setEnabled(camposLlenos && puertoValido);

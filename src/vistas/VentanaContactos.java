@@ -33,20 +33,7 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 	/**
 	 * Launch the application.
 	 */
-	/*
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VentanaContactos frame = new VentanaContactos();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-*/
+
 	/**
 	 * Create the frame.
 	 */
