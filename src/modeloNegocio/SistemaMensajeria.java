@@ -77,10 +77,11 @@ public class SistemaMensajeria extends Observable{
 	                    Object recibido = ois.readObject();
 	                    if (recibido instanceof Mensaje) {
 	                        Mensaje mensaje = (Mensaje) recibido;
+	                        this.usuario.recibirMensaje(mensaje);
 	                        setChanged(); // importante
 	     		           	notifyObservers(mensaje);
 	     		         
-	                        this.usuario.recibirMensaje(mensaje);
+	                        
 	                        System.out.println("AAAAa");
 	                        for (Mensaje msj : this.usuario.getMensajes()) {
 	                            System.out.println(msj.toString());
@@ -124,8 +125,6 @@ public class SistemaMensajeria extends Observable{
 	    		   oos.writeObject(msg);
 	    		   oos.flush();
 		    	   oos.close();
-		    	   setChanged(); // importante
-		           notifyObservers(msg);
 	    	   }
 
 	    } catch (IOException e) {

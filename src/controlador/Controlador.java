@@ -185,9 +185,9 @@ public class Controlador implements ActionListener,Observer{
 	            	VentanaPrincipal vp = (VentanaPrincipal) ventana;
 	            	//chequeo si soy receptor
 	            	if(!(mensaje.getEmisor().getIp().equals(this.sistemaMensajeria.getUsuario().getIp()) && (mensaje.getEmisor().getPuerto()==this.sistemaMensajeria.getUsuario().getPuerto()))) {
-	            		this.sistemaMensajeria.getUsuario().recibirMensaje(mensaje);
+	            		//this.sistemaMensajeria.getUsuario().recibirMensaje(mensaje);
 	            		//Si emisor es el contacto con el que estoy hablando muestra en pantalla	
-	            		if((vp.hayConversaciones()) && mensaje.getEmisor().getIp().equals(vp.getContactoConversacionActual().getIp())&& (mensaje.getEmisor().getPuerto()==vp.getContactoConversacionActual().getPuerto()) ) {
+	            		if((vp.hayConversaciones()) && (!(vp.getContactoConversacionActual()==null)) && mensaje.getEmisor().getIp().equals(vp.getContactoConversacionActual().getIp())&& (mensaje.getEmisor().getPuerto()==vp.getContactoConversacionActual().getPuerto()) ) {
 	            			vp.agregarMensajeAchat(mensaje.getContenido(),mensaje.getFechayhora(),mensaje.getEmisor().getNickName());
 	            			vp.limpiarChat(); 
             		        this.cargaChat(mensaje.getEmisor().getPuerto(), mensaje.getEmisor().getIp()); // Mostrás historial
@@ -195,7 +195,7 @@ public class Controlador implements ActionListener,Observer{
 	            		}//notifica llega cuando no hay conversaciones o no es contacto actual
 	            		else {
 	            			vp.actualizarListaChats(this.getListaConversaciones());
-          			 
+	            			
 	            		} 
 	            	}
 	        

@@ -27,6 +27,7 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.ListModel;
 import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
@@ -196,6 +197,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	    this.textAreaChat.setText("");
 	}
 
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -238,6 +240,6 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	}
 	public void limpiarBuffer() {
 		this.textFieldMensaje.setText("");
-		
+		this.botonEnviar.setEnabled(false);
 	}
 }
