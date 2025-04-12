@@ -15,6 +15,7 @@ import dto.UsuarioDTO;
 import modeloNegocio.*;
 import util.Util;
 import vistas.*;
+import excepciones.*;
 
 public class Controlador implements ActionListener,Observer{
 	protected IVista ventana;
@@ -214,10 +215,14 @@ public class Controlador implements ActionListener,Observer{
 	            
 	     }
 		 else
-			 if (arg instanceof IOException) {
+			 if (arg instanceof ErrorEnvioMensajeException) {
 				 String error = (String) arg.toString();
 				 ((VentanaPrincipal) ventana).mostrarErrorEnvioMensaje(error);
 			 }
-			 else (arg instanceof )
+			 else
+			   if (arg instanceof PuertoEnUsoException) {
+				String error = (String) arg.toString();
+				 ((Ventanalogin) ventana).mostrarPuertoEnUso(error);
+			   }
 	}
 }

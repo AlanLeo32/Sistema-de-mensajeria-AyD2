@@ -106,7 +106,9 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 		panel_1.add(this.botonRegistrar);
 	}
 	
-
+    public void mostrarPuertoEnUso(String error) {
+		JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
+	}
 	//Lo de abajo posiblemente se borra
 	public String getUsuario() {
 		return txtUsuario.getText();
