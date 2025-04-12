@@ -84,9 +84,9 @@ public class SistemaMensajeria extends Observable{
 	                socket.close();
 	            }
 	        } catch (IOException e) {
-	            e.printStackTrace();
+	            excepcion=new PuertoEnUsoException(Util.CTEPUERTOENUSO);
 				setChanged(); // importante
-			    notifyObservers(msg);
+			    notifyObservers(excepcion);
 	        }
 	    });
 	    serverThread.start();
@@ -120,8 +120,9 @@ public class SistemaMensajeria extends Observable{
 	    	   }
 
 	    } catch (IOException e) {
+			excepcion= new ErrorEnvioMensajeException(Util.CTEERRORENVIOMENSAJE);
 	    	setChanged(); // importante
-	        notifyObservers(e);
+	        notifyObservers(excepcion);
 	    }
 	}
 	
