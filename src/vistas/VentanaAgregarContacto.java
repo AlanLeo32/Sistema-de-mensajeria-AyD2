@@ -80,7 +80,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		panelIP.add(ipLabel);
 		
 		textFieldIP = new JTextField();
-		textFieldIP.setText("localhost");
+		textFieldIP.setText(Util.IPLOCAL);
 		textFieldIP.setBounds(176, 21, 86, 20);
 		panelIP.add(textFieldIP);
 		this.textFieldIP.addKeyListener(new KeyAdapter() {
@@ -126,7 +126,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		contentPane.add(panel_3);
 		
 		btnAgregarButton = new JButton("Agregar");
-		this.btnAgregarButton.setActionCommand("AGREGAR");
+		this.btnAgregarButton.setActionCommand(Util.CTEAGREGAR);
 		btnAgregarButton.setBounds(75, 24, 80, 23);
 		this.btnAgregarButton.setToolTipText("Agregar");
 		

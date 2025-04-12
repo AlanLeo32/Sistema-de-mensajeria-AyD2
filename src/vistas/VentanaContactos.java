@@ -51,7 +51,7 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 		this.contentPane.add(this.panelIniciar, BorderLayout.SOUTH);
 		
 		this.btnIniciarConversacion = new JButton("Iniciar conversacion");
-		this.btnIniciarConversacion.setActionCommand("INICIAR CONVERSACIÓN");
+		this.btnIniciarConversacion.setActionCommand(Util.CTEINICIARCONVERSACION);
 		this.btnIniciarConversacion.setToolTipText("Iniciar conversacion");
 		this.panelIniciar.add(this.btnIniciarConversacion);
 		

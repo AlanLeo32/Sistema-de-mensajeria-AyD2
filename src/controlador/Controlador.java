@@ -100,7 +100,7 @@ public class Controlador implements ActionListener,Observer{
 		// TODO Auto-generated method stub
 		int puerto;
 		switch (e.getActionCommand()) {
-		case "REGISTRAR":
+		case CTEREGISTRAR:
 			
 			if (this.ventana instanceof Ventanalogin) {
 				Ventanalogin ventanalogin = (Ventanalogin) this.ventana;
@@ -113,13 +113,13 @@ public class Controlador implements ActionListener,Observer{
 			}
 			
 			break;
-		case "AGREGAR CONTACTO":
+		case CTEAGREGARCONTACTO:
 			this.setVentana2(new VentanaAgregarContacto(this));
 			break;
-		case "NUEVA CONVERSACIÓN":
+		case CTENUEVACONVER:
 			this.setVentana2(new VentanaContactos(this));
 			break;
-		case "ENVIAR":
+		case CTEENVIAR:
 			if (ventana instanceof VentanaPrincipal) {
 				String contenidoMensaje;
 	
@@ -130,7 +130,7 @@ public class Controlador implements ActionListener,Observer{
 				
 			}
 			break;
-		case "INICIAR CONVERSACIÓN":
+		case CTEINICIARCONVERSACION:
 			if (this.ventana2 instanceof VentanaContactos) {
 		        VentanaContactos ventanaContactos = (VentanaContactos) this.ventana2;
 		        
@@ -149,7 +149,7 @@ public class Controlador implements ActionListener,Observer{
 		        this.ventana2.dispose();
 		    }
 			break;
-		case "AGREGAR":
+		case CTEAGREGAR:
 			if (this.ventana2 instanceof VentanaAgregarContacto) {
 			    VentanaAgregarContacto ventanaAgregar = (VentanaAgregarContacto) this.ventana2;
 			    String nick = ventanaAgregar.getNickname();

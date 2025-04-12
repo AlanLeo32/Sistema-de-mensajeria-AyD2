@@ -77,11 +77,11 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		panel_1.setLayout(new GridLayout(1, 2, 0, 0));
 		
 		this.botonAgregarContacto = new JButton("Agregar contacto");
-		this.botonAgregarContacto.setActionCommand("AGREGAR CONTACTO");
+		this.botonAgregarContacto.setActionCommand(Util.CTEAGREGARCONTACTO);
 		panel_1.add(this.botonAgregarContacto);
 		
 		this.botonNuevaConversacion = new JButton("Nueva conversacion");
-		this.botonNuevaConversacion.setActionCommand("NUEVA CONVERSACIÓN");
+		this.botonNuevaConversacion.setActionCommand(Util.CTENUEVACONVER);
 		panel_1.add(this.botonNuevaConversacion);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -127,7 +127,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		
 		this.botonEnviar = new JButton("Enviar");
 		this.botonEnviar.setEnabled(false);
-		this.botonEnviar.setActionCommand("ENVIAR");
+		this.botonEnviar.setActionCommand(Util.CTEENVIAR);
 		panel_3.add(this.botonEnviar);
 		
 		JScrollPane scrollPane = new JScrollPane();
