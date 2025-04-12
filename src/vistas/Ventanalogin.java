@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controlador.*;
+import util.Util;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
