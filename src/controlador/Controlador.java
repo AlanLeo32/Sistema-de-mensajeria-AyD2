@@ -105,12 +105,13 @@ public class Controlador implements ActionListener,Observer{
 		case Util.CTEREGISTRAR:
 			
 			if (this.ventana instanceof Ventanalogin) {
+				Ventanalogin ventanalogin = (Ventanalogin) this.ventana;
 				puerto=Integer.parseInt(ventanalogin.getPuerto());
-				setUser(ventanalogin.getUsuario(),puerto);
+				
 				this.sistemaMensajeria.iniciarServidor(puerto);
-				Ventanalogin ventanalogin = (Ventanalogin) this.ventana;	
-				this.ventana.setVisible(false);
-				this.setVentana(new VentanaPrincipal(this));
+				setUser(ventanalogin.getUsuario(),puerto);
+				//this.ventana.setVisible(false);
+				//this.setVentana(new VentanaPrincipal(this));
 				((VentanaPrincipal) ventana).TitulonameUsuario(ventanalogin.getUsuario());
 			}
 			

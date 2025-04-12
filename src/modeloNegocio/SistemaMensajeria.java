@@ -16,6 +16,9 @@ import java.util.PriorityQueue;
 
 import dto.MensajeDTO;
 import dto.UsuarioDTO;
+import excepciones.ErrorEnvioMensajeException;
+import excepciones.PuertoEnUsoException;
+import util.Util;
 
 public class SistemaMensajeria extends Observable{
 	private Usuario usuario;
@@ -84,7 +87,7 @@ public class SistemaMensajeria extends Observable{
 	                socket.close();
 	            }
 	        } catch (IOException e) {
-	            excepcion=new PuertoEnUsoException(Util.CTEPUERTOENUSO);
+	            PuertoEnUsoException excepcion=new PuertoEnUsoException(Util.CTEPUERTOENUSO);
 				setChanged(); // importante
 			    notifyObservers(excepcion);
 	        }
@@ -120,7 +123,7 @@ public class SistemaMensajeria extends Observable{
 	    	   }
 
 	    } catch (IOException e) {
-			excepcion= new ErrorEnvioMensajeException(Util.CTEERRORENVIOMENSAJE);
+	    	ErrorEnvioMensajeException excepcion= new ErrorEnvioMensajeException(Util.CTEERRORENVIOMENSAJE);
 	    	setChanged(); // importante
 	        notifyObservers(excepcion);
 	    }
