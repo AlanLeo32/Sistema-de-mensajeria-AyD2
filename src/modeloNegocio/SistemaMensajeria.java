@@ -77,12 +77,6 @@ public class SistemaMensajeria extends Observable{
 	                        this.usuario.recibirMensaje(mensaje);
 	                        setChanged(); // importante
 	     		           	notifyObservers(mensaje);
-	     		         
-	                        
-
-	                       
-
-	                        
 	                    }
 	                } catch (ClassNotFoundException e) {
 	                    e.printStackTrace();
@@ -91,6 +85,8 @@ public class SistemaMensajeria extends Observable{
 	            }
 	        } catch (IOException e) {
 	            e.printStackTrace();
+				setChanged(); // importante
+			    notifyObservers(msg);
 	        }
 	    });
 	    serverThread.start();
