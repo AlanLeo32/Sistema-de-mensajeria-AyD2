@@ -1,6 +1,7 @@
-/sistemaMensajeria/
-/vistas/
 /controlador/
-/modeloNegocio/
-/util/
 /dto/
+/excepciones/
+/modeloNegocio/
+/sistemaMensajeria/
+/util/
+/vistas/

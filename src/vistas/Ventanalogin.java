@@ -69,8 +69,13 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 		txtUsuario = new JTextField();
 		panel_2.add(txtUsuario);
 		txtUsuario.setColumns(10);
-		this.txtUsuario.addKeyListener(this);
-		
+		this.txtUsuario.addKeyListener(new KeyAdapter() {
+		    @Override
+		    public void keyReleased(KeyEvent e) {
+		        validarCampos();
+		    }
+		});
+
 		JLabel lblNewLabel = new JLabel("Puerto(1023<P<65536):");
 		panel.add(lblNewLabel);
 		
@@ -84,16 +89,18 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 		panel_3.add(this.textFieldPuerto);
 		this.textFieldPuerto.setColumns(10);
 		this.textFieldPuerto.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if (!Character.isDigit(c)) { // Si no es un número, se ignora el evento
-                    e.consume();
-                }
-            }
-			public void keyReleased(KeyEvent e) {
-				botonRegistrar.setEnabled(!(getPuerto().isEmpty()));
-			}
+			   @Override
+			    public void keyTyped(KeyEvent e) {
+			        char c = e.getKeyChar();
+			        if (!Character.isDigit(c)) {
+			            e.consume();
+			        }
+			    }
+
+			    @Override
+			    public void keyReleased(KeyEvent e) {
+			        validarCampos();
+			    }
         });
 		
 		JPanel panel_1 = new JPanel();
@@ -107,9 +114,7 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 		panel_1.add(this.botonRegistrar);
 	}
 	
-    public void mostrarPuertoEnUso(String error) {
-		JOptionPane.showMessageDialog(this, error, "Error", JOptionPane.ERROR_MESSAGE);
-	}
+
 	//Lo de abajo posiblemente se borra
 	public String getUsuario() {
 		return txtUsuario.getText();
@@ -118,7 +123,35 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 	public String getPuerto() {
 		return this.textFieldPuerto.getText();
 	}
+	private void validarCampos() {
+	    String usuario = getUsuario();
+	    String puerto = getPuerto();
+	    boolean habilitar = !usuario.isEmpty() && !puerto.isEmpty();
 
+	    try {
+	        int p = Integer.parseInt(puerto);
+	        habilitar = habilitar && p > 1023 && p < 65536;
+	    } catch (NumberFormatException e) {
+	        habilitar = false;
+	    }
+
+	    botonRegistrar.setEnabled(habilitar);
+	}
+	public void muestraErrorPuertoEnUso() {
+		JOptionPane.showMessageDialog(
+			    null,
+			    "El puerto ingresado ya está en uso.\nPor favor, elegí otro puerto entre 1024 y 65535.",
+			    "Error: Puerto en uso",
+			    JOptionPane.ERROR_MESSAGE
+			);
+
+	}
+	public void vaciarTextFieldPuerto() {
+		this.textFieldPuerto.setText("");
+	}
+	public void deshabilitarBoton() {
+		this.botonRegistrar.setEnabled(false);
+	}
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -132,8 +165,7 @@ public class Ventanalogin extends JFrame implements IVista,ActionListener, KeyLi
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		this.botonRegistrar.setEnabled(!(this.getUsuario().isEmpty() || this.getPuerto().isEmpty()) && (Integer.parseInt(this.getPuerto())>1023) &&(Integer.parseInt(this.getPuerto())<65536));
+		
 	}
 	
 	@Override

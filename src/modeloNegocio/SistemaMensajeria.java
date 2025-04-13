@@ -16,18 +16,15 @@ import java.util.PriorityQueue;
 
 import dto.MensajeDTO;
 import dto.UsuarioDTO;
-import excepciones.ErrorEnvioMensajeException;
-import excepciones.PuertoEnUsoException;
-import util.Util;
 
 public class SistemaMensajeria extends Observable{
 	private Usuario usuario;
 	private static SistemaMensajeria sistema_instancia=null;
 	
-	 
 	
 	
-	  private SistemaMensajeria() {
+	
+	private SistemaMensajeria() {
 		
 	}
 	public static SistemaMensajeria get_Instancia() {
@@ -45,9 +42,15 @@ public class SistemaMensajeria extends Observable{
 	public int getPuerto() {
 		return usuario.getPuerto();
 	}
-	public void agregaContacto(String nickName,String ip,int puerto) {
+	public boolean agregaContacto(String nickName,String ip,int puerto) {
 		Usuario contacto=new Usuario(nickName,puerto,ip);
-		this.usuario.agregaContacto(contacto);
+		//si puerto de contacto que desea agregar es el mismo que el mio soy yo, no me puedo agregar
+		if(this.usuario.getPuerto()==puerto)
+			return false;
+		else {
+			this.usuario.agregaContacto(contacto);
+			return true;
+		}
 	}
 
 	public PriorityQueue<Usuario> getAgenda() {
@@ -58,7 +61,7 @@ public class SistemaMensajeria extends Observable{
 		return usuario.getChat(puerto,ip);
 	}
 	public ArrayList<Mensaje> getMensajes(){
-      return usuario.getMensajes();
+    	return usuario.getMensajes();
     }
 	
 	public void setContactoActual(int puerto,String ip) {
@@ -80,6 +83,7 @@ public class SistemaMensajeria extends Observable{
 	                        this.usuario.recibirMensaje(mensaje);
 	                        setChanged(); // importante
 	     		           	notifyObservers(mensaje);
+	                        
 	                    }
 	                } catch (ClassNotFoundException e) {
 	                    e.printStackTrace();
@@ -87,9 +91,7 @@ public class SistemaMensajeria extends Observable{
 	                socket.close();
 	            }
 	        } catch (IOException e) {
-	            PuertoEnUsoException excepcion=new PuertoEnUsoException(Util.CTEPUERTOENUSO);
-				setChanged(); // importante
-			    notifyObservers(excepcion);
+	            e.printStackTrace();
 	        }
 	    });
 	    serverThread.start();
@@ -106,32 +108,49 @@ public class SistemaMensajeria extends Observable{
 	public Usuario getUsuario() {
 		return this.usuario;
 	}
-	public void enviarMensaje(UsuarioDTO contacto, String mensaje) {
+	public void enviarMensaje(UsuarioDTO contacto, String mensaje)  {
 	    try (Socket socket = new Socket(contacto.getIp(), contacto.getPuerto())) {
-	    	   ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-	    	   Usuario ureceptor=this.buscarUsuarioPorDTO(contacto);
-	    	   Mensaje msg;
-	    	   if(ureceptor!=null) {
-	    		   msg=new Mensaje(mensaje,LocalDateTime.now(),this.usuario,ureceptor);
-	    		   
-	    		   oos.writeObject(msg);
-	    		   oos.flush();
-		    	   oos.close();
-		    	   this.usuario.guardarMensaje(msg);
-		    	   setChanged(); // importante
-			       notifyObservers(msg);
-	    	   }
+	    	ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+	    	Usuario ureceptor=this.buscarUsuarioPorDTO(contacto);
+	    	Mensaje msg;
+	    	if(ureceptor!=null) {
+	    		msg=new Mensaje(mensaje,LocalDateTime.now(),this.usuario,ureceptor); 
+	    		oos.writeObject(msg);
+	    		oos.flush();
+		    	oos.close();
+		    	this.usuario.guardarMensaje(msg);
+		    	setChanged(); // importante
+			    notifyObservers(msg);
+	    	}
 
 	    } catch (IOException e) {
-	    	ErrorEnvioMensajeException excepcion= new ErrorEnvioMensajeException(Util.CTEERRORENVIOMENSAJE);
 	    	setChanged(); // importante
-	        notifyObservers(excepcion);
+	        notifyObservers(e);
 	    }
 	}
-	
+	public static boolean puertoDisponible(int puerto) {
+	    try (ServerSocket socket = new ServerSocket(puerto)) {
+	        socket.setReuseAddress(true);
+	        return true; // El puerto está disponible
+	    } catch (IOException e) {
+	        return false; // El puerto ya está en uso
+	    }
+	}
+
 	
 	public List<Usuario> getListaConversaciones() {
 		return this.usuario.getListaConversaciones();
+	}
+	public String getAlias(int puerto) {
+		String name;
+		PriorityQueue<Usuario> lista=this.usuario.getAgenda();
+		while (!lista.isEmpty()) {
+	        Usuario contacto = lista.poll();
+	        if (contacto.getPuerto() == puerto) {
+	            return contacto.getNickName();
+	        }
+	    }
+		return null;
 	}
 
 }

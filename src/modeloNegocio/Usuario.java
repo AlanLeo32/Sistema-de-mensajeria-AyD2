@@ -92,7 +92,7 @@ public class Usuario implements Serializable {
 
 
     public ArrayList<Mensaje> getMensajes(){
-      return this.mensajes;
+    	return this.mensajes;
     }
     public ArrayList<MensajeDTO> getChat(int puerto, String ip) {
         ArrayList<MensajeDTO> chat = new ArrayList<>();
@@ -111,7 +111,7 @@ public class Usuario implements Serializable {
         return chat;
     }
 
-   
+
 	public PriorityQueue<Usuario> getAgenda() {
 		return new PriorityQueue<>(agenda);
 	}

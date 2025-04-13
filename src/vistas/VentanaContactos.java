@@ -55,7 +55,7 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 		this.btnIniciarConversacion.setActionCommand(Util.CTEINICIARCONVERSACION);
 		this.btnIniciarConversacion.setToolTipText("Iniciar conversacion");
 		this.panelIniciar.add(this.btnIniciarConversacion);
-		
+		this.btnIniciarConversacion.setEnabled(false);
 		this.scrollPane = new JScrollPane();
 		this.contentPane.add(this.scrollPane, BorderLayout.CENTER);
 		
@@ -67,7 +67,16 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 		}
 
 		this.list  = new JList<>(modelo);
+		// Agrego listener para habilitar el botón al seleccionar un contacto
+		this.list.addListSelectionListener(e -> {
+		    if (!e.getValueIsAdjusting()) {
+		        btnIniciarConversacion.setEnabled(list.getSelectedIndex() != -1);
+		    }
+		});
+
 		this.scrollPane.setViewportView(this.list);
+		
+
 	}
 	public UsuarioDTO getUsuario() {
 		return this.list.getSelectedValue();
@@ -75,7 +84,7 @@ public class VentanaContactos extends JFrame implements IVista,ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 	}
-
+	
 	@Override
 	public void setActionListener(ActionListener controlador) {
 		// TODO Auto-generated method stub

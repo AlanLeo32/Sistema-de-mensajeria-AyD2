@@ -71,7 +71,13 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		this.textFieldNickname.addKeyListener(this);
 		panelNickname.add(textFieldNickname);
 		textFieldNickname.setColumns(10);
-		
+		this.textFieldNickname.addKeyListener(new KeyAdapter() {
+		    @Override
+		    public void keyReleased(KeyEvent e) {
+		        validarCampos();
+		    }
+		});
+
 		panelIP = new JPanel();
 		contentPane.add(panelIP);
 		panelIP.setLayout(null);
@@ -81,21 +87,16 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		panelIP.add(ipLabel);
 		
 		textFieldIP = new JTextField();
-		textFieldIP.setText(Util.IPLOCAL);
+		textFieldIP.setText("localhost");
 		textFieldIP.setBounds(176, 21, 86, 20);
 		panelIP.add(textFieldIP);
 		this.textFieldIP.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if (!(Character.isDigit(c) || c == '.')) { // Si no es un número, se ignora el evento
-                    e.consume();
-                }
-            }
-			public void keyReleased(KeyEvent e) {
-				btnAgregarButton.setEnabled(!(textFieldIP.getText().isEmpty()));
-			}
-        });
+		    @Override
+		    public void keyReleased(KeyEvent e) {
+		        validarCampos();
+		    }
+		});
+
 		textFieldIP.setColumns(10);
 		
 		panelPuerto = new JPanel();
@@ -110,17 +111,19 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 		textFieldPuerto.setBounds(176, 22, 86, 20);
 		panelPuerto.add(textFieldPuerto);
 		this.textFieldPuerto.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-                char c = e.getKeyChar();
-                if (!Character.isDigit(c)) { // Si no es un número, se ignora el evento
-                    e.consume();
-                }
-            }
-			public void keyReleased(KeyEvent e) {
-				btnAgregarButton.setEnabled(!(textFieldIP.getText().isEmpty()));
-			}
-        });
+		    @Override
+		    public void keyTyped(KeyEvent e) {
+		        char c = e.getKeyChar();
+		        if (!Character.isDigit(c)) {
+		            e.consume();
+		        }
+		    }
+
+		    @Override
+		    public void keyReleased(KeyEvent e) {
+		        validarCampos();
+		    }
+		});
 		textFieldPuerto.setColumns(10);
 		
 		panel_3 = new JPanel();
@@ -144,9 +147,27 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	public String getPuerto() {
 		return this.textFieldPuerto.getText();
 	}
+	private void validarCampos() {
+	    String nickname = textFieldNickname.getText().trim();
+	    String ip = textFieldIP.getText().trim();
+	    String puertoTexto = textFieldPuerto.getText().trim();
+
+	    boolean camposLlenos = !nickname.isEmpty() && !ip.isEmpty() && !puertoTexto.isEmpty();
+	    boolean puertoValido = false;
+
+	    try {
+	        int puerto = Integer.parseInt(puertoTexto);
+	        puertoValido = puerto > 1023 && puerto < 65536;
+	    } catch (NumberFormatException e) {
+	        puertoValido = false;
+	    }
+
+	    btnAgregarButton.setEnabled(camposLlenos && puertoValido);
+	}
+
 	@Override
 	public void keyTyped(KeyEvent e) {
-		
+		validarCampos();
 	}
 
 	@Override
@@ -157,20 +178,7 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-	    String puertoTexto = this.textFieldPuerto.getText();
-	    boolean camposLlenos = 
-	        !this.textFieldNickname.getText().isEmpty() &&
-	        !this.textFieldIP.getText().isEmpty() &&
-	        !puertoTexto.isEmpty();
-
-	    boolean puertoValido = puertoTexto.matches("\\d+") &&
-	        Integer.parseInt(puertoTexto) > 1023 &&
-	        Integer.parseInt(puertoTexto) < 65536;
-
-	    this.btnAgregarButton.setEnabled(camposLlenos && puertoValido);
-	}
-	public void mostrarConfirmacionContactoAgregado() {
-	    JOptionPane.showMessageDialog(this, "¡Contacto agregado exitosamente!", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+	    
 	}
 
 	@Override
@@ -182,5 +190,20 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+	public void mostrarConfirmacionContactoAgregado() {
+		JOptionPane.showMessageDialog(this, "¡Contacto agregado exitosamente!", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);	
+	}
+	public void mostrarErrorNoPuedoAgregarme() {
+		JOptionPane.showMessageDialog(this,"El puerto ingresado no puede ser el mismo que el suyo.\nPor favor, ingrese un puerto distinto.",
+		        "Puerto inválido",
+		        JOptionPane.WARNING_MESSAGE
+		    );	
+	}
+	public void vaciarTextFieldPuerto() {
+		this.textFieldPuerto.setText("");
+	}
+	public void deshabilitarBoton() {
+		this.btnAgregarButton.setEnabled(false);
 	}
 }

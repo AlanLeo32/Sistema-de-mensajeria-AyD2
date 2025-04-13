@@ -15,7 +15,6 @@ import dto.UsuarioDTO;
 import modeloNegocio.*;
 import util.Util;
 import vistas.*;
-import excepciones.*;
 
 public class Controlador implements ActionListener,Observer{
 	protected IVista ventana;
@@ -58,8 +57,8 @@ public class Controlador implements ActionListener,Observer{
 	    PriorityQueue<Usuario> copia = new PriorityQueue<>(sistemaMensajeria.getAgenda());
 	    Usuario user;
 	    while (!copia.isEmpty()) {
-	    	 user = copia.poll();
-	         lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto(),user.getIp()));
+	    	user = copia.poll();
+	        lista.add(new UsuarioDTO(user.getNickName(), user.getPuerto(),user.getIp()));
 	    }
 
 	    return lista;
@@ -82,15 +81,19 @@ public class Controlador implements ActionListener,Observer{
 		this.ventana2.setActionListener(this);
 		this.ventana2.setVisible(true);
 	}
-	public void agregaContacto(String nickName,String ip,int puerto) {
-		this.sistemaMensajeria.agregaContacto(nickName,ip,puerto);
+	public boolean agregaContacto(String nickName,String ip,int puerto) {
+		return this.sistemaMensajeria.agregaContacto(nickName,ip,puerto);
 	}
 
 	public void cargaChat(int puerto,String ip) {
-	
-	  for (MensajeDTO msg : this.sistemaMensajeria.getChat(puerto,ip)) {
+	String alias=this.sistemaMensajeria.getAlias(puerto);
+	for (MensajeDTO msg : this.sistemaMensajeria.getChat(puerto,ip)) {
 		        if (ventana instanceof VentanaPrincipal) {
-		            ((VentanaPrincipal) ventana).agregarMensajeAchat(msg.getContenido(), msg.getFechayhora(), msg.getEmisor().getNickName());
+		        	if(msg.getEmisor().getPuerto()==puerto) //el msg lo mando el contacto
+		            ((VentanaPrincipal) ventana).agregarMensajeAchat(msg.getContenido(), msg.getFechayhora(),alias);
+		        	else { //el msg lo manda el usuario
+			            ((VentanaPrincipal) ventana).agregarMensajeAchat(msg.getContenido(), msg.getFechayhora(),msg.getEmisor().getNickName());
+		        	}
 		        }
 		    }
 	}
@@ -107,12 +110,18 @@ public class Controlador implements ActionListener,Observer{
 			if (this.ventana instanceof Ventanalogin) {
 				Ventanalogin ventanalogin = (Ventanalogin) this.ventana;
 				puerto=Integer.parseInt(ventanalogin.getPuerto());
-				
-				this.sistemaMensajeria.iniciarServidor(puerto);
-				setUser(ventanalogin.getUsuario(),puerto);
-				//this.ventana.setVisible(false);
-				//this.setVentana(new VentanaPrincipal(this));
-				((VentanaPrincipal) ventana).TitulonameUsuario(ventanalogin.getUsuario());
+				if (!this.sistemaMensajeria.puertoDisponible(puerto)) {
+					((Ventanalogin) this.ventana).muestraErrorPuertoEnUso();
+					((Ventanalogin) this.ventana).vaciarTextFieldPuerto();
+					((Ventanalogin) this.ventana).deshabilitarBoton();
+				}
+				else {
+					setUser(ventanalogin.getUsuario(),puerto);
+					this.sistemaMensajeria.iniciarServidor(puerto);
+					this.ventana.setVisible(false);
+					this.setVentana(new VentanaPrincipal(this));
+					((VentanaPrincipal) ventana).TitulonameUsuario(ventanalogin.getUsuario());
+				}
 			}
 			
 			break;
@@ -121,6 +130,7 @@ public class Controlador implements ActionListener,Observer{
 			break;
 		case Util.CTENUEVACONVER:
 			this.setVentana2(new VentanaContactos(this));
+			
 			break;
 		case Util.CTEENVIAR:
 			if (ventana instanceof VentanaPrincipal) {
@@ -129,8 +139,6 @@ public class Controlador implements ActionListener,Observer{
 				contenidoMensaje=((VentanaPrincipal) ventana).getTextFieldMensaje();
 				UsuarioDTO user=((VentanaPrincipal) ventana).getContactoConversacionActual();
 				this.sistemaMensajeria.enviarMensaje(user, contenidoMensaje);
-				
-				
 			}
 			break;
 		case Util.CTEINICIARCONVERSACION:
@@ -158,17 +166,21 @@ public class Controlador implements ActionListener,Observer{
 			    String nick = ventanaAgregar.getNickname();
 			    String ip = ventanaAgregar.getIp();
 			    puerto = Integer.parseInt(ventanaAgregar.getPuerto());
-			    this.agregaContacto(nick, ip, puerto);
-			    ((VentanaAgregarContacto) ventana2).mostrarConfirmacionContactoAgregado();
-			    ventana2.dispose(); // cerrar la ventana luego de agregar
-			    
+			    if(this.agregaContacto(nick, ip, puerto)) {
+			    	((VentanaAgregarContacto) ventana2).mostrarConfirmacionContactoAgregado();
+			    	ventana2.dispose(); // cerrar la ventana luego de agregar
+			    }
+			    else {
+			    	((VentanaAgregarContacto) ventana2).mostrarErrorNoPuedoAgregarme();
+			    	((VentanaAgregarContacto) ventana2).vaciarTextFieldPuerto();
+			    	((VentanaAgregarContacto) ventana2).deshabilitarBoton();
+			    }
 
 			}
 			break;
 		default:
 			break;
 		}
-		
 
 	}	
 	public void contactoSeleccionadoDesdeLista(UsuarioDTO contacto){
@@ -184,46 +196,37 @@ public class Controlador implements ActionListener,Observer{
 	@Override
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
-		 if (arg instanceof Mensaje ) {
-			 	Mensaje mensaje = (Mensaje) arg;
-                if (mensaje.getEmisor().equals(this.sistemaMensajeria.getUsuario()))
-                {
+		if (arg instanceof Mensaje ) {
+			Mensaje mensaje = (Mensaje) arg;
+            if (mensaje.getEmisor().equals(this.sistemaMensajeria.getUsuario())){
                 	((VentanaPrincipal) ventana).agregarMensajeAchat(mensaje.getContenido(),LocalDateTime.now(),this.sistemaMensajeria.getUsuario().getNickName());
     				((VentanaPrincipal) ventana).limpiarBuffer();
-                }
-                else
-                {
-	            if (ventana instanceof VentanaPrincipal) {
-	            	VentanaPrincipal vp = (VentanaPrincipal) ventana;
-	            	//chequeo si soy receptor
-	            	if(!(mensaje.getEmisor().getIp().equals(this.sistemaMensajeria.getUsuario().getIp()) && (mensaje.getEmisor().getPuerto()==this.sistemaMensajeria.getUsuario().getPuerto()))) {
-	            		//this.sistemaMensajeria.getUsuario().recibirMensaje(mensaje);
-	            		//Si emisor es el contacto con el que estoy hablando muestra en pantalla	
-	            		if((vp.hayConversaciones()) && (!(vp.getContactoConversacionActual()==null)) && mensaje.getEmisor().getIp().equals(vp.getContactoConversacionActual().getIp())&& (mensaje.getEmisor().getPuerto()==vp.getContactoConversacionActual().getPuerto()) ) {
-	            			vp.agregarMensajeAchat(mensaje.getContenido(),mensaje.getFechayhora(),mensaje.getEmisor().getNickName());
-	            			vp.limpiarChat(); 
-            		        this.cargaChat(mensaje.getEmisor().getPuerto(), mensaje.getEmisor().getIp()); // Mostrás historial
-
-	            		}//notifica llega cuando no hay conversaciones o no es contacto actual
-	            		else {
-	            			vp.actualizarListaChats(this.getListaConversaciones());
-	            			
-	            		} 
-	            	}
-	        
+            }
+            else{
+	        if (ventana instanceof VentanaPrincipal) {
+	            VentanaPrincipal vp = (VentanaPrincipal) ventana;
+	            //chequeo si soy receptor
+	            if(!(mensaje.getEmisor().getIp().equals(this.sistemaMensajeria.getUsuario().getIp()) && (mensaje.getEmisor().getPuerto()==this.sistemaMensajeria.getUsuario().getPuerto()))) {
+	            	//this.sistemaMensajeria.getUsuario().recibirMensaje(mensaje);
+	            	//Si emisor es el contacto con el que estoy hablando muestra en pantalla	
+	            	if((vp.hayConversaciones()) && (!(vp.getContactoConversacionActual()==null)) && mensaje.getEmisor().getIp().equals(vp.getContactoConversacionActual().getIp())&& (mensaje.getEmisor().getPuerto()==vp.getContactoConversacionActual().getPuerto()) ) {
+	            		//String alias=this.sistemaMensajeria.getAlias(mensaje.getEmisor().getPuerto());
+	            		//vp.agregarMensajeAchat(mensaje.getContenido(),mensaje.getFechayhora(),alias);
+	            		vp.limpiarChat(); 
+            		    this.cargaChat(mensaje.getEmisor().getPuerto(), mensaje.getEmisor().getIp()); // Mostrás historial
+						}//notifica llega cuando no hay conversaciones o no es contacto actual
+	            	else {
+	            		vp.actualizarListaChats(this.getListaConversaciones());
+	            	} 
 	            }
-                }
+	    	}
+        }
 	            
 	     }
 		 else
-			 if (arg instanceof ErrorEnvioMensajeException) {
+			 if (arg instanceof IOException) {
 				 String error = (String) arg.toString();
 				 ((VentanaPrincipal) ventana).mostrarErrorEnvioMensaje(error);
 			 }
-			 else
-			   if (arg instanceof PuertoEnUsoException) {
-				String error = (String) arg.toString();
-				 ((Ventanalogin) ventana).mostrarPuertoEnUso(error);
-			   }
 	}
 }
