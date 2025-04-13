@@ -172,6 +172,14 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 	        JOptionPane.ERROR_MESSAGE
 	    );
 	}
+	public void mostrarErrorUsuarioNoDisponible() {
+	    JOptionPane.showMessageDialog(
+	        this,
+	        "Error:Usuario no disponible para agregar",
+	        "Error",
+	        JOptionPane.ERROR_MESSAGE
+	    );
+	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {

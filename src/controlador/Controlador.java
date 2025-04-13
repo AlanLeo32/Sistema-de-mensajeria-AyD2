@@ -82,7 +82,14 @@ public class Controlador implements ActionListener,Observer{
 		this.ventana2.setVisible(true);
 	}
 	public int agregaContacto(String nickName,String ip,int puerto) {
-		return this.sistemaMensajeria.agregaContacto(nickName,ip,puerto);
+		int nroCondicionAgregado;
+		//Si puerto esta disponible es por que no existe ningun usuario con ese puerto
+		if(this.sistemaMensajeria.puertoDisponible(puerto))
+			nroCondicionAgregado=4;
+		else {
+			nroCondicionAgregado=this.sistemaMensajeria.agregaContacto(nickName,ip,puerto);
+		}
+		return nroCondicionAgregado;
 	}
 
 	public void cargaChat(int puerto,String ip) {
@@ -177,12 +184,17 @@ public class Controlador implements ActionListener,Observer{
 			    		((VentanaAgregarContacto) ventana2).mostrarErrorNoPuedoAgregarme();
 			    	}
 			    	else {
-			    		((VentanaAgregarContacto) ventana2).mostrarErrorContactoYaAgendado();;
-			    	}
+			    		if(nroCondicionAgregado==2) {
+			    			((VentanaAgregarContacto) ventana2).mostrarErrorContactoYaAgendado();
+			    		}
+			    		else {
+			    			((VentanaAgregarContacto) ventana2).mostrarErrorUsuarioNoDisponible();
+			    		}
 			    	((VentanaAgregarContacto) ventana2).vaciarTextFieldPuerto();
 			    	((VentanaAgregarContacto) ventana2).deshabilitarBoton();
 			    }
 
+			}
 			}
 			break;
 		default:
@@ -224,6 +236,8 @@ public class Controlador implements ActionListener,Observer{
 						}//notifica llega cuando no hay conversaciones o no es contacto actual
 	            	else {
 	            		vp.actualizarListaChats(this.getListaConversaciones());
+	            		UsuarioDTO usuarioDTO=new UsuarioDTO(mensaje.getEmisor().getNickName(),mensaje.getEmisor().getPuerto(),mensaje.getEmisor().getIp());
+	            		vp.notificarNuevoMensaje(usuarioDTO);
 	            	} 
 	            }
 	    	}

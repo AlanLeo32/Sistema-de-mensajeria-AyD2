@@ -20,7 +20,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.JSplitPane;
 import javax.swing.JScrollPane;
@@ -52,6 +54,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	private JList<UsuarioDTO> listaConversacionesActivas;
 	private JTextArea textAreaChat;
 	private JLabel textFieldNameContacto;
+	private Set<UsuarioDTO> notificacionesPendientes = new HashSet<>();
 	/**
 	 * Launch the application.
 	 */
@@ -98,6 +101,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 				return values[index];
 			}
 		});
+		listaConversacionesActivas.setCellRenderer(new UsuarioRenderer(notificacionesPendientes));
 		scrollPane_1.setViewportView(listaConversacionesActivas);
 		this.listaConversacionesActivas.addListSelectionListener(e -> {
 		    if (!e.getValueIsAdjusting()) {
@@ -105,6 +109,7 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		        if (seleccionado != null) {
 		        	vaciarTextFieldMensajes(); 
 		        	botonEnviar.setEnabled(false);
+		        	limpiarNotificacion(seleccionado);
 		            controlador.contactoSeleccionadoDesdeLista(seleccionado);
 		        }
 		    }
@@ -160,6 +165,16 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	    this.listaConversacionesActivas.setModel(modelo);
 	    
 	}
+	public void notificarNuevoMensaje(UsuarioDTO usuario) {
+	    notificacionesPendientes.add(usuario);
+	    this.listaConversacionesActivas.repaint(); // Para refrescar la lista visualmente
+	}
+	
+	public void limpiarNotificacion(UsuarioDTO usuario) {
+	    notificacionesPendientes.remove(usuario);
+	    this.listaConversacionesActivas.repaint();
+	}
+	
 	public boolean hayConversaciones() {
 		return listaConversacionesActivas.getModel().getSize() != 0;
 	}
