@@ -16,6 +16,7 @@ import java.util.PriorityQueue;
 
 import dto.MensajeDTO;
 import dto.UsuarioDTO;
+import excepciones.ErrorEnvioMensajeException;
 
 public class SistemaMensajeria extends Observable{
 	private Usuario usuario;
@@ -42,14 +43,21 @@ public class SistemaMensajeria extends Observable{
 	public int getPuerto() {
 		return usuario.getPuerto();
 	}
-	public boolean agregaContacto(String nickName,String ip,int puerto) {
+	public int agregaContacto(String nickName,String ip,int puerto) {
 		Usuario contacto=new Usuario(nickName,puerto,ip);
 		//si puerto de contacto que desea agregar es el mismo que el mio soy yo, no me puedo agregar
 		if(this.usuario.getPuerto()==puerto)
-			return false;
+			return 1;
 		else {
-			this.usuario.agregaContacto(contacto);
-			return true;
+			//El contacto ya lo tenias agreagado
+			if(this.usuario.estaContacto(puerto)) {
+				return 2;
+			}
+			//El contacto que se agrega es nuevo y valido
+			else {
+				this.usuario.agregaContacto(contacto);
+				return 3;
+			}
 		}
 	}
 
@@ -124,8 +132,9 @@ public class SistemaMensajeria extends Observable{
 	    	}
 
 	    } catch (IOException e) {
+	    	ErrorEnvioMensajeException error=new ErrorEnvioMensajeException("Error de conexion: el destinario se encuentra desconectado");
 	    	setChanged(); // importante
-	        notifyObservers(e);
+	        notifyObservers(error);
 	    }
 	}
 	public static boolean puertoDisponible(int puerto) {

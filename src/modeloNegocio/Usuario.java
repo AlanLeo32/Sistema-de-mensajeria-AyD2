@@ -157,5 +157,15 @@ public class Usuario implements Serializable {
 	    }
 	    return null; // No se encontró
 	}
-
+	public boolean estaContacto(int puerto) {
+	    PriorityQueue<Usuario> agendaCopia = new PriorityQueue<>(agenda);
+		boolean esta=false; 
+		while (!agendaCopia.isEmpty()) {
+		        Usuario contacto = agendaCopia.poll();
+		        if (contacto.getPuerto() == puerto) {
+		            esta=true;
+		        }
+		    }
+		 return esta;
+	}
 }

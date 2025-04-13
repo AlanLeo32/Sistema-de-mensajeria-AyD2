@@ -81,7 +81,7 @@ public class Controlador implements ActionListener,Observer{
 		this.ventana2.setActionListener(this);
 		this.ventana2.setVisible(true);
 	}
-	public boolean agregaContacto(String nickName,String ip,int puerto) {
+	public int agregaContacto(String nickName,String ip,int puerto) {
 		return this.sistemaMensajeria.agregaContacto(nickName,ip,puerto);
 	}
 
@@ -154,7 +154,8 @@ public class Controlador implements ActionListener,Observer{
 		            //pone nombre de user seleccionado en parte de chat
 		            
 		            ((VentanaPrincipal)ventana).setTextFieldNameContacto(contacto.getNombre());
-		            ((VentanaPrincipal)ventana).setDejarSeleccionadoContactoNuevaConversacion(contacto);;
+		            ((VentanaPrincipal)ventana).setDejarSeleccionadoContactoNuevaConversacion(contacto);
+		            ((VentanaPrincipal)ventana).vaciarTextFieldMensajes();
 		        }
 
 		        this.ventana2.dispose();
@@ -166,12 +167,18 @@ public class Controlador implements ActionListener,Observer{
 			    String nick = ventanaAgregar.getNickname();
 			    String ip = ventanaAgregar.getIp();
 			    puerto = Integer.parseInt(ventanaAgregar.getPuerto());
-			    if(this.agregaContacto(nick, ip, puerto)) {
+			    int nroCondicionAgregado=this.agregaContacto(nick, ip, puerto);
+			    if(nroCondicionAgregado==3) {
 			    	((VentanaAgregarContacto) ventana2).mostrarConfirmacionContactoAgregado();
 			    	ventana2.dispose(); // cerrar la ventana luego de agregar
 			    }
 			    else {
-			    	((VentanaAgregarContacto) ventana2).mostrarErrorNoPuedoAgregarme();
+			    	if(nroCondicionAgregado==1) {
+			    		((VentanaAgregarContacto) ventana2).mostrarErrorNoPuedoAgregarme();
+			    	}
+			    	else {
+			    		((VentanaAgregarContacto) ventana2).mostrarErrorContactoYaAgendado();;
+			    	}
 			    	((VentanaAgregarContacto) ventana2).vaciarTextFieldPuerto();
 			    	((VentanaAgregarContacto) ventana2).deshabilitarBoton();
 			    }
@@ -225,8 +232,9 @@ public class Controlador implements ActionListener,Observer{
 	     }
 		 else
 			 if (arg instanceof IOException) {
-				 String error = (String) arg.toString();
-				 ((VentanaPrincipal) ventana).mostrarErrorEnvioMensaje(error);
+				
+				 String mensaje = ((IOException) arg).getMessage();
+				 ((VentanaPrincipal) ventana).mostrarErrorEnvioMensaje(mensaje);
 			 }
 	}
 }

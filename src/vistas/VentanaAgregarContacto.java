@@ -164,6 +164,14 @@ public class VentanaAgregarContacto extends JFrame implements IVista,ActionListe
 
 	    btnAgregarButton.setEnabled(camposLlenos && puertoValido);
 	}
+	public void mostrarErrorContactoYaAgendado() {
+	    JOptionPane.showMessageDialog(
+	        this,
+	        "El contacto que intentás agregar ya está en tu agenda.",
+	        "Contacto ya agendado",
+	        JOptionPane.ERROR_MESSAGE
+	    );
+	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {

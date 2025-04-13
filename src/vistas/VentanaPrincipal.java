@@ -103,6 +103,8 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 		    if (!e.getValueIsAdjusting()) {
 		        UsuarioDTO seleccionado = listaConversacionesActivas.getSelectedValue();
 		        if (seleccionado != null) {
+		        	vaciarTextFieldMensajes(); 
+		        	botonEnviar.setEnabled(false);
 		            controlador.contactoSeleccionadoDesdeLista(seleccionado);
 		        }
 		    }
@@ -191,7 +193,9 @@ public class VentanaPrincipal extends JFrame implements IVista, ActionListener, 
 	    this.textAreaChat.setText("");
 	}
 
-
+	public void vaciarTextFieldMensajes() {
+		this.textFieldMensaje.setText("");
+	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
